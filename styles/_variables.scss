@@ -4,14 +4,21 @@
 // 正文文本，主要颜色
 $text-color: #333;
 
-// 标题颜色
-$heading-color: #000;
-
 // 文本强调颜色，hover效果
-$main-color: #a57e60;
+$theme-color: #5a6afa;
 
 // 背景颜色
-$backgroung-color: #050c23;
+$backgroung-color: #e6e9f0;
 
-// 顶部菜单部分的高度
-$height: 120px;
+// 顶部个人信息部分的高度
+$page-top-height: 70px;
+
+// 底部版权信息部分的高度
+$page-bottom-height: 40px;
+
+// 左侧菜单部分的高度
+$page-left-width: 180px;
+
+// 面包屑部分的高度
+$breadcrumb-height: 74px;
+
