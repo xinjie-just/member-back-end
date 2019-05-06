@@ -254,6 +254,9 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+  &:focus {
+    outline: none;
+  }
 }
 
 //通过之前的规则修复 optgroup 元素的字体粗细
@@ -281,6 +284,7 @@ html [type="button"],
 [type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+  background-color: transparent;
   &:focus {
     outline: none;
   }
@@ -470,4 +474,19 @@ label {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.main-content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.main-content::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 3px 0 14px rgba(120,120,120,.4);
+  background: rgba(120,120,120,.4);
+}
+.main-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 3px 0 14px rgba(120,120,120,.4);
+  border-radius: 0;
+  background: rgba(120,120,120,.1);
 }

@@ -82,7 +82,7 @@ html {
 body {
   width: 100%;
   font-size: 1rem;
-  color: #333;
+  color: #666;
   background: #fff;
   font-family: "webfont", Arial, sans-serif;
   -webkit-overflow-scrolling: touch;
@@ -113,7 +113,7 @@ template,
 
 /* ===链接=== */
 a {
-  color: #333;
+  color: #666;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
@@ -208,6 +208,12 @@ textarea {
   font: inherit;
   margin: 0;
 }
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
 
 optgroup {
   font-weight: bold;
@@ -229,6 +235,7 @@ html [type="button"],
 [type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+  background-color: transparent;
 }
 button:focus,
 html [type="button"]:focus,
@@ -325,6 +332,16 @@ ul {
 }
 
 /* ===关于浮动=== */
+.header:before, .personal-account-form .form-item:before {
+  content: "";
+  display: table;
+}
+.header:after, .personal-account-form .form-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /*快捷样式*/
 figure {
   overflow: hidden;
@@ -348,11 +365,28 @@ label:hover {
   opacity: .8;
 }
 
-/*===首页===*/
-/*
+.main-content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 3px 0 14px rgba(120, 120, 120, 0.4);
+  background: rgba(120, 120, 120, 0.4);
+}
+
+.main-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 3px 0 14px rgba(120, 120, 120, 0.4);
+  border-radius: 0;
+  background: rgba(120, 120, 120, 0.1);
+}
+
+/*===整体框架===*/
 html {
   height: 100%;
 }
+
 body {
   height: 100%;
   position: relative;
@@ -365,200 +399,32 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: $page-top-height;
-  line-height: $page-top-height;
-  color: #fff;
-  font-size: 16px;
-  background: linear-gradient(90deg,rgba(55,120,250,1) 0%,rgba(55,74,250,1) 100%);
-  box-shadow: 0 2px 4px 0 rgba(46,95,230,0.2);
-  .logo {
-    width: $page-left-width;
-    height: $page-top-height;
-    line-height: $page-top-height;
-    font-size: 1.5em;
-    font-weight: 500;
-    text-align: center;
-  }
-  .personal-info {
-    display: -ms-flex;
-    display: flex;
-    justify-content: flex-end;
-    -ms-flex: 1;
-    flex: 1;
-    padding-right: 20px;
-    padding-left: 20px;
-    text-align: right;
-    .msg {
-      font-size: 1.5em;
-      margin-right: 1em;
-    }
-    .personal-account {
-      font-size: 1em;
-      &:hover {
-        .arrows {
-          transform: rotate(135deg);
-        }
-      }
-      .arrows {
-        display: inline-block;
-        margin-left: 1em;
-        width: 8px;
-        height: 8px;
-        border-left: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        transform: rotate(-45deg);
-        transform-origin: center;
-        transition: all .5s ease 0s;
-      }
-    }
-  }
-}
-
-.main {
-  position: absolute;
-  top: $page-top-height;
-  right: 0;
-  bottom: $page-bottom-height;
-  left: 0;
-  height: calc(100% - 72px - 40px);
-  .nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: $page-left-width;
-    background-color: #fff;
-    padding-top: 26px;
-    padding-bottom: 26px;
-    overflow-y: auto;
-  }
-  .main-body {
-    position: absolute;
-    top: 0;
-    left: $page-left-width;
-    height: 100%;
-    width: calc(100% - 180px);
-  }
-  .breadcrumbs {
-    position: relative;
-    width: 100%;
-    height: $breadcrumb-height;
-    line-height: $breadcrumb-height;
-    padding-left: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .05);
-    li {
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      height: $breadcrumb-height;
-      line-height: $breadcrumb-height;
-      padding-left: 20px;
-      font-size: 16px;
-      color: $text-color;
-      &:first-child {
-        padding-left: 0;
-      }
-      &:last-child {
-        padding-left: 25px;
-        &:before {
-          content: "";
-        }
-      }
-      &:before {
-        content: ">";
-        position: absolute;
-        top: 0;
-        right: -18px;
-        transform: scaleY(1.5);
-        color: #999;
-      }
-      a {
-        display: block;
-        color: #999;
-        padding-right: 5px;
-        padding-left: 5px;
-        &.icon-home {
-          font-size: 24px;
-          color: #999;
-        }
-        &:hover {
-          color: $text-color;
-        }
-      }
-    }
-  }
-  .main-content {
-    position: absolute;
-    top: $breadcrumb-height;
-    left: 0;
-    width: calc(100% - 40px);
-    margin: 20px;
-    height: calc(100% - 76px - 40px);
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 30px 50px;
-    overflow-y: auto;
-  }
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: $page-bottom-height;
-  line-height: $page-bottom-height;
-  text-align: center;
-  background-image: linear-gradient(to right, #3778f9, #374af9);
-  color: #fff;
-  font-size: 14px;
-  padding-right: 2em;
-  padding-left: 2em;
-}*/
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-height: 100vh;
-  font-family: "Microsoft YaHei", Arial, sans-serif;
-  background-color: #e6e9f0;
-}
-body .header {
   height: 72px;
-}
-body .main {
-  flex: 1;
-}
-body .footer {
-  height: 40px;
-}
-
-.header {
-  display: flex;
   line-height: 72px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   background: linear-gradient(90deg, #3778fa 0%, #374afa 100%);
   box-shadow: 0 2px 4px 0 rgba(46, 95, 230, 0.2);
 }
 .header .logo {
+  float: left;
   width: 180px;
-  height: 100%;
-  line-height: inherit;
+  height: 72px;
+  line-height: 72px;
   font-size: 1.5em;
   font-weight: 500;
   text-align: center;
 }
 .header .personal-info {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
+  float: right;
+  width: calc(100% - 180px);
   padding-right: 20px;
   padding-left: 20px;
   text-align: right;
 }
 .header .personal-info .msg {
+  display: inline-block;
+  vertical-align: middle;
   color: inherit;
   font-size: 1.3em;
   margin-right: .6em;
@@ -569,6 +435,8 @@ body .footer {
   background-color: #4154f9;
 }
 .header .personal-info .personal-account {
+  display: inline-block;
+  vertical-align: middle;
   font-size: 1em;
   padding-right: .6em;
   padding-left: .6em;
@@ -595,9 +463,9 @@ body .footer {
   position: absolute;
   top: 72px;
   right: 0;
-  bottom: 40px;
+  bottom: 0;
   left: 0;
-  height: calc(100% - 72px - 40px);
+  height: calc(100% - 72px - 0);
 }
 .main .nav {
   position: absolute;
@@ -606,6 +474,7 @@ body .footer {
   height: 100%;
   width: 180px;
   background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   padding-top: 26px;
   padding-bottom: 26px;
   overflow-y: auto;
@@ -617,7 +486,114 @@ body .footer {
   height: 100%;
   width: calc(100% - 180px);
 }
-.main .breadcrumbs {
+
+.nav-list {
+  width: 100%;
+  border-top: #ebeef5;
+  border-bottom: #ebeef5;
+}
+.nav-list > li {
+  font-size: 14px;
+}
+.nav-list > li.cashier > a {
+  background-image: url("../images/cashier.png");
+}
+.nav-list > li.member > a {
+  background-image: url("../images/member.png");
+}
+.nav-list > li.operate > a {
+  background-image: url("../images/operate.png");
+}
+.nav-list > li.union > a {
+  background-image: url("../images/union.png");
+}
+.nav-list > li.statistics > a {
+  background-image: url("../images/statistics.png");
+}
+.nav-list > li.setup > a {
+  background-image: url("../images/setup.png");
+}
+.nav-list > li:not(:last-of-type) > a {
+  border-bottom: 1px solid #ebeef5;
+}
+.nav-list > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 60px;
+  background-position: left 23px center;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  color: #475066;
+  font-size: inherit;
+}
+.nav-list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #a3b1cc;
+  border-bottom: 1px solid #a3b1cc;
+  transform-origin: left center;
+  transition: all .5s ease 0s;
+}
+.nav-list > li ul {
+  display: none;
+}
+.nav-list > li:hover {
+  background-color: #f2f6fc;
+}
+.nav-list > li.active {
+  background-color: #f2f6fc;
+}
+.nav-list > li.active > a::after {
+  right: 9px;
+  transform: translateY(-50%) rotate(135deg);
+}
+.nav-list > li.active ul {
+  display: block;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-top: 1px solid #ebeef5;
+  background-color: #f2f6fc;
+}
+.nav-list > li.active ul > li {
+  height: 36px;
+  line-height: 36px;
+}
+.nav-list > li.active ul > li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  position: relative;
+  color: inherit;
+  padding-left: calc(60px + 1.2em);
+}
+.nav-list > li.active ul > li a::before {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  content: "";
+  width: .6em;
+  height: 1px;
+  color: inherit;
+  background-color: currentColor;
+}
+.nav-list > li.active ul > li:hover a {
+  color: #5a6afa;
+}
+.nav-list > li.active ul > li.active a {
+  color: #5a6afa;
+}
+
+.breadcrumbs {
   position: relative;
   width: 100%;
   height: 76px;
@@ -626,47 +602,56 @@ body .footer {
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
 }
-.main .breadcrumbs li {
+.breadcrumbs li {
   position: relative;
   display: inline-block;
-  vertical-align: middle;
   height: 76px;
   line-height: 76px;
   padding-left: 20px;
-  font-size: 16px;
-  color: #333;
+  font-size: 14px;
+  color: #666;
 }
-.main .breadcrumbs li:first-child {
+.breadcrumbs li:first-child {
   padding-left: 0;
 }
-.main .breadcrumbs li:last-child {
+.breadcrumbs li:first-child:last-child {
+  color: #606266;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.breadcrumbs li:last-child {
   padding-left: 25px;
 }
-.main .breadcrumbs li:last-child:before {
+.breadcrumbs li:last-child:before {
   content: "";
 }
-.main .breadcrumbs li:before {
+.breadcrumbs li:before {
   content: ">";
   position: absolute;
   top: 0;
   right: -18px;
   transform: scaleY(1.5);
-  color: #999;
+  color: #96999e;
 }
-.main .breadcrumbs li a {
+.breadcrumbs li a {
   display: block;
-  color: #999;
+  color: #606266;
   padding-right: 5px;
   padding-left: 5px;
+  font-size: 18px;
+  font-weight: 600;
 }
-.main .breadcrumbs li a.icon-home {
+.breadcrumbs li a.icon-home {
   font-size: 24px;
   color: #999;
 }
-.main .breadcrumbs li a:hover {
-  color: #333;
+.breadcrumbs li a:hover {
+  color: #5a6afa;
 }
-.main .main-content {
+
+.main-content {
   position: absolute;
   top: 76px;
   left: 0;
@@ -684,14 +669,155 @@ body .footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  line-height: 40px;
+  height: 0;
+  line-height: 0;
   text-align: center;
   background-image: linear-gradient(to right, #3778f9, #374af9);
   color: #fff;
   font-size: 14px;
   padding-right: 2em;
   padding-left: 2em;
+}
+
+/*主要内容*/
+/*个人账户*/
+.account-main-content {
+  padding: 40px;
+}
+
+.personal-account-form {
+  font-size: 14px;
+}
+.personal-account-form .form-item {
+  height: 36px;
+  line-height: 36px;
+}
+.personal-account-form .form-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.personal-account-form .form-item label {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 6em;
+  height: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: right;
+  color: #666;
+}
+.personal-account-form .form-item strong {
+  display: block;
+  float: left;
+  margin-right: .5em;
+  font-size: 1.43em;
+  color: #333;
+  font-weight: 600;
+}
+.personal-account-form .form-item span {
+  display: block;
+  float: left;
+  color: #666;
+}
+.personal-account-form .form-item .recharge {
+  padding-right: 14px;
+  padding-left: 14px;
+  margin-left: 6px;
+  height: inherit;
+  line-height: inherit;
+  color: #5a6afa;
+}
+.personal-account-form .form-item .recharge:hover {
+  color: #4154f9;
+}
+.personal-account-form .form-item.withdraw-deposits {
+  height: auto;
+}
+.personal-account-form .form-item .form-content {
+  float: left;
+  margin-right: .7em;
+}
+.personal-account-form .form-item .form-content .form-input {
+  position: relative;
+}
+.personal-account-form .form-item .form-content .form-input:focus {
+  border: 1px solid #5a6afa;
+}
+.personal-account-form .form-item .form-content .form-input input {
+  width: calc(100% - 76px);
+}
+.personal-account-form .form-item .form-content .form-input .withdraw-deposits-btn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 76px;
+  height: calc(36px - 2px);
+  line-height: calc(36px - 2px);
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+  color: #5a6afa;
+}
+.personal-account-form .form-item .form-content .form-input .withdraw-deposits-btn:hover {
+  color: #4154f9;
+}
+.personal-account-form .form-item .form-content .tips {
+  display: block;
+  color: #666;
+  line-height: 20px;
+  margin-top: 8px;
+  font-size: inherit;
+  font-weight: normal;
+}
+.personal-account-form .form-input {
+  width: 28.4%;
+  min-width: 300px;
+  height: 36px;
+  line-height: calc(36px - 2px);
+  border: 1px solid #bfc7d4;
+  border-radius: 2px;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.personal-account-form .form-input:focus {
+  border-color: #5a6afa;
+}
+.personal-account-form .form-title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  background: #f5f7fa;
+  border-radius: 4px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #606266;
+  font-size: 1.15em;
+}
+.personal-account-form .form-title .sub-title {
+  font-size: .85em;
+  margin-left: .5em;
+}
+.personal-account-form .submit {
+  min-width: 6em;
+  padding: .6em 1.6em;
+  margin-top: 40px;
+  margin-left: calc(6em + 10px);
+  border-radius: 5px;
+  background-color: #5a6afa;
+  color: #fff;
+  font-size: inherit;
+}
+.personal-account-form .submit.disabled {
+  cursor: not-allowed;
+  background-color: #eaeaea;
+}
+.personal-account-form .submit:not(.disabled):hover {
+  background-color: #4154f9;
+}
+.personal-account-form .submit:not(.disabled):focus {
+  background-color: #3246f9;
 }
 
 /*# sourceMappingURL=member.css.map */

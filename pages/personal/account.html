@@ -21,68 +21,49 @@
         </header>
         <main id="main" class="main" role="main">
             <nav id="nav" class="nav" role="navigation">
-                <ul>
-                    <li><a href="#" title="收银">收银</a></li>
-                    <li>
-                        <a href="#" title="会员">会员</a>
+                <ul class="nav-list">
+                    <li class="cashier"><a href="#" title="收银">收银</a></li>
+                    <li class="member active">
+                    <li class="member">
+                        <!--<a href="#" title="会员">会员</a>-->
                         <ul>
+                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素也添加 active 类-->
+                            <!--<li class="active"><a href="#" title="会员管理">会员管理</a></li>-->
                             <li><a href="#" title="会员管理">会员管理</a></li>
                             <li><a href="#" title="会员等级">会员等级</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" title="运营">运营</a></li>
-                    <li><a href="#" title="联盟">联盟</a></li>
-                    <li><a href="#" title="统计">统计</a></li>
-                    <li><a href="#" title="系统设置">系统设置</a></li>
-                    <li><a href="#" title="收银">收银</a></li>
-                    <li>
-                        <a href="#" title="会员">会员</a>
-                        <ul>
-                            <li><a href="#" title="会员管理">会员管理</a></li>
-                            <li><a href="#" title="会员等级">会员等级</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" title="运营">运营</a></li>
-                    <li><a href="#" title="联盟">联盟</a></li>
-                    <li><a href="#" title="统计">统计</a></li>
-                    <li><a href="#" title="系统设置">系统设置</a></li>
-                    <li><a href="#" title="收银">收银</a></li>
-                    <li>
-                        <a href="#" title="会员">会员</a>
-                        <ul>
-                            <li><a href="#" title="会员管理">会员管理</a></li>
-                            <li><a href="#" title="会员等级">会员等级</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" title="运营">运营</a></li>
-                    <li><a href="#" title="联盟">联盟</a></li>
-                    <li><a href="#" title="统计">统计</a></li>
-                    <li><a href="#" title="系统设置">系统设置</a></li>
+                    <li class="operate"><a href="#" title="运营">运营</a></li>
+                    <li class="union"><a href="#" title="联盟">联盟</a></li>
+                    <li class="statistics"><a href="#" title="统计">统计</a></li>
+                    <li class="setup"><a href="#" title="系统设置">系统设置</a></li>
                 </ul>
             </nav>
             <div class="main-body">
                 <ol class="breadcrumbs">
+                    <!--只有一级导航时没有a标签，多级导航时，最后一级没有a标签，除了最后一级其余有a标签-->
+                    <!--<li><a href="#" title="个人账户">个人账户</a></li>-->
                     <li>个人账户</li>
                 </ol>
-                <div class="main-content">
-                    <form action="" name="personal-account-form">
+                <div class="main-content account-main-content">
+                    <form action="" name="personalAccountForm" class="personal-account-form">
                         <div class="form-item remaining-balance">
-                            <label>账户余额</label>
+                            <label>账户余额： </label>
                             <strong>455.00</strong>
                             <span>元</span>
                         </div>
                         <div class="form-item amount-reserves">
-                            <label>账户余额</label>
+                            <label>备付金金额： </label>
                             <strong>455.00</strong>
                             <span>元</span>
-                            <button type="button" class="recharge">充值</button>
+                            <button type="button" class="recharge" title="充值">充值</button>
                         </div>
                         <div class="form-item withdraw-deposits">
-                            <label for="withdrawDeposits">提现金额</label>
+                            <label for="withdrawDeposits">提现金额：</label>
                             <div class="form-content">
                                 <div class="form-input">
-                                    <input type="text" name="withdrawDeposits" id="withdrawDeposits">
-                                    <button type="button" class="withdraw-deposits-btn">全部提现</button>
+                                    <input type="text" name="withdrawDeposits" id="withdrawDeposits" placeholder="请输入提现金额">
+                                    <button type="button" class="withdraw-deposits-btn" title="全部提现">全部提现</button>
                                 </div>
                                 <strong class="tips">最大可提现455.00</strong>
                             </div>
@@ -90,121 +71,21 @@
                         </div>
                         <h2 class="form-title">商家信息<span class="sub-title">(补充完整后可提现)</span></h2>
                         <div class="form-item crad">
-                            <label for="crad">银行卡号</label>
-                            <input type="number" name="crad" id="crad">
+                            <label for="crad">银行卡号:</label>
+                            <input type="number" name="crad" id="crad" class="form-input" placeholder="请输入银行卡号">
                         </div>
                         <div class="form-item id-card">
-                            <label for="idCard">身份证号</label>
-                            <input type="number" name="idCard" id="idCard">
+                            <label for="idCard">身份证号:</label>
+                            <input type="number" name="idCard" id="idCard" class="form-input" placeholder="请输入身份证号">
                         </div>
-                        <button type="submit" class="submit">立即提现</button>
-                    </form>
-                    <form action="" name="personal-account-form">
-                        <div class="form-item remaining-balance">
-                            <label>账户余额</label>
-                            <strong>455.00</strong>
-                            <span>元</span>
-                        </div>
-                        <div class="form-item amount-reserves">
-                            <label>账户余额</label>
-                            <strong>455.00</strong>
-                            <span>元</span>
-                            <button type="button" class="recharge">充值</button>
-                        </div>
-                        <div class="form-item withdraw-deposits">
-                            <label for="withdrawDeposits">提现金额</label>
-                            <div class="form-content">
-                                <div class="form-input">
-                                    <input type="text" name="withdrawDeposits" id="withdrawDeposits">
-                                    <button type="button" class="withdraw-deposits-btn">全部提现</button>
-                                </div>
-                                <strong class="tips">最大可提现455.00</strong>
-                            </div>
-                            <span>元</span>
-                        </div>
-                        <h2 class="form-title">商家信息<span class="sub-title">(补充完整后可提现)</span></h2>
-                        <div class="form-item crad">
-                            <label for="crad">银行卡号</label>
-                            <input type="number" name="crad" id="crad">
-                        </div>
-                        <div class="form-item id-card">
-                            <label for="idCard">身份证号</label>
-                            <input type="number" name="idCard" id="idCard">
-                        </div>
-                        <button type="submit" class="submit">立即提现</button>
-                    </form>
-                    <form action="" name="personal-account-form">
-                        <div class="form-item remaining-balance">
-                            <label>账户余额</label>
-                            <strong>455.00</strong>
-                            <span>元</span>
-                        </div>
-                        <div class="form-item amount-reserves">
-                            <label>账户余额</label>
-                            <strong>455.00</strong>
-                            <span>元</span>
-                            <button type="button" class="recharge">充值</button>
-                        </div>
-                        <div class="form-item withdraw-deposits">
-                            <label for="withdrawDeposits">提现金额</label>
-                            <div class="form-content">
-                                <div class="form-input">
-                                    <input type="text" name="withdrawDeposits" id="withdrawDeposits">
-                                    <button type="button" class="withdraw-deposits-btn">全部提现</button>
-                                </div>
-                                <strong class="tips">最大可提现455.00</strong>
-                            </div>
-                            <span>元</span>
-                        </div>
-                        <h2 class="form-title">商家信息<span class="sub-title">(补充完整后可提现)</span></h2>
-                        <div class="form-item crad">
-                            <label for="crad">银行卡号</label>
-                            <input type="number" name="crad" id="crad">
-                        </div>
-                        <div class="form-item id-card">
-                            <label for="idCard">身份证号</label>
-                            <input type="number" name="idCard" id="idCard">
-                        </div>
-                        <button type="submit" class="submit">立即提现</button>
-                    </form>
-                    <form action="" name="personal-account-form">
-                        <div class="form-item remaining-balance">
-                            <label>账户余额</label>
-                            <strong>455.00</strong>
-                            <span>元</span>
-                        </div>
-                        <div class="form-item amount-reserves">
-                            <label>账户余额</label>
-                            <strong>455.00</strong>
-                            <span>元</span>
-                            <button type="button" class="recharge">充值</button>
-                        </div>
-                        <div class="form-item withdraw-deposits">
-                            <label for="withdrawDeposits">提现金额</label>
-                            <div class="form-content">
-                                <div class="form-input">
-                                    <input type="text" name="withdrawDeposits" id="withdrawDeposits">
-                                    <button type="button" class="withdraw-deposits-btn">全部提现</button>
-                                </div>
-                                <strong class="tips">最大可提现455.00</strong>
-                            </div>
-                            <span>元</span>
-                        </div>
-                        <h2 class="form-title">商家信息<span class="sub-title">(补充完整后可提现)</span></h2>
-                        <div class="form-item crad">
-                            <label for="crad">银行卡号</label>
-                            <input type="number" name="crad" id="crad">
-                        </div>
-                        <div class="form-item id-card">
-                            <label for="idCard">身份证号</label>
-                            <input type="number" name="idCard" id="idCard">
-                        </div>
-                        <button type="submit" class="submit">立即提现</button>
+                        <!--不可用时添加 disabled 类-->
+                        <button type="submit" class="submit disabled" title="请先补全商家信息" disabled>立即提现</button>
+                        <!--<button type="submit" class="submit" title="立即提现">立即提现</button>-->
                     </form>
                 </div>
             </div>
         </main>
-        <footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>
+        <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
         <script src="../../scripts/jquery-3.4.0.min.js"></script>
         <script src="../../scripts/popper.min.js"></script>
         <script src="../../scripts/bootstrap.min.js"></script>
