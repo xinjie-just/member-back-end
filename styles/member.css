@@ -349,10 +349,10 @@ label:hover {
 }
 
 /*===首页===*/
+/*
 html {
   height: 100%;
 }
-
 body {
   height: 100%;
   position: relative;
@@ -360,42 +360,221 @@ body {
   background-color: #e6e9f0;
 }
 
-/*头部*/
 .header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
-  line-height: 70px;
-  background-image: linear-gradient(to right, #3778f9, #374af9);
+  height: $page-top-height;
+  line-height: $page-top-height;
   color: #fff;
   font-size: 16px;
+  background: linear-gradient(90deg,rgba(55,120,250,1) 0%,rgba(55,74,250,1) 100%);
+  box-shadow: 0 2px 4px 0 rgba(46,95,230,0.2);
+  .logo {
+    width: $page-left-width;
+    height: $page-top-height;
+    line-height: $page-top-height;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+  }
+  .personal-info {
+    display: -ms-flex;
+    display: flex;
+    justify-content: flex-end;
+    -ms-flex: 1;
+    flex: 1;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: right;
+    .msg {
+      font-size: 1.5em;
+      margin-right: 1em;
+    }
+    .personal-account {
+      font-size: 1em;
+      &:hover {
+        .arrows {
+          transform: rotate(135deg);
+        }
+      }
+      .arrows {
+        display: inline-block;
+        margin-left: 1em;
+        width: 8px;
+        height: 8px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(-45deg);
+        transform-origin: center;
+        transition: all .5s ease 0s;
+      }
+    }
+  }
+}
+
+.main {
+  position: absolute;
+  top: $page-top-height;
+  right: 0;
+  bottom: $page-bottom-height;
+  left: 0;
+  height: calc(100% - 72px - 40px);
+  .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: $page-left-width;
+    background-color: #fff;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    overflow-y: auto;
+  }
+  .main-body {
+    position: absolute;
+    top: 0;
+    left: $page-left-width;
+    height: 100%;
+    width: calc(100% - 180px);
+  }
+  .breadcrumbs {
+    position: relative;
+    width: 100%;
+    height: $breadcrumb-height;
+    line-height: $breadcrumb-height;
+    padding-left: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .05);
+    li {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      height: $breadcrumb-height;
+      line-height: $breadcrumb-height;
+      padding-left: 20px;
+      font-size: 16px;
+      color: $text-color;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-left: 25px;
+        &:before {
+          content: "";
+        }
+      }
+      &:before {
+        content: ">";
+        position: absolute;
+        top: 0;
+        right: -18px;
+        transform: scaleY(1.5);
+        color: #999;
+      }
+      a {
+        display: block;
+        color: #999;
+        padding-right: 5px;
+        padding-left: 5px;
+        &.icon-home {
+          font-size: 24px;
+          color: #999;
+        }
+        &:hover {
+          color: $text-color;
+        }
+      }
+    }
+  }
+  .main-content {
+    position: absolute;
+    top: $breadcrumb-height;
+    left: 0;
+    width: calc(100% - 40px);
+    margin: 20px;
+    height: calc(100% - 76px - 40px);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px 50px;
+    overflow-y: auto;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $page-bottom-height;
+  line-height: $page-bottom-height;
+  text-align: center;
+  background-image: linear-gradient(to right, #3778f9, #374af9);
+  color: #fff;
+  font-size: 14px;
+  padding-right: 2em;
+  padding-left: 2em;
+}*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  background-color: #e6e9f0;
+}
+body .header {
+  height: 72px;
+}
+body .main {
+  flex: 1;
+}
+body .footer {
+  height: 40px;
+}
+
+.header {
+  display: flex;
+  line-height: 72px;
+  color: #fff;
+  font-size: 14px;
+  background: linear-gradient(90deg, #3778fa 0%, #374afa 100%);
+  box-shadow: 0 2px 4px 0 rgba(46, 95, 230, 0.2);
 }
 .header .logo {
   width: 180px;
-  height: 70px;
-  line-height: 70px;
+  height: 100%;
+  line-height: inherit;
   font-size: 1.5em;
   font-weight: 500;
   text-align: center;
 }
 .header .personal-info {
-  display: -ms-flex;
   display: flex;
   justify-content: flex-end;
-  -ms-flex: 1;
   flex: 1;
   padding-right: 20px;
   padding-left: 20px;
   text-align: right;
 }
 .header .personal-info .msg {
-  font-size: 1.5em;
-  margin-right: 1em;
+  color: inherit;
+  font-size: 1.3em;
+  margin-right: .6em;
+  padding-right: .6em;
+  padding-left: .6em;
+}
+.header .personal-info .msg:hover {
+  background-color: #4154f9;
 }
 .header .personal-info .personal-account {
   font-size: 1em;
+  padding-right: .6em;
+  padding-left: .6em;
+}
+.header .personal-info .personal-account:hover {
+  background-color: #4154f9;
 }
 .header .personal-info .personal-account:hover .arrows {
   transform: rotate(135deg);
@@ -414,11 +593,11 @@ body {
 
 .main {
   position: absolute;
-  top: 70px;
+  top: 72px;
   right: 0;
   bottom: 40px;
   left: 0;
-  height: calc(100% - 70px - 40px);
+  height: calc(100% - 72px - 40px);
 }
 .main .nav {
   position: absolute;
@@ -441,17 +620,18 @@ body {
 .main .breadcrumbs {
   position: relative;
   width: 100%;
-  height: 74px;
-  line-height: 74px;
+  height: 76px;
+  line-height: 76px;
   padding-left: 20px;
   background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
 }
 .main .breadcrumbs li {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  height: 74px;
-  line-height: 74px;
+  height: 76px;
+  line-height: 76px;
   padding-left: 20px;
   font-size: 16px;
   color: #333;
@@ -488,11 +668,11 @@ body {
 }
 .main .main-content {
   position: absolute;
-  top: 74px;
+  top: 76px;
   left: 0;
   width: calc(100% - 40px);
   margin: 20px;
-  height: calc(100% - 74px - 40px);
+  height: calc(100% - 76px - 40px);
   background-color: #fff;
   border-radius: 5px;
   padding: 30px 50px;
