@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>盟客多多后台管理系统</title>
+        <title>个人账户</title>
         <meta name="author" content="lixinjie">
         <meta name="keywords" content="盟客多多" />
         <meta name="description" content="盟客多多" />
@@ -20,32 +20,63 @@
             </div>
         </header>
         <main id="main" class="main" role="main">
-            <nav id="nav" class="nav" role="navigation">
+            <nav id="nav" class="nav user-defined-scrollbar" role="navigation">
                 <ul class="nav-list">
-                    <li class="cashier"><a href="#" title="收银">收银</a></li>
-                    <li class="member active">
-                    <li class="member">
-                        <!--<a href="#" title="会员">会员</a>-->
+                    <li class="cashier">
+                        <a href="#" title="收银">收银</a>
                         <ul>
-                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素也添加 active 类-->
-                            <!--<li class="active"><a href="#" title="会员管理">会员管理</a></li>-->
+                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素 li 也添加 active 类-->
+                            <li><a href="#" title="快速消费">快速消费</a></li>
+                            <li><a href="#" title="账单中心">账单中心</a></li>
+                        </ul>
+                    </li>
+                    <li class="member">
+                        <a href="#" title="会员">会员</a>
+                        <ul>
                             <li><a href="#" title="会员管理">会员管理</a></li>
                             <li><a href="#" title="会员等级">会员等级</a></li>
                         </ul>
                     </li>
-                    <li class="operate"><a href="#" title="运营">运营</a></li>
-                    <li class="union"><a href="#" title="联盟">联盟</a></li>
-                    <li class="statistics"><a href="#" title="统计">统计</a></li>
-                    <li class="setup"><a href="#" title="系统设置">系统设置</a></li>
+                    <li class="operate">
+                        <a href="#" title="运营">运营</a>
+                        <ul>
+                            <li><a href="#" title="运营管理">运营管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="union">
+                        <a href="#" title="联盟">联盟</a>
+                        <ul>
+                            <li><a href="#" title="商家联盟">商家联盟</a></li>
+                        </ul>
+                    </li>
+                    <li class="statistics">
+                        <a href="#" title="统计">统计</a>
+                        <ul>
+                            <li><a href="#" title="财务统计">财务统计</a></li>
+                            <li><a href="#" title="销售分析">销售分析</a></li>
+                            <li><a href="#" title="综合分析">综合分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="setup">
+                        <a href="#" title="系统设置">系统设置</a>
+                        <ul>
+                            <li><a href="#" title="我的店铺">我的店铺</a></li>
+                            <li><a href="#" title="系统提醒">系统提醒</a></li>
+                            <li><a href="#" title="角色权限">角色权限</a></li>
+                            <li><a href="#" title="操作日志">操作日志</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
-            <div class="main-body">
-                <ol class="breadcrumbs">
-                    <!--只有一级导航时没有a标签，多级导航时，最后一级没有a标签，除了最后一级其余有a标签-->
-                    <!--<li><a href="#" title="个人账户">个人账户</a></li>-->
-                    <li>个人账户</li>
-                </ol>
-                <div class="main-content account-main-content">
+            <div class="main-content">
+                <div class="main-header">
+                    <ol class="breadcrumbs">
+                        <!--只有一级导航时没有a标签，多级导航时，最后一级没有a标签，除了最后一级其余有a标签-->
+                        <!--<li><a href="#" title="个人账户">个人账户</a></li>-->
+                        <li>个人账户</li>
+                    </ol>
+                </div>
+                <div class="main-body user-defined-scrollbar account-main-body">
                     <form action="" name="personalAccountForm" class="personal-account-form">
                         <div class="form-item remaining-balance">
                             <label>账户余额： </label>
@@ -76,7 +107,7 @@
                         </div>
                         <div class="form-item id-card">
                             <label for="idCard">身份证号:</label>
-                            <input type="number" name="idCard" id="idCard" class="form-input" placeholder="请输入身份证号">
+                            <input type="text" name="idCard" id="idCard" class="form-input" placeholder="请输入身份证号">
                         </div>
                         <!--不可用时添加 disabled 类-->
                         <button type="submit" class="submit disabled" title="请先补全商家信息" disabled>立即提现</button>
