@@ -335,6 +335,103 @@ body {
   padding-left: 2em;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  th,
+  td {
+    text-align: center;
+  }
+  thead {
+    tr {
+      background-color: #ebeef5;
+      th {
+        font-size: 14px;
+        font-weight: 400;
+        background-color: #e8e8e8;
+        padding: 5px 10px;
+        height: 48px;
+        line-height: 38px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        font-size: 14px;
+        font-weight: 400;
+        color: inherit;
+        padding: 20px 10px;
+        height: 70px;
+        line-height: 29px;
+        border-bottom: 1px solid #ebeef5;
+        &:not(:last-of-type):not(:first-of-type){
+          border-right: 1px solid #ebeef5;
+        }
+        &.handle {
+          color: #496eae;
+          button {
+            width: 100%;
+            height: 100%;
+            color: inherit;
+            &:hover {
+              color: lighten(#496eae, 20%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*分页*/
+.pagination-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  .count {
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.pagination {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  > li {
+    > a,
+    > span {
+      color: $text-color;
+      border-color: #d4d4d4;
+      background-color: #fff;
+      &:focus,
+      &:hover {
+        color: #fff;
+        border-color: $theme-color;
+        background-color: $theme-color;
+      }
+    }
+  }
+  > .active {
+    > a,
+    > a:focus,
+    > a:hover,
+    > span,
+    > span:focus,
+    > span:hover {
+      color: #fff;
+      border-color: $theme-color;
+      background-color: $theme-color;
+    }
+  }
+}
+
 /*主要内容*/
 /*个人账户*/
 .account-main-body {
@@ -549,50 +646,13 @@ input[type=checkbox] {
   }
 }
 .message-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-  width: 100%;
-  thead {
-    tr {
-      background-color: #ebeef5;
-      th {
-        font-size: 14px;
-        font-weight: 400;
-        background-color: #e8e8e8;
-        padding: 5px 10px;
-        height: 48px;
-        line-height: 38px;
-      }
-    }
-  }
   tbody {
     tr {
-      border-bottom: 1px solid #ebeef5;
       &.read {
         color: #ccc;
       }
       &.unread {
         color: #6b7099;
-      }
-      td {
-        font-size: 14px;
-        font-weight: 400;
-        color: inherit;
-        padding: 20px 10px;
-        height: 69px;
-        line-height: 29px;
-        &.handle {
-          color: #496eae;
-          .delete {
-            width: 100%;
-            height: 100%;
-            color: inherit;
-            &:hover {
-              color: lighten(#496eae, 20%);
-            }
-          }
-        }
       }
     }
   }
@@ -602,12 +662,10 @@ input[type=checkbox] {
       padding-left: 10px;
       width: calc(16px + 10px * 2);
     }
-    .status,
-    .time,
-    .handle {
-      text-align: center;
+    .content {
+      text-align: left;
     }
-    @media (min-width: 1000px) {
+    @media (max-width: 1199px) {
       .status {
         width: 120px;
       }
@@ -666,3 +724,244 @@ input[type=checkbox] {
 }
 
 /*===商家联盟===*/
+.union-main-body {
+  padding: 20px;
+}
+.handle-condition {
+  $size: 36px;
+  @extend %clearfix;
+  color: #909399;
+  font-size: 0;
+  .condition-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    height: $size;
+    line-height: $size;
+    font-size: 14px;
+    > label {
+      display: block;
+      float: left;
+      margin-right: 10px;
+      font-weight: normal;
+    }
+    select {
+      display: block;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: $size;
+      line-height: $size;
+      border: 1px solid #dcdfe6;
+      border-radius: 2px;
+      &:focus {
+        border-color: darken(#dcdfe6, 20%);
+      }
+      option {
+        font-size: inherit;
+        color: inherit;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+  .search {
+    display: inline-block;
+    vertical-align: middle;
+    height: $size;
+    line-height: $size;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    background-color: rgba(100, 153, 245, .2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    border-radius: 4px;
+    color: #0557fa;
+    font-size: 14px;
+    &:hover {
+      background-color: rgba(100, 153, 245, .4);
+    }
+    &:focus {
+      background-color: rgba(100, 153, 245, .6);
+    }
+  }
+}
+.union-main-body-header {
+  $size: 36px;
+  @extend %clearfix;
+  height: calc(#{$size} + 8px * 2);
+  line-height: calc(#{$size} + 8px * 2);
+  .sellers-tab {
+    @extend %clearfix;
+    float: left;
+    height: 100%;
+    line-height: inherit;
+    li {
+      float: left;
+      display: block;
+      padding-right: 8px;
+      padding-left: 8px;
+      height: 100%;
+      line-height: inherit;
+      font-size: 16px;
+      color: #444;
+      cursor: pointer;
+      &:not(:last-of-type) {
+        margin-right: 26px;
+      }
+      &.active {
+        box-shadow: 0 2px 0 0 $theme-color;
+      }
+      &:hover {
+        box-shadow: 0 2px 0 0 $theme-color;
+      }
+    }
+  }
+  .union-handle {
+    @extend %clearfix;
+    float: right;
+    margin-top: 8px;
+    button {
+      float: left;
+      display: none;
+      height: $size;
+      line-height: $size;
+      padding-right: 1.5em;
+      padding-left: 1.5em;
+      margin-left: 15px;
+      background-color: rgba(100, 153, 245, .2);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+      border-radius: 4px;
+      color: #0557fa;
+      font-size: 14px;
+      &.active {
+        display: block;
+      }
+      &:hover {
+        background-color: rgba(100, 153, 245, .4);
+      }
+      &:focus {
+        background-color: rgba(100, 153, 245, .6);
+      }
+    }
+  }
+}
+.sellers-panel {
+  section {
+    display: none;
+    &.active {
+      display: table;
+    }
+    > .count {
+      font-size: 16px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      strong {
+        font-weight: normal;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+  table {
+    .name {
+      text-align: left;
+    }
+    tbody {
+      td {
+        .hide {
+          display: none;
+        }
+      }
+      .deal {
+        color: $theme-color;
+      }
+    }
+    tr {
+      .sellers-check,
+      .leagued-check,
+      .unleashed-check {
+        padding-right: 10px;
+        padding-left: 10px;
+        width: calc(16px + 10px * 2);
+      }
+      .name,
+      .address {
+        width: 40%;
+      }
+      .trade,
+      .area {
+        width: 30%;
+      }
+      @media (max-width: 1199px) {
+        .status {
+          width: 90px;
+        }
+        .time {
+          width: 120px;
+        }
+        .handle {
+          width: 100px;
+        }
+        .deal {
+          width: 110px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .status {
+          width: 100px;
+        }
+        .time {
+          width: 130px;
+        }
+        .handle {
+          width: 110px;
+        }
+        .deal {
+          width: 120px;
+        }
+      }
+      @media (min-width: 1400px) {
+        .status {
+          width: 110px;
+        }
+        .time {
+          width: 140px;
+        }
+        .handle {
+          width: 120px;
+        }
+        .deal {
+          width: 130px;
+        }
+      }
+      @media (min-width: 1600px) {
+        .status {
+          width: 120px;
+        }
+        .time {
+          width: 150px;
+        }
+        .handle {
+          width: 130px;
+        }
+        .deal {
+          width: 140px;
+        }
+      }
+      @media (min-width: 1800px) {
+        .status {
+          width: 130px;
+        }
+        .time {
+          width: 160px;
+        }
+        .handle {
+          width: 140px;
+        }
+        .deal {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

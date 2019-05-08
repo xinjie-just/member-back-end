@@ -85,72 +85,321 @@
                             <option value="3">成华区</option>
                         </select>
                     </div>
+                    <div class="condition-item">
+                        <label for="industry">商家所属行业</label>
+                        <select name="industry" id="industry">
+                            <option value="0">美容美发</option>
+                            <option value="1">房地产</option>
+                            <option value="2">互联网</option>
+                            <option value="3">军工</option>
+                        </select>
+                    </div>
+                    <button type="button" class="search" title="搜索">搜索</button>
                 </div>
             </div>
             <div class="main-body user-defined-scrollbar union-main-body">
                 <div class="union-main-body-header">
-                    <ul class="sellers-tab">
-                        <li>周边商家</li>
-                        <li>已联盟商家</li>
-                        <li>已取消商家</li>
+                    <ul class="sellers-tab" role="tablist">
+                        <li aria-controls="circum" role="tab" data-toggle="tab" class="active" title="周边商家">周边商家</li>
+                        <li aria-controls="leagued" role="tab" data-toggle="tab" title="已联盟商家">已联盟商家</li>
+                        <li aria-controls="unleashed" role="tab" data-toggle="tab" title="已取消商家">已取消商家</li>
                     </ul>
-                    <div class="handle">
-                        <button type="button" class="apply-union" title="申请联盟">申请联盟</button>
-                        <button type="button" class="cancel-union" title="取消联盟">取消联盟</button>
+                    <div class="union-handle">
+                        <button type="button" class="active" title="申请联盟">申请联盟</button>
+                        <button type="button" title="取消联盟">取消联盟</button>
+                        <button type="button" title="申请联盟">申请联盟</button>
                     </div>
                 </div>
-                <table class="union-table">
-                    <thead>
-                    <tr>
-                        <th class="sellers-check" title="全选商家">
-                            <input id="allSellers" name="allSellers" type="checkbox">
-                            <label for="allSellers"></label>
-                        </th>
-                        <th class="name">商家名称</th>
-                        <th class="trade">行业</th>
-                        <th class="area">所属区域</th>
-                        <th class="address">地址</th>
-                        <th class="time">结盟时间</th>
-                        <td class="status">状态</td>
-                        <!--<th class="deal">交易次数</th>-->
-                        <th class="handle">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="sellers-check" title="选择商家">
-                            <input name="seller" type="checkbox" id="seller0">
-                            <label for="seller0"></label>
-                        </td>
-                        <th class="name">水城黄焖鸡</th>
-                        <th class="trade">美容美发</th>
-                        <th class="area">金牛区</th>
-                        <th class="address">理想中心天一街16号</th>
-                        <td class="status">已申请</td>
-                        <th class="time">2018-09-01</th>
-                        <!--<th class="deal">交易次数</th>-->
-                        <td class="handle">
-                            <button type="button" class="delete" title="删除该条消息">删除</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="seller-check" title="选择商家">
-                            <input name="seller" type="checkbox" id="seller1">
-                            <label for="seller1"></label>
-                        </td>
-                        <th class="name">水城黄焖鸡</th>
-                        <th class="trade">美容美发</th>
-                        <th class="area">金牛区</th>
-                        <th class="address">理想中心天一街16号</th>
-                        <td class="status">未结盟</td>
-                        <th class="time">2018-09-01</th>
-                        <!--<th class="deal">交易次数</th>-->
-                        <td class="handle">
-                            <button type="button" class="union" title="申请联盟">申请联盟</button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="sellers-panel">
+                    <section class="active">
+                        <table class="circum-table active">
+                        <thead>
+                        <tr>
+                            <th class="sellers-check" title="全选商家">
+                                <input id="allSellers" name="allSellers" type="checkbox">
+                                <label for="allSellers"></label>
+                            </th>
+                            <th class="name">商家名称</th>
+                            <th class="trade">行业</th>
+                            <th class="area">所属区域</th>
+                            <th class="address">地址</th>
+                            <th class="status">状态</th>
+                            <th class="time">时间</th>
+                            <!--<th class="deal">交易次数</th>-->
+                            <th class="handle">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="sellers-check" title="选择商家">
+                                <input name="seller" type="checkbox" id="seller0">
+                                <label for="seller0"></label>
+                            </td>
+                            <td class="name">水城黄焖鸡</td>
+                            <td class="trade">美容美发</td>
+                            <td class="area">金牛区</td>
+                            <td class="address">理想中心天一街16号</td>
+                            <td class="status">已申请</td>
+                            <td class="time">2018-09-01</td>
+                            <!--<th class="deal">交易次数</th>-->
+                            <td class="handle">
+                                <!--当状态为已申请时，下面 button 添加 .hide 类-->
+                                <button type="button" class="handle-btn hide" title="删除该条消息">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="seller-check" title="选择商家">
+                                <input name="seller" type="checkbox" id="seller1">
+                                <label for="seller1"></label>
+                            </td>
+                            <td class="name">水城黄焖鸡</td>
+                            <td class="trade">美容美发</td>
+                            <td class="area">金牛区</td>
+                            <td class="address">理想中心天一街16号</td>
+                            <td class="status">未结盟</td>
+                            <td class="time">2018-09-01</td>
+                            <!--<th class="deal">交易次数</th>-->
+                            <td class="handle">
+                                <button type="button" class="handle-btn" title="申请联盟">申请联盟</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                        <nav class="pagination-wrapper" aria-label="Page navigation">
+                            <strong class="count">共2条</strong>
+                            <ul class="pagination">
+                                <!--给不能点击的链接添加 .disabled 类-->
+                                <li class="disabled">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <!--给当前页添加 .active 类-->
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section>
+                        <table class="leagued-table">
+                        <thead>
+                        <tr>
+                            <th class="leagued-check" title="全选已联盟商家">
+                                <input id="allLeagued" name="allLeagued" type="checkbox">
+                                <label for="allLeagued"></label>
+                            </th>
+                            <th class="name">商家名称</th>
+                            <th class="trade">行业</th>
+                            <th class="area">所属区域</th>
+                            <th class="address">地址</th>
+                            <th class="time">结盟时间</th>
+                            <th class="deal">交易次数</th>
+                            <th class="handle">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="leagued-check" title="选择已联盟商家">
+                                <input name="leagued" type="checkbox" id="leagued0">
+                                <label for="leagued0"></label>
+                            </td>
+                            <td class="name">水城黄焖鸡</td>
+                            <td class="trade">美容美发</td>
+                            <td class="area">金牛区</td>
+                            <td class="address">理想中心天一街16号</td>
+                            <td class="time">2018-09-01</td>
+                            <td class="deal">7</td>
+                            <td class="handle">
+                                <button type="button" class="handle-btn" title="取消联盟">取消联盟</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leagued-check" title="选择已联盟商家">
+                                <input name="leagued" type="checkbox" id="leagued1">
+                                <label for="leagued1"></label>
+                            </td>
+                            <td class="name">水城黄焖鸡</td>
+                            <td class="trade">美容美发</td>
+                            <td class="area">金牛区</td>
+                            <td class="address">理想中心天一街16号</td>
+                            <td class="time">2018-09-01</td>
+                            <td class="deal">89</td>
+                            <td class="handle">
+                                <button type="button" class="handle-btn" title="取消联盟">取消联盟</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                        <nav class="pagination-wrapper" aria-label="Page navigation">
+                            <strong class="count">共2条</strong>
+                            <ul class="pagination">
+                                <!--给不能点击的链接添加 .disabled 类-->
+                                <li class="disabled">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <!--给当前页添加 .active 类-->
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section>
+                        <table class="unleashed-table">
+                        <thead>
+                        <tr>
+                            <th class="unleashed-check" title="全选已取消商家">
+                                <input id="allUnleashed" name="allUnleashed" type="checkbox">
+                                <label for="allUnleashed"></label>
+                            </th>
+                            <th class="name">商家名称</th>
+                            <th class="trade">行业</th>
+                            <th class="area">所属区域</th>
+                            <th class="address">地址</th>
+                            <th class="time">结盟时间</th>
+                            <th class="deal">交易次数</th>
+                            <th class="handle">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="unleashed-check" title="选择已取消商家">
+                                <input name="unleashed" type="checkbox" id="unleashed0">
+                                <label for="unleashed0"></label>
+                            </td>
+                            <td class="name">水城黄焖鸡</td>
+                            <td class="trade">美容美发</td>
+                            <td class="area">金牛区</td>
+                            <td class="address">理想中心天一街16号</td>
+                            <td class="time">2018-09-01</td>
+                            <td class="deal">7</td>
+                            <td class="handle">
+                                <button type="button" class="handle-btn" title="申请联盟">申请联盟</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="unleashed-check" title="选择已取消商家">
+                                <input name="unleashed" type="checkbox" id="unleashed1">
+                                <label for="unleashed1"></label>
+                            </td>
+                            <td class="name">水城黄焖鸡</td>
+                            <td class="trade">美容美发</td>
+                            <td class="area">金牛区</td>
+                            <td class="address">理想中心天一街16号</td>
+                            <td class="time">2018-09-01</td>
+                            <td class="deal">89</td>
+                            <td class="handle">
+                                <button type="button" class="handle-btn" title="申请联盟">申请联盟</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                        <nav class="pagination-wrapper" aria-label="Page navigation">
+                            <strong class="count">共2条</strong>
+                            <ul class="pagination">
+                                <!--给不能点击的链接添加 .disabled 类-->
+                                <li class="disabled">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <!--给当前页添加 .active 类-->
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section>
+                        <div class="count">已找到<strong>2</strong>个商家</div>
+                        <table class="unleashed-table">
+                            <thead>
+                            <tr>
+                                <th class="name">商家名称</th>
+                                <th class="trade">行业</th>
+                                <th class="area">所属区域</th>
+                                <th class="address">地址</th>
+                                <th class="status">状态</th>
+                                <th class="time">结盟时间</th>
+                                <th class="deal">交易次数</th>
+                                <th class="handle">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="name">水城黄焖鸡</td>
+                                <td class="trade">美容美发</td>
+                                <td class="area">金牛区</td>
+                                <td class="address">理想中心天一街16号</td>
+                                <td class="status">已结盟</td>
+                                <td class="time">2018-09-01</td>
+                                <td class="deal">7</td>
+                                <td class="handle">
+                                    <button type="button" class="handle-btn" title="取消联盟">取消联盟</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="name">水城黄焖鸡</td>
+                                <td class="trade">美容美发</td>
+                                <td class="area">金牛区</td>
+                                <td class="address">理想中心天一街16号</td>
+                                <td class="status">未结盟</td>
+                                <td class="time"></td>
+                                <td class="deal">89</td>
+                                <td class="handle">
+                                    <button type="button" class="handle-btn" title="申请联盟">申请联盟</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <nav class="pagination-wrapper" aria-label="Page navigation">
+                            <strong class="count">共2条</strong>
+                            <ul class="pagination">
+                                <!--给不能点击的链接添加 .disabled 类-->
+                                <li class="disabled">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <!--给当前页添加 .active 类-->
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
             </div>
         </div>
     </main>
@@ -158,5 +407,18 @@
     <script src="../../scripts/jquery-3.4.0.min.js"></script>
     <script src="../../scripts/popper.min.js"></script>
     <script src="../../scripts/bootstrap.min.js"></script>
+    <script>
+        var tab = $(".sellers-tab li");
+        var panel = $(".sellers-panel section");
+        var handle = $(".union-handle button");
+        tab.click(function () {
+            $(this).addClass("active");
+            $(this).siblings("li").removeClass("active");
+            panel.eq($(this).index()).addClass("active");
+            panel.eq($(this).index()).siblings("section").removeClass("active");
+            handle.eq($(this).index()).addClass("active");
+            handle.eq($(this).index()).siblings("button").removeClass("active");
+        })
+    </script>
     </body>
 </html>

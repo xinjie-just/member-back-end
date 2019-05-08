@@ -332,11 +332,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.header:before, .main .main-content .main-header:before, .personal-account-form .form-item:before, .message-main-body-header:before {
+.header:before, .main .main-content .main-header:before, .personal-account-form .form-item:before, .message-main-body-header:before, .handle-condition:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before {
   content: "";
   display: table;
 }
-.header:after, .main .main-content .main-header:after, .personal-account-form .form-item:after, .message-main-body-header:after {
+.header:after, .main .main-content .main-header:after, .personal-account-form .form-item:after, .message-main-body-header:after, .handle-condition:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after {
   content: "";
   display: table;
   clear: both;
@@ -688,6 +688,94 @@ body {
   padding-left: 2em;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+table th,
+table td {
+  text-align: center;
+}
+table thead tr {
+  background-color: #ebeef5;
+}
+table thead tr th {
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #e8e8e8;
+  padding: 5px 10px;
+  height: 48px;
+  line-height: 38px;
+}
+table tbody tr td {
+  font-size: 14px;
+  font-weight: 400;
+  color: inherit;
+  padding: 20px 10px;
+  height: 70px;
+  line-height: 29px;
+  border-bottom: 1px solid #ebeef5;
+}
+table tbody tr td:not(:last-of-type):not(:first-of-type) {
+  border-right: 1px solid #ebeef5;
+}
+table tbody tr td.handle {
+  color: #496eae;
+}
+table tbody tr td.handle button {
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+table tbody tr td.handle button:hover {
+  color: #8ea6cf;
+}
+
+/*分页*/
+.pagination-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+.pagination-wrapper .count {
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pagination {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #666;
+  border-color: #d4d4d4;
+  background-color: #fff;
+}
+.pagination > li > a:focus, .pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #fff;
+  border-color: #5a6afa;
+  background-color: #5a6afa;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  color: #fff;
+  border-color: #5a6afa;
+  background-color: #5a6afa;
+}
+
 /*主要内容*/
 /*个人账户*/
 .account-main-body {
@@ -897,62 +985,21 @@ input[type=checkbox]:checked + label::before {
   color: #5a6afa;
 }
 
-.message-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-  width: 100%;
-}
-.message-table thead tr {
-  background-color: #ebeef5;
-}
-.message-table thead tr th {
-  font-size: 14px;
-  font-weight: 400;
-  background-color: #e8e8e8;
-  padding: 5px 10px;
-  height: 48px;
-  line-height: 38px;
-}
-.message-table tbody tr {
-  border-bottom: 1px solid #ebeef5;
-}
 .message-table tbody tr.read {
   color: #ccc;
 }
 .message-table tbody tr.unread {
   color: #6b7099;
 }
-.message-table tbody tr td {
-  font-size: 14px;
-  font-weight: 400;
-  color: inherit;
-  padding: 20px 10px;
-  height: 69px;
-  line-height: 29px;
-}
-.message-table tbody tr td.handle {
-  color: #496eae;
-}
-.message-table tbody tr td.handle .delete {
-  width: 100%;
-  height: 100%;
-  color: inherit;
-}
-.message-table tbody tr td.handle .delete:hover {
-  color: #8ea6cf;
-}
 .message-table tr .message-check {
   padding-right: 10px;
   padding-left: 10px;
   width: calc(16px + 10px * 2);
 }
-.message-table tr .status,
-.message-table tr .time,
-.message-table tr .handle {
-  text-align: center;
+.message-table tr .content {
+  text-align: left;
 }
-@media (min-width: 1000px) {
+@media (max-width: 1199px) {
   .message-table tr .status {
     width: 120px;
   }
@@ -1009,5 +1056,233 @@ input[type=checkbox]:checked + label::before {
 }
 
 /*===商家联盟===*/
+.union-main-body {
+  padding: 20px;
+}
+
+.handle-condition {
+  color: #909399;
+  font-size: 0;
+}
+.handle-condition .condition-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+}
+.handle-condition .condition-item > label {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  font-weight: normal;
+}
+.handle-condition .condition-item select {
+  display: block;
+  float: left;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #dcdfe6;
+  border-radius: 2px;
+}
+.handle-condition .condition-item select:focus {
+  border-color: #a1a9bc;
+}
+.handle-condition .condition-item select option {
+  font-size: inherit;
+  color: inherit;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.handle-condition .search {
+  display: inline-block;
+  vertical-align: middle;
+  height: 36px;
+  line-height: 36px;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  background-color: rgba(100, 153, 245, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  color: #0557fa;
+  font-size: 14px;
+}
+.handle-condition .search:hover {
+  background-color: rgba(100, 153, 245, 0.4);
+}
+.handle-condition .search:focus {
+  background-color: rgba(100, 153, 245, 0.6);
+}
+
+.union-main-body-header {
+  height: calc(36px + 8px * 2);
+  line-height: calc(36px + 8px * 2);
+}
+.union-main-body-header .sellers-tab {
+  float: left;
+  height: 100%;
+  line-height: inherit;
+}
+.union-main-body-header .sellers-tab li {
+  float: left;
+  display: block;
+  padding-right: 8px;
+  padding-left: 8px;
+  height: 100%;
+  line-height: inherit;
+  font-size: 16px;
+  color: #444;
+  cursor: pointer;
+}
+.union-main-body-header .sellers-tab li:not(:last-of-type) {
+  margin-right: 26px;
+}
+.union-main-body-header .sellers-tab li.active {
+  box-shadow: 0 2px 0 0 #5a6afa;
+}
+.union-main-body-header .sellers-tab li:hover {
+  box-shadow: 0 2px 0 0 #5a6afa;
+}
+.union-main-body-header .union-handle {
+  float: right;
+  margin-top: 8px;
+}
+.union-main-body-header .union-handle button {
+  float: left;
+  display: none;
+  height: 36px;
+  line-height: 36px;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  margin-left: 15px;
+  background-color: rgba(100, 153, 245, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  color: #0557fa;
+  font-size: 14px;
+}
+.union-main-body-header .union-handle button.active {
+  display: block;
+}
+.union-main-body-header .union-handle button:hover {
+  background-color: rgba(100, 153, 245, 0.4);
+}
+.union-main-body-header .union-handle button:focus {
+  background-color: rgba(100, 153, 245, 0.6);
+}
+
+.sellers-panel section {
+  display: none;
+}
+.sellers-panel section.active {
+  display: table;
+}
+.sellers-panel section > .count {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.sellers-panel section > .count strong {
+  font-weight: normal;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.sellers-panel table .name {
+  text-align: left;
+}
+.sellers-panel table tbody td .hide {
+  display: none;
+}
+.sellers-panel table tbody .deal {
+  color: #5a6afa;
+}
+.sellers-panel table tr .sellers-check,
+.sellers-panel table tr .leagued-check,
+.sellers-panel table tr .unleashed-check {
+  padding-right: 10px;
+  padding-left: 10px;
+  width: calc(16px + 10px * 2);
+}
+.sellers-panel table tr .name,
+.sellers-panel table tr .address {
+  width: 40%;
+}
+.sellers-panel table tr .trade,
+.sellers-panel table tr .area {
+  width: 30%;
+}
+@media (max-width: 1199px) {
+  .sellers-panel table tr .status {
+    width: 90px;
+  }
+  .sellers-panel table tr .time {
+    width: 120px;
+  }
+  .sellers-panel table tr .handle {
+    width: 100px;
+  }
+  .sellers-panel table tr .deal {
+    width: 110px;
+  }
+}
+@media (min-width: 1200px) {
+  .sellers-panel table tr .status {
+    width: 100px;
+  }
+  .sellers-panel table tr .time {
+    width: 130px;
+  }
+  .sellers-panel table tr .handle {
+    width: 110px;
+  }
+  .sellers-panel table tr .deal {
+    width: 120px;
+  }
+}
+@media (min-width: 1400px) {
+  .sellers-panel table tr .status {
+    width: 110px;
+  }
+  .sellers-panel table tr .time {
+    width: 140px;
+  }
+  .sellers-panel table tr .handle {
+    width: 120px;
+  }
+  .sellers-panel table tr .deal {
+    width: 130px;
+  }
+}
+@media (min-width: 1600px) {
+  .sellers-panel table tr .status {
+    width: 120px;
+  }
+  .sellers-panel table tr .time {
+    width: 150px;
+  }
+  .sellers-panel table tr .handle {
+    width: 130px;
+  }
+  .sellers-panel table tr .deal {
+    width: 140px;
+  }
+}
+@media (min-width: 1800px) {
+  .sellers-panel table tr .status {
+    width: 130px;
+  }
+  .sellers-panel table tr .time {
+    width: 160px;
+  }
+  .sellers-panel table tr .handle {
+    width: 140px;
+  }
+  .sellers-panel table tr .deal {
+    width: 150px;
+  }
+}
 
 /*# sourceMappingURL=member.css.map */
