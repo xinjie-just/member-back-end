@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>运营管理</title>
+        <meta name="author" content="lixinjie">
+        <meta name="keywords" content="盟客多多" />
+        <meta name="description" content="盟客多多" />
+        <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../styles/member.css" />
+    </head>
+    <body>
+        <header id="header" class="header" role="banner">
+            <h1 class="logo">盟客多多</h1>
+            <div class="personal-info">
+                <a href="#" title="查看消息" class="iconfont icon-msg msg"></a>
+                <div class="personal-account">个人账户<span class="arrows"></span></div>
+            </div>
+        </header>
+        <main id="main" class="main" role="main">
+            <nav id="nav" class="nav user-defined-scrollbar" role="navigation">
+                <ul class="nav-list">
+                    <li class="cashier">
+                        <a href="#" title="收银">收银</a>
+                        <ul>
+                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素 li 也添加 active 类-->
+                            <li><a href="#" title="快速消费">快速消费</a></li>
+                            <li><a href="#" title="账单中心">账单中心</a></li>
+                        </ul>
+                    </li>
+                    <li class="member">
+                        <a href="#" title="会员">会员</a>
+                        <ul>
+                            <li><a href="#" title="会员管理">会员管理</a></li>
+                            <li><a href="#" title="会员等级">会员等级</a></li>
+                        </ul>
+                    </li>
+                    <li class="operate active">
+                        <a href="#" title="运营">运营</a>
+                        <ul>
+                            <li><a href="#" title="运营管理" class="active">运营管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="union">
+                        <a href="#" title="联盟">联盟</a>
+                        <ul>
+                            <li><a href="#" title="商家联盟">商家联盟</a></li>
+                        </ul>
+                    </li>
+                    <li class="statistics">
+                        <a href="#" title="统计">统计</a>
+                        <ul>
+                            <li><a href="#" title="财务统计">财务统计</a></li>
+                            <li><a href="#" title="销售分析">销售分析</a></li>
+                            <li><a href="#" title="综合分析">综合分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="setup">
+                        <a href="#" title="系统设置">系统设置</a>
+                        <ul>
+                            <li><a href="#" title="我的店铺">我的店铺</a></li>
+                            <li><a href="#" title="系统提醒">系统提醒</a></li>
+                            <li><a href="#" title="角色权限">角色权限</a></li>
+                            <li><a href="#" title="操作日志">操作日志</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-content">
+                <div class="main-header">
+                    <ol class="breadcrumbs">
+                        <li>运营管理</li>
+                    </ol>
+                </div>
+                <div class="main-body user-defined-scrollbar operate-main-body">
+                    <form action="" name="operateForm" class="operate-form">
+                        <fieldset class="basic">
+                            <legend>基础设置</legend>
+                            <div class="form-item">
+                                <label for="valueAssessment">店面估值:</label>
+                                <input type="text" name="valueAssessment" id="valueAssessment" class="form-input" placeholder="请输入店面估值">
+                                <span>万</span>
+                            </div>
+                            <div class="form-item">
+                                <label for="stockEquity">会员股份分配上限:</label>
+                                <input type="text" name="stockEquity" id="stockEquity" class="form-input" placeholder="请输入会员股份分配上限">
+                                <span>%</span>
+                            </div>
+                            <div class="form-item">
+                                <label for="businessVolume">当日营业额:</label>
+                                <input type="text" name="businessVolume" id="businessVolume" class="form-input" placeholder="请输入当日营业额">
+                                <span>元</span>
+                            </div>
+                        </fieldset>
+                        <fieldset class="profit">
+                            <legend>利润率设置</legend>
+                            <div class="section">
+                                <div class="form-item">
+                                    <label for="businessVolume1">营业额大于:</label>
+                                    <input type="text" name="businessVolume1" id="businessVolume1" class="form-input" placeholder="请输入营业额">
+                                    <span>元</span>
+                                </div>
+                                <div class="form-item">
+                                    <label for="profit1">利润率:</label>
+                                    <input type="text" name="profit1" id="profit1" class="form-input" placeholder="请输入利润率">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <div class="form-item">
+                                    <label for="businessVolume2">营业额大于:</label>
+                                    <input type="text" name="businessVolume2" id="businessVolume2" class="form-input" placeholder="请输入营业额">
+                                    <span>元</span>
+                                </div>
+                                <div class="form-item">
+                                    <label for="profit2">利润率:</label>
+                                    <input type="text" name="profit2" id="profit2" class="form-input" placeholder="请输入利润率">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <div class="form-item">
+                                    <label for="businessVolume3">营业额大于:</label>
+                                    <input type="text" name="businessVolume3" id="businessVolume3" class="form-input" placeholder="请输入营业额">
+                                    <span>元</span>
+                                </div>
+                                <div class="form-item">
+                                    <label for="profit3">利润率:</label>
+                                    <input type="text" name="profit3" id="profit3" class="form-input" placeholder="请输入利润率">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <!--如果添加达到上限了,给 button 添加 .disabled 类-->
+                            <!--<button class="add" title="添加更多">添加更多</button>-->
+                            <button class="add disabled" title="个数已经达到上限" disabled>添加更多</button>
+                        </fieldset>
+                        <fieldset class="proportion">
+                            <legend>会员利润分配比例参数设置</legend>
+                            <div class="form-item">
+                                <label for="proportion1">会员余额权重(i1):</label>
+                                <input type="text" name="proportion1" id="proportion1" class="form-input" placeholder="请输入会员余额权重">
+                                <span>%</span>
+                            </div>
+                            <div class="form-item">
+                                <label for="proportion2">会员消费权重(i2):</label>
+                                <input type="text" name="proportion2" id="proportion2" class="form-input" placeholder="请输入会员余额权重">
+                                <span>%</span>
+                            </div>
+                            <div class="form-item">
+                                <label for="proportion3">会员推荐权重(i3):</label>
+                                <input type="text" name="proportion3" id="proportion3" class="form-input" placeholder="请输入会员余额权重">
+                                <span>%</span>
+                            </div>
+                        </fieldset>
+                        <!--不可用时添加 disabled 类-->
+                        <button type="submit" class="submit disabled" title="请先补全表单信息" disabled>立即提交</button>
+                        <!--<button type="submit" class="submit" title="立即提交">立即提交</button>-->
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
+        <script src="../../scripts/jquery-3.4.0.min.js"></script>
+        <script src="../../scripts/popper.min.js"></script>
+        <script src="../../scripts/bootstrap.min.js"></script>
+    </body>
+</html>
