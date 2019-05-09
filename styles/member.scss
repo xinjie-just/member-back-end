@@ -993,6 +993,21 @@ input[type=checkbox] {
       float: left;
       color: #333;
     }
+    .form-input {
+      float: left;
+      width: 28.4%;
+      min-width: 300px;
+      height: $size;
+      line-height: calc(#{$size} - 2px);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding-right: 1em;
+      padding-left: 1em;
+      margin-right: 10px;
+      &:focus {
+        border-color: $theme-color;
+      }
+    }
   }
   .basic {
     .form-item {
@@ -1043,21 +1058,6 @@ input[type=checkbox] {
       }
     }
   }
-  .form-input {
-    float: left;
-    width: 28.4%;
-    min-width: 300px;
-    height: $size;
-    line-height: calc(#{$size} - 2px);
-    border: 1px solid #bfc7d4;
-    border-radius: 2px;
-    padding-right: 1em;
-    padding-left: 1em;
-    margin-right: 10px;
-    &:focus {
-      border-color: $theme-color;
-    }
-  }
   fieldset {
     border: none;
     margin: 0;
@@ -1076,10 +1076,6 @@ input[type=checkbox] {
       padding-left: 20px;
       color: #606266;
       font-size: 1.15em;
-      .sub-title {
-        font-size: .85em;
-        margin-left: .5em;
-      }
     }
     .add {
       color: #496eae;
@@ -1122,6 +1118,184 @@ input[type=checkbox] {
     }
     &:not(.disabled):focus {
       background-color: darken($theme-color, 8%);
+    }
+  }
+}
+
+/*===我的店铺===*/
+.shop-main-body {
+  $size: 36px;
+  $padding-left: 20px;
+  padding: 30px 40px;
+  font-size: 14px;
+  .form-item {
+    @extend %clearfix;
+    height: $size;
+    line-height: $size;
+    padding-left: $padding-left;
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      float: left;
+      margin-right: 10px;
+      height: inherit;
+      line-height: inherit;
+      font-size: inherit;
+      font-weight: normal;
+      color: $text-color;
+      text-align: right;
+    }
+    .form-input {
+      float: left;
+      width: 28.4%;
+      min-width: 300px;
+      height: $size;
+      line-height: calc(#{$size} - 2px);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding-right: 1em;
+      padding-left: 1em;
+      margin-right: 10px;
+      color: #333;
+      font-weight: 600;
+      &:focus {
+        border-color: $theme-color;
+      }
+    }
+    span {
+      display: block;
+      float: left;
+      color: #333;
+      font-weight: 600;
+    }
+    .select {
+      @extend %clearfix;
+      float: left;
+      margin-right: 10px;
+      height: inherit;
+      line-height: inherit;
+    }
+    select {
+      float: left;
+      display: block;
+      height: inherit;
+      line-height: inherit;
+      padding-right: 1em;
+      padding-left: 1em;
+      border: 1px solid #bfc7d4;
+      font-size: inherit;
+      font-weight: normal;
+      color: $text-color;
+      text-align: right;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      option {
+        color: inherit;
+      }
+    }
+    @media (max-width: 1200px) {
+      height: auto;
+      .select {
+        height: $size;
+        line-height: $size;
+        & + input {
+          float: none;
+          margin-top: 10px;
+          margin-left: calc(5em + 10px);
+        }
+      }
+    }
+  }
+  .personal-info {
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+    .form-item {
+      margin-bottom: 8px;
+      label {
+        width: 5em;
+      }
+    }
+  }
+  .shop-info {
+    .form-item {
+      label {
+        width: 5em;
+      }
+    }
+  }
+  .business-info {
+    .form-item {
+      label {
+        width: 6em;
+      }
+    }
+  }
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+    legend {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      background: #f5f7fa;
+      border: none;
+      border-radius: 4px;
+      padding-right: $padding-left;
+      padding-left: $padding-left;
+      color: #606266;
+      font-size: 1.15em;
+    }
+  }
+  .form-footer {
+    @extend %clearfix;
+    margin-top: 30px;
+    margin-left: calc(#{$padding-left} + 6em + 10px);
+    button {
+      float: left;
+      min-width: 8em;
+      padding: .6em 1.6em;
+      border-radius: 2px;
+      font-size: inherit;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      &.submit {
+        color: #fff;
+        &.disabled {
+          cursor: not-allowed;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+        }
+        &:not(.disabled) {
+          background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
+          box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
+        }
+        &:not(.disabled):hover {
+          background-color: darken($theme-color, 5%);
+        }
+        &:not(.disabled):focus {
+          background-color: darken($theme-color, 8%);
+        }
+      }
+      &.cancel {
+        color: #6e727a;
+        border: 1px solid #ced5e0;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        &:hover {
+          color: darken(#6e727a, 5%);
+        }
+        &:focus {
+          color: darken(#6e727a, 8%);
+        }
+      }
     }
   }
 }
