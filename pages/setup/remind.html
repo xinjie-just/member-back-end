@@ -78,7 +78,7 @@
                     <div class="remind-main-body-header">
                         <div class="tips">共有<strong class="remind-count">2</strong>个系统提醒</div>
                         <div class="handle">
-                            <button type="button" class="add-remind" title="新增系统提醒">新增</button>
+                            <button type="button" class="add-remind" title="新增系统提醒" data-toggle="modal" data-target="#addRemind">新增</button>
                         </div>
                     </div>
                     <table class="remind-table">
@@ -117,9 +117,53 @@
                 </div>
             </div>
         </main>
+        <!-- Modal -->
+        <div class="modal fade" id="addRemind" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <!--<div class="modal-dialog" role="document">-->
+                <div class="modal-content add-remind-modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">新增系统提醒</h4>
+                    </div>
+                    <form name="addRemindForm" id="addRemindForm" class="modal-body user-defined-scrollbar add-remind-form">
+                        <div class="form-item title">
+                            <label for="title">提醒标题：</label>
+                            <input type="text" name="title" id="title" class="form-input" placeholder="请输入提醒标题">
+                        </div>
+                        <div class="form-item type">
+                            <label for="type">提醒类型：</label>
+                            <select name="type" id="type">
+                                <option value="0">提醒类型1</option>
+                                <option value="0">提醒类型2</option>
+                                <option value="0">提醒类型3</option>
+                                <option value="0">提醒类型4</option>
+                            </select>
+                        </div>
+                        <div class="form-item condition">
+                            <label for="condition">提醒条件：</label>
+                            <select name="condition" id="condition">
+                                <option value="0">提醒条件1</option>
+                                <option value="0">提醒条件2</option>
+                                <option value="0">提醒条件3</option>
+                                <option value="0">提醒条件4</option>
+                            </select>
+                        </div>
+                        <div class="form-item parameter">
+                            <label for="parameter">提醒参数：</label>
+                            <textarea name="parameter" id="parameter" placeholder="请输入提醒参数"></textarea>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <!--<button type="submit" class="submit disabled" title="请补全系统提示表单" disabled>保存</button>-->
+                        <button type="submit" class="submit">保存</button>
+                        <button type="button" class="cancel" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            <!--</div>-->
+        </div>
         <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
-    <script src="../../scripts/jquery-3.4.0.min.js"></script>
-    <script src="../../scripts/popper.min.js"></script>
-    <script src="../../scripts/bootstrap.min.js"></script>
+        <script src="../../scripts/jquery-3.4.0.min.js"></script>
+        <script src="../../scripts/popper.min.js"></script>
+        <script src="../../scripts/bootstrap.min.js"></script>
     </body>
 </html>

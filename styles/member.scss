@@ -1320,7 +1320,7 @@ input[type=checkbox] {
   }
 }
 
-/*===系统提示===*/
+/*===系统提醒===*/
 .remind-main-body {
   padding: 20px;
 }
@@ -1407,6 +1407,173 @@ input[type=checkbox] {
       }
       .handle {
         width: 210px;
+      }
+    }
+  }
+}
+
+/*新增系统提醒*/
+.add-remind-modal-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  min-height: 300px;
+  max-height: 600px;
+  padding: 6px 20px 40px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2), 0 8px 8px 0 rgba(0, 0, 0, .2);
+  border-radius: 2px;
+  .modal-header {
+    border-bottom-color: #e9eaeb;
+    padding: 12px 0;
+    .modal-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-color + #111;
+    }
+  }
+  .modal-body {
+    flex: 1;
+    padding: 30px 44px;
+    $size: 36px;
+    $label-width: 5em;
+    font-size: 14px;
+    overflow-y: auto;
+    .form-item {
+      @extend %clearfix;
+      line-height: $size;
+      width: 100%;
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        float: left;
+        margin-right: 10px;
+        width: $label-width;
+        height: inherit;
+        line-height: inherit;
+        font-size: inherit;
+        text-align: right;
+        color: $text-color;
+      }
+      .form-input {
+        display: block;
+        float: left;
+        min-width: 300px;
+        height: $size;
+        line-height: calc(#{$size} - 2px);
+        border: 1px solid #bfc7d4;
+        border-radius: 2px;
+        padding-right: 1em;
+        padding-left: 1em;
+        &:focus {
+          border-color: $theme-color;
+        }
+      }
+      select {
+        display: block;
+        float: left;
+        min-width: 300px;
+        height: $size;
+        line-height: calc(#{$size} - 2px);
+        border: 1px solid #bfc7d4;
+        border-radius: 2px;
+        padding-right: 1em;
+        padding-left: 1em;
+        &:focus {
+          border-color: $theme-color;
+        }
+        option {
+
+        }
+      }
+      textarea {
+        display: block;
+        float: left;
+        width: calc(100% - 5em - 10px);
+        line-height: 1.6em;
+        min-height: calc(1em + 2px + 1.6em * 4);
+        max-height: calc(1em + 2px + 1.6em * 5);
+        border: 1px solid #bfc7d4;
+        border-radius: 2px;
+        padding: .5em 1em;
+        resize: vertical;
+        &:focus {
+          border-color: $theme-color;
+        }
+      }
+    }
+    .submit {
+      min-width: 6em;
+      padding: .6em 1.6em;
+      margin-top: 40px;
+      margin-left: calc(#{$label-width} + 10px);
+      border-radius: 5px;
+      background-color: $theme-color;
+      color: #fff;
+      font-size: inherit;
+      &.disabled {
+        cursor: not-allowed;
+        background-color: #eaeaea;
+      }
+      &:not(.disabled):hover {
+        background-color: darken($theme-color, 5%);
+      }
+      &:not(.disabled):focus {
+        background-color: darken($theme-color, 8%);
+      }
+    }
+  }
+  .modal-footer {
+    @extend %clearfix;
+    margin-left: calc(44px + 5em + 10px);
+    padding: 0;
+    text-align: left;
+    border-top: none;
+    font-size: 14px;
+    button {
+      float: left;
+      min-width: 8em;
+      padding: .6em 1.6em;
+      border-radius: 2px;
+      font-size: inherit;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      &.submit {
+        color: #fff;
+        &.disabled {
+          cursor: not-allowed;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+        }
+        &:not(.disabled) {
+          background-color: #3179f5;
+          box-shadow: 0 2px 2px 0 rgba(49,121,245,0.4);
+          border-radius: 2px;
+        }
+        &:not(.disabled):hover {
+          background-color: darken(#3179f5, 5%);
+        }
+        &:not(.disabled):focus {
+          background-color: darken(#3179f5, 8%);
+        }
+      }
+      &.cancel {
+        color: #6e727a;
+        border: 1px solid #ced5e0;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        &:hover {
+          color: darken(#6e727a, 5%);
+        }
+        &:focus {
+          color: darken(#6e727a, 8%);
+        }
       }
     }
   }
