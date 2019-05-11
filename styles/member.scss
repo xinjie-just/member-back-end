@@ -458,13 +458,12 @@ table {
   padding: 40px;
 }
 .personal-account-form {
-  $size: 36px;
   $label-width: 6em;
   font-size: 14px;
   .form-item {
     @extend %clearfix;
-    height: $size;
-    line-height: $size;
+    height: $form-element-height;
+    line-height: $form-element-height;
     &:not(:last-of-type) {
       margin-bottom: 20px;
     }
@@ -522,8 +521,8 @@ table {
           top: 1px;
           right: 1px;
           width: 76px;
-          height: calc(#{$size} - 2px);
-          line-height: calc(#{$size} - 2px);
+          height: calc(#{$form-element-height} - 2px);
+          line-height: calc(#{$form-element-height} - 2px);
           padding-right: 10px;
           padding-left: 10px;
           text-align: center;
@@ -546,8 +545,8 @@ table {
   .form-input {
     width: 28.4%;
     min-width: 300px;
-    height: $size;
-    line-height: calc(#{$size} - 2px);
+    height: $form-element-height;
+    line-height: calc(#{$form-element-height} - 2px);
     border: 1px solid #bfc7d4;
     border-radius: 2px;
     padding-right: 1em;
@@ -600,6 +599,8 @@ table {
   padding: 20px;
 }
 .message-main-body-header {
+  height: $form-element-height;;
+  line-height: $form-element-height;
   margin-bottom: 10px;
   @extend %clearfix;
   .tips {
@@ -616,9 +617,13 @@ table {
     }
   }
   .handle {
+    @extend %clearfix;
     float: right;
     button {
-      padding: .56em 1.5em;
+      float: left;
+      height: 100%;
+      line-height: inherit;
+      padding: 0 1.5em;
       background-color: rgba(100, 153, 245, .2);
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
       border-radius: 4px;
@@ -748,7 +753,6 @@ input[type=checkbox] {
   padding: 20px;
 }
 .handle-condition {
-  $size: 36px;
   @extend %clearfix;
   color: #909399;
   font-size: 0;
@@ -756,8 +760,8 @@ input[type=checkbox] {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-    height: $size;
-    line-height: $size;
+    height: $form-element-height;
+    line-height: $form-element-height;
     font-size: 14px;
     > label {
       display: block;
@@ -769,8 +773,8 @@ input[type=checkbox] {
       float: left;
       padding-right: 15px;
       padding-left: 15px;
-      height: $size;
-      line-height: $size;
+      height: $form-element-height;
+      line-height: $form-element-height;
       border: 1px solid #dcdfe6;
       border-radius: 2px;
       &:focus {
@@ -787,8 +791,8 @@ input[type=checkbox] {
   .search {
     display: inline-block;
     vertical-align: middle;
-    height: $size;
-    line-height: $size;
+    height: $form-element-height;
+    line-height: $form-element-height;
     padding-right: 1.5em;
     padding-left: 1.5em;
     background-color: rgba(100, 153, 245, .2);
@@ -805,10 +809,9 @@ input[type=checkbox] {
   }
 }
 .union-main-body-header {
-  $size: 36px;
   @extend %clearfix;
-  height: calc(#{$size} + 8px * 2);
-  line-height: calc(#{$size} + 8px * 2);
+  height: calc(#{$form-element-height} + 8px * 2);
+  line-height: calc(#{$form-element-height} + 8px * 2);
   .sellers-tab {
     @extend %clearfix;
     float: left;
@@ -842,8 +845,8 @@ input[type=checkbox] {
     button {
       float: left;
       display: none;
-      height: $size;
-      line-height: $size;
+      height: $form-element-height;
+      line-height: $form-element-height;
       padding-right: 1.5em;
       padding-left: 1.5em;
       margin-left: 15px;
@@ -987,13 +990,12 @@ input[type=checkbox] {
 
 /*===运营管理===*/
 .operate-main-body {
-  $size: 36px;
   padding: 30px 40px;
   font-size: 14px;
   .form-item {
     @extend %clearfix;
-    height: $size;
-    line-height: $size;
+    height: $form-element-height;
+    line-height: $form-element-height;
     padding-left: 20px;
     &:not(:last-of-type) {
       margin-bottom: 20px;
@@ -1017,8 +1019,8 @@ input[type=checkbox] {
       float: left;
       width: 28.4%;
       min-width: 300px;
-      height: $size;
-      line-height: calc(#{$size} - 2px);
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
       border: 1px solid #bfc7d4;
       border-radius: 2px;
       padding-right: 1em;
@@ -1144,14 +1146,13 @@ input[type=checkbox] {
 
 /*===我的店铺===*/
 .shop-main-body {
-  $size: 36px;
   $padding-left: 20px;
   padding: 30px 40px;
   font-size: 14px;
   .form-item {
     @extend %clearfix;
-    height: $size;
-    line-height: $size;
+    height: $form-element-height;
+    line-height: $form-element-height;
     padding-left: $padding-left;
     &:not(:last-of-type) {
       margin-bottom: 20px;
@@ -1171,8 +1172,8 @@ input[type=checkbox] {
       float: left;
       width: 28.4%;
       min-width: 300px;
-      height: $size;
-      line-height: calc(#{$size} - 2px);
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
       border: 1px solid #bfc7d4;
       border-radius: 2px;
       padding-right: 1em;
@@ -1219,8 +1220,8 @@ input[type=checkbox] {
     @media (max-width: 1200px) {
       height: auto;
       .select {
-        height: $size;
-        line-height: $size;
+        height: $form-element-height;
+        line-height: $form-element-height;
         & + input {
           float: none;
           margin-top: 10px;
@@ -1325,6 +1326,8 @@ input[type=checkbox] {
   padding: 20px;
 }
 .remind-main-body-header {
+  height: $form-element-height;
+  line-height: $form-element-height;
   margin-bottom: 10px;
   @extend %clearfix;
   .tips {
@@ -1341,10 +1344,14 @@ input[type=checkbox] {
     }
   }
   .handle {
+    @extend %clearfix;
     float: right;
     button {
+      float: left;
       min-width: 7em;
-      padding: .56em 1.5em;
+      height: 100%;
+      line-height: inherit;
+      padding: 0 1.5em;
       background-color: $theme-color;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
       border-radius: 4px;
@@ -1439,13 +1446,12 @@ input[type=checkbox] {
   .modal-body {
     flex: 1;
     padding: 30px 44px;
-    $size: 36px;
     $label-width: 5em;
     font-size: 14px;
     overflow-y: auto;
     .form-item {
       @extend %clearfix;
-      line-height: $size;
+      line-height: $form-element-height;
       width: 100%;
       &:not(:last-of-type) {
         margin-bottom: 20px;
@@ -1465,8 +1471,8 @@ input[type=checkbox] {
         display: block;
         float: left;
         min-width: 300px;
-        height: $size;
-        line-height: calc(#{$size} - 2px);
+        height: $form-element-height;
+        line-height: calc(#{$form-element-height} - 2px);
         border: 1px solid #bfc7d4;
         border-radius: 2px;
         padding-right: 1em;
@@ -1479,8 +1485,8 @@ input[type=checkbox] {
         display: block;
         float: left;
         min-width: 300px;
-        height: $size;
-        line-height: calc(#{$size} - 2px);
+        height: $form-element-height;
+        line-height: calc(#{$form-element-height} - 2px);
         border: 1px solid #bfc7d4;
         border-radius: 2px;
         padding-right: 1em;
@@ -1508,30 +1514,290 @@ input[type=checkbox] {
         }
       }
     }
-    .submit {
-      min-width: 6em;
+  }
+  .modal-footer {
+    @extend %clearfix;
+    margin-left: calc(44px + 5em + 10px);
+    padding: 0;
+    text-align: left;
+    border-top: none;
+    font-size: 14px;
+    button {
+      float: left;
+      min-width: 8em;
       padding: .6em 1.6em;
-      margin-top: 40px;
-      margin-left: calc(#{$label-width} + 10px);
-      border-radius: 5px;
-      background-color: $theme-color;
-      color: #fff;
+      border-radius: 2px;
       font-size: inherit;
-      &.disabled {
-        cursor: not-allowed;
-        background-color: #eaeaea;
+      &:not(:last-of-type) {
+        margin-right: 10px;
       }
-      &:not(.disabled):hover {
+      &.submit {
+        color: #fff;
+        &.disabled {
+          cursor: not-allowed;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+        }
+        &:not(.disabled) {
+          background-color: #3179f5;
+          box-shadow: 0 2px 2px 0 rgba(49,121,245,0.4);
+          border-radius: 2px;
+        }
+        &:not(.disabled):hover {
+          background-color: darken(#3179f5, 5%);
+        }
+        &:not(.disabled):focus {
+          background-color: darken(#3179f5, 8%);
+        }
+      }
+      &.cancel {
+        color: #6e727a;
+        border: 1px solid #ced5e0;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        &:hover {
+          color: darken(#6e727a, 5%);
+        }
+        &:focus {
+          color: darken(#6e727a, 8%);
+        }
+      }
+    }
+  }
+}
+
+/*===角色权限===*/
+.role-main-body {
+  padding: 20px;
+}
+.role-main-body-header {
+  height: $form-element-height;
+  line-height: $form-element-height;
+  margin-bottom: 10px;
+  @extend %clearfix;
+  .tips {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #676c73;
+    .role-count {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #333;
+      padding-right: .2em;
+      padding-left: .2em;
+    }
+  }
+  .handle {
+    @extend %clearfix;
+    float: right;
+    button {
+      float: left;
+      min-width: 7em;
+      height: 100%;
+      line-height: inherit;
+      padding: 0 1.5em;
+      background-color: $theme-color;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      &:hover {
         background-color: darken($theme-color, 5%);
       }
-      &:not(.disabled):focus {
+      &:focus {
         background-color: darken($theme-color, 8%);
+      }
+      &:not(:last-of-type) {
+        margin-right: .7em;
+      }
+    }
+  }
+}
+.role-table {
+  tr {
+    td {
+      &:first-of-type {
+        border-right: 1px solid #ebeef5;
+      }
+    }
+    @media (max-width: 1199px) {
+      .status {
+        width: 70px;
+      }
+      .phone {
+        width: 140px;
+      }
+      .handle {
+        width: 120px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .status {
+        width: 80px;
+      }
+      .phone {
+        width: 150px;
+      }
+      .handle {
+        width: 130px;
+      }
+    }
+    @media (min-width: 1400px) {
+      .status {
+        width: 90px;
+      }
+      .phone {
+        width: 160px;
+      }
+      .handle {
+        width: 140px;
+      }
+    }
+    @media (min-width: 1600px) {
+      .status {
+        width: 100px;
+      }
+      .phone {
+        width: 170px;
+      }
+      .handle {
+        width: 150px;
+      }
+    }
+    @media (min-width: 1800px) {
+      .status {
+        width: 110px;
+      }
+      .phone {
+        width: 180px;
+      }
+      .handle {
+        width: 160px;
+      }
+    }
+  }
+}
+
+/*新增加色权限*/
+.add-role-modal-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  min-height: 300px;
+  max-height: 600px;
+  padding: 6px 20px 40px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2), 0 8px 8px 0 rgba(0, 0, 0, .2);
+  border-radius: 2px;
+  .modal-header {
+    border-bottom-color: #e9eaeb;
+    padding: 12px 0;
+    .modal-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-color + #111;
+    }
+  }
+  .modal-body {
+    flex: 1;
+    padding: 30px 20px;
+    $label-width: 5em;
+    font-size: 14px;
+    overflow-y: auto;
+    .form-item {
+      @extend %clearfix;
+      float: left;
+      width: calc(50% - 20px);
+      line-height: $form-element-height;
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+      &:nth-of-type(2n + 1) {
+        label {
+          width: 3em;
+        }
+        input,
+        textarea,
+        select {
+          width: calc(100% - 3em - 10px)
+        }
+      }
+      &:nth-of-type(2n + 2) {
+        margin-left: 40px;
+        label {
+          width: 5em;
+        }
+        input,
+        textarea,
+        select {
+          width: calc(100% - 5em - 10px)
+        }
+      }
+      &:nth-of-type(2n + 1):last-of-type {
+        width: 100%;
+      }
+      label {
+        display: block;
+        float: left;
+        margin-right: 10px;
+        height: inherit;
+        line-height: inherit;
+        font-size: inherit;
+        text-align: right;
+        color: $text-color;
+      }
+      .form-input {
+        display: block;
+        float: left;
+        height: $form-element-height;
+        line-height: calc(#{$form-element-height} - 2px);
+        border: 1px solid #bfc7d4;
+        border-radius: 2px;
+        padding-right: 1em;
+        padding-left: 1em;
+        &:focus {
+          border-color: $theme-color;
+        }
+      }
+      select {
+        display: block;
+        float: left;
+        height: $form-element-height;
+        line-height: calc(#{$form-element-height} - 2px);
+        border: 1px solid #bfc7d4;
+        border-radius: 2px;
+        padding-right: 1em;
+        padding-left: 1em;
+        &:focus {
+          border-color: $theme-color;
+        }
+        option {
+
+        }
+      }
+      textarea {
+        display: block;
+        float: left;
+        line-height: 1.6em;
+        min-height: calc(1em + 2px + 1.6em * 4);
+        max-height: calc(1em + 2px + 1.6em * 5);
+        border: 1px solid #bfc7d4;
+        border-radius: 2px;
+        padding: .5em 1em;
+        resize: vertical;
+        &:focus {
+          border-color: $theme-color;
+        }
       }
     }
   }
   .modal-footer {
     @extend %clearfix;
-    margin-left: calc(44px + 5em + 10px);
+    margin-left: calc(20px + 3em + 10px);
     padding: 0;
     text-align: left;
     border-top: none;

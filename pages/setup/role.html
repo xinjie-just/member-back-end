@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>系统提醒</title>
+        <title>角色权限</title>
         <meta name="author" content="lixinjie">
         <meta name="keywords" content="盟客多多" />
         <meta name="description" content="盟客多多" />
@@ -61,8 +61,8 @@
                         <a href="#" title="系统设置">系统设置</a>
                         <ul>
                             <li><a href="#" title="我的店铺">我的店铺</a></li>
-                            <li class="active"><a href="#" title="系统提醒">系统提醒</a></li>
-                            <li><a href="#" title="角色权限">角色权限</a></li>
+                            <li><a href="#" title="系统提醒">系统提醒</a></li>
+                            <li class="active"><a href="#" title="角色权限">角色权限</a></li>
                             <li><a href="#" title="操作日志">操作日志</a></li>
                         </ul>
                     </li>
@@ -71,42 +71,48 @@
             <div class="main-content">
                 <div class="main-header">
                     <ol class="breadcrumbs">
-                        <li>系统提醒</li>
+                        <li>角色权限</li>
                     </ol>
                 </div>
-                <div class="main-body user-defined-scrollbar remind-main-body">
-                    <div class="remind-main-body-header">
-                        <div class="tips">共有<strong class="remind-count">2</strong>个系统提醒</div>
+                <div class="main-body user-defined-scrollbar role-main-body">
+                    <div class="role-main-body-header">
+                        <div class="tips">共有<strong class="role-count">2</strong>个角色</div>
                         <div class="handle">
-                            <button type="button" class="add-remind" title="新增系统提醒" data-toggle="modal" data-target="#addRemind">新增</button>
+                            <button type="button" class="add-role" title="新增角色" data-toggle="modal" data-target="#addrole">新增</button>
                         </div>
                     </div>
-                    <table class="remind-table">
+                    <table class="role-table">
                         <thead>
                         <tr>
-                            <th class="title">提醒标题</th>
-                            <th class="type">提醒类型</th>
-                            <th class="condition">提醒条件</th>
-                            <th class="parameter">提醒参数</th>
+                            <th class="role">角色名称</th>
+                            <th class="name">姓名</th>
+                            <th class="phone">手机号</th>
+                            <th class="subbranch">分店</th>
+                            <th class="status">状态</th>
+                            <th class="comment">备注</th>
                             <th class="handle">操作</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="title">请尽快充值</td>
-                            <td class="type">会员充值</td>
-                            <td class="condition">少于20元</td>
-                            <td class="parameter">提醒参数</td>
+                            <td class="role">默认角色</td>
+                            <td class="name">战三</td>
+                            <td class="phone">14555000933</td>
+                            <td class="subbranch">水城黄焖鸡理想中心店</td>
+                            <td class="status">正常</td>
+                            <td class="comment">备注备注备注备注备注</td>
                             <td class="handle">
                                 <button type="button" class="update" title="修改">修改</button>
                                 <button type="button" class="delete" title="删除">删除</button>
                             </td>
                         </tr>
                         <tr>
-                            <td class="title">请尽快充值</td>
-                            <td class="type">会员充值</td>
-                            <td class="condition">少于20元</td>
-                            <td class="parameter">提醒参数</td>
+                            <td class="role">默认角色</td>
+                            <td class="name">战三</td>
+                            <td class="phone">14555000933</td>
+                            <td class="subbranch">水城黄焖鸡理想中心店</td>
+                            <td class="status">正常</td>
+                            <td class="comment">备注备注备注备注备注</td>
                             <td class="handle">
                                 <button type="button" class="update" title="修改">修改</button>
                                 <button type="button" class="delete" title="删除">删除</button>
@@ -118,38 +124,63 @@
             </div>
         </main>
         <!-- Modal -->
-        <div class="modal fade" id="addRemind" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-content add-remind-modal-content">
+        <div class="modal fade" id="addrole" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-content add-role-modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">新增系统提醒</h4>
+                    <h4 class="modal-title" id="myModalLabel">新增角色</h4>
                 </div>
-                <form name="addRemindForm" id="addRemindForm" class="modal-body user-defined-scrollbar add-remind-form">
+                <form name="addRoleForm" id="addRoleForm" class="modal-body user-defined-scrollbar add-role-form">
                     <div class="form-item">
-                        <label for="title">提醒标题：</label>
-                        <input type="text" name="title" id="title" class="form-input" placeholder="请输入提醒标题">
+                        <label for="account">帐号：</label>
+                        <input type="text" name="account" id="account" class="form-input" placeholder="请输入帐号">
                     </div>
                     <div class="form-item">
-                        <label for="type">提醒类型：</label>
-                        <select name="type" id="type">
-                            <option value="0">提醒类型1</option>
-                            <option value="2">提醒类型2</option>
-                            <option value="3">提醒类型3</option>
-                            <option value="4">提醒类型4</option>
+                        <label for="name">姓名：</label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="请输入姓名">
+                    </div>
+                    <div class="form-item">
+                        <label for="password">密码：</label>
+                        <input type="password" name="password" id="password" class="form-input" placeholder="请输入密码">
+                    </div>
+                    <div class="form-item">
+                        <label for="confirm">确认密码：</label>
+                        <input type="password" name="confirm" id="confirm" class="form-input" placeholder="请再次输入确认密码">
+                    </div>
+                    <div class="form-item">
+                        <label for="subbranch">分店：</label>
+                        <select name="subbranch" id="subbranch">
+                            <option value="0">分店1</option>
+                            <option value="1">分店2</option>
+                            <option value="2">分店3</option>
+                            <option value="3">分店4</option>
                         </select>
                     </div>
                     <div class="form-item">
-                        <label for="condition">提醒条件：</label>
-                        <select name="condition" id="condition">
-                            <option value="0">提醒条件1</option>
-                            <option value="1">提醒条件2</option>
-                            <option value="2">提醒条件3</option>
-                            <option value="3">提醒条件4</option>
+                        <label for="phone">手机号码：</label>
+                        <input type="number" name="phone" id="phone" class="form-input" placeholder="请输入手机号码">
+                    </div>
+                    <div class="form-item">
+                        <label for="status">状态：</label>
+                        <select name="status" id="status">
+                            <option value="0">状态1</option>
+                            <option value="1">状态2</option>
+                            <option value="2">状态3</option>
+                            <option value="3">状态4</option>
                         </select>
                     </div>
                     <div class="form-item">
-                        <label for="parameter">提醒参数：</label>
-                        <textarea name="parameter" id="parameter" placeholder="请输入提醒参数"></textarea>
+                        <label for="role">角色：</label>
+                        <select name="role" id="role">
+                            <option value="0">角色1</option>
+                            <option value="1">角色2</option>
+                            <option value="2">角色3</option>
+                            <option value="3">角色4</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="comment">备注：</label>
+                        <textarea name="comment" id="comment" placeholder="请输入备注"></textarea>
                     </div>
                 </form>
                 <div class="modal-footer">

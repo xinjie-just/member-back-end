@@ -332,11 +332,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.header:before, .main .main-content .main-header:before, .personal-account-form .form-item:before, .message-main-body-header:before, .handle-condition:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before, .add-remind-modal-content .modal-body .form-item:before, .add-remind-modal-content .modal-footer:before {
+.header:before, .main .main-content .main-header:before, .personal-account-form .form-item:before, .message-main-body-header:before, .message-main-body-header .handle:before, .handle-condition:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before, .remind-main-body-header .handle:before, .add-remind-modal-content .modal-body .form-item:before, .add-remind-modal-content .modal-footer:before, .role-main-body-header:before, .role-main-body-header .handle:before, .add-role-modal-content .modal-body .form-item:before, .add-role-modal-content .modal-footer:before {
   content: "";
   display: table;
 }
-.header:after, .main .main-content .main-header:after, .personal-account-form .form-item:after, .message-main-body-header:after, .handle-condition:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after, .add-remind-modal-content .modal-body .form-item:after, .add-remind-modal-content .modal-footer:after {
+.header:after, .main .main-content .main-header:after, .personal-account-form .form-item:after, .message-main-body-header:after, .message-main-body-header .handle:after, .handle-condition:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after, .remind-main-body-header .handle:after, .add-remind-modal-content .modal-body .form-item:after, .add-remind-modal-content .modal-footer:after, .role-main-body-header:after, .role-main-body-header .handle:after, .add-role-modal-content .modal-body .form-item:after, .add-role-modal-content .modal-footer:after {
   content: "";
   display: table;
   clear: both;
@@ -945,6 +945,8 @@ table tbody tr td.handle button:hover {
 }
 
 .message-main-body-header {
+  height: 36px;
+  line-height: 36px;
   margin-bottom: 10px;
 }
 .message-main-body-header .tips {
@@ -964,7 +966,10 @@ table tbody tr td.handle button:hover {
   float: right;
 }
 .message-main-body-header .handle button {
-  padding: .56em 1.5em;
+  float: left;
+  height: 100%;
+  line-height: inherit;
+  padding: 0 1.5em;
   background-color: rgba(100, 153, 245, 0.2);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -1621,6 +1626,8 @@ input[type=checkbox]:checked + label::before {
 }
 
 .remind-main-body-header {
+  height: 36px;
+  line-height: 36px;
   margin-bottom: 10px;
 }
 .remind-main-body-header .tips {
@@ -1640,8 +1647,11 @@ input[type=checkbox]:checked + label::before {
   float: right;
 }
 .remind-main-body-header .handle button {
+  float: left;
   min-width: 7em;
-  padding: .56em 1.5em;
+  height: 100%;
+  line-height: inherit;
+  padding: 0 1.5em;
   background-color: #5a6afa;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -1794,26 +1804,6 @@ input[type=checkbox]:checked + label::before {
 .add-remind-modal-content .modal-body .form-item textarea:focus {
   border-color: #5a6afa;
 }
-.add-remind-modal-content .modal-body .submit {
-  min-width: 6em;
-  padding: .6em 1.6em;
-  margin-top: 40px;
-  margin-left: calc(5em + 10px);
-  border-radius: 5px;
-  background-color: #5a6afa;
-  color: #fff;
-  font-size: inherit;
-}
-.add-remind-modal-content .modal-body .submit.disabled {
-  cursor: not-allowed;
-  background-color: #eaeaea;
-}
-.add-remind-modal-content .modal-body .submit:not(.disabled):hover {
-  background-color: #4154f9;
-}
-.add-remind-modal-content .modal-body .submit:not(.disabled):focus {
-  background-color: #3246f9;
-}
 .add-remind-modal-content .modal-footer {
   margin-left: calc(44px + 5em + 10px);
   padding: 0;
@@ -1859,6 +1849,272 @@ input[type=checkbox]:checked + label::before {
   color: #62656d;
 }
 .add-remind-modal-content .modal-footer button.cancel:focus {
+  color: #5b5e65;
+}
+
+/*===角色权限===*/
+.role-main-body {
+  padding: 20px;
+}
+
+.role-main-body-header {
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+.role-main-body-header .tips {
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #676c73;
+}
+.role-main-body-header .tips .role-count {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #333;
+  padding-right: .2em;
+  padding-left: .2em;
+}
+.role-main-body-header .handle {
+  float: right;
+}
+.role-main-body-header .handle button {
+  float: left;
+  min-width: 7em;
+  height: 100%;
+  line-height: inherit;
+  padding: 0 1.5em;
+  background-color: #5a6afa;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+.role-main-body-header .handle button:hover {
+  background-color: #4154f9;
+}
+.role-main-body-header .handle button:focus {
+  background-color: #3246f9;
+}
+.role-main-body-header .handle button:not(:last-of-type) {
+  margin-right: .7em;
+}
+
+.role-table tr td:first-of-type {
+  border-right: 1px solid #ebeef5;
+}
+@media (max-width: 1199px) {
+  .role-table tr .status {
+    width: 70px;
+  }
+  .role-table tr .phone {
+    width: 140px;
+  }
+  .role-table tr .handle {
+    width: 120px;
+  }
+}
+@media (min-width: 1200px) {
+  .role-table tr .status {
+    width: 80px;
+  }
+  .role-table tr .phone {
+    width: 150px;
+  }
+  .role-table tr .handle {
+    width: 130px;
+  }
+}
+@media (min-width: 1400px) {
+  .role-table tr .status {
+    width: 90px;
+  }
+  .role-table tr .phone {
+    width: 160px;
+  }
+  .role-table tr .handle {
+    width: 140px;
+  }
+}
+@media (min-width: 1600px) {
+  .role-table tr .status {
+    width: 100px;
+  }
+  .role-table tr .phone {
+    width: 170px;
+  }
+  .role-table tr .handle {
+    width: 150px;
+  }
+}
+@media (min-width: 1800px) {
+  .role-table tr .status {
+    width: 110px;
+  }
+  .role-table tr .phone {
+    width: 180px;
+  }
+  .role-table tr .handle {
+    width: 160px;
+  }
+}
+
+/*新增加色权限*/
+.add-role-modal-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  min-height: 300px;
+  max-height: 600px;
+  padding: 6px 20px 40px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+.add-role-modal-content .modal-header {
+  border-bottom-color: #e9eaeb;
+  padding: 12px 0;
+}
+.add-role-modal-content .modal-header .modal-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #777777;
+}
+.add-role-modal-content .modal-body {
+  flex: 1;
+  padding: 30px 20px;
+  font-size: 14px;
+  overflow-y: auto;
+}
+.add-role-modal-content .modal-body .form-item {
+  float: left;
+  width: calc(50% - 20px);
+  line-height: 36px;
+}
+.add-role-modal-content .modal-body .form-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1) label {
+  width: 3em;
+}
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1) input,
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1) textarea,
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1) select {
+  width: calc(100% - 3em - 10px);
+}
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 2) {
+  margin-left: 40px;
+}
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 2) label {
+  width: 5em;
+}
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 2) input,
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 2) textarea,
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 2) select {
+  width: calc(100% - 5em - 10px);
+}
+.add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1):last-of-type {
+  width: 100%;
+}
+.add-role-modal-content .modal-body .form-item label {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  height: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: right;
+  color: #666;
+}
+.add-role-modal-content .modal-body .form-item .form-input {
+  display: block;
+  float: left;
+  height: 36px;
+  line-height: calc(36px - 2px);
+  border: 1px solid #bfc7d4;
+  border-radius: 2px;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.add-role-modal-content .modal-body .form-item .form-input:focus {
+  border-color: #5a6afa;
+}
+.add-role-modal-content .modal-body .form-item select {
+  display: block;
+  float: left;
+  height: 36px;
+  line-height: calc(36px - 2px);
+  border: 1px solid #bfc7d4;
+  border-radius: 2px;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.add-role-modal-content .modal-body .form-item select:focus {
+  border-color: #5a6afa;
+}
+.add-role-modal-content .modal-body .form-item textarea {
+  display: block;
+  float: left;
+  line-height: 1.6em;
+  min-height: calc(1em + 2px + 1.6em * 4);
+  max-height: calc(1em + 2px + 1.6em * 5);
+  border: 1px solid #bfc7d4;
+  border-radius: 2px;
+  padding: .5em 1em;
+  resize: vertical;
+}
+.add-role-modal-content .modal-body .form-item textarea:focus {
+  border-color: #5a6afa;
+}
+.add-role-modal-content .modal-footer {
+  margin-left: calc(20px + 3em + 10px);
+  padding: 0;
+  text-align: left;
+  border-top: none;
+  font-size: 14px;
+}
+.add-role-modal-content .modal-footer button {
+  float: left;
+  min-width: 8em;
+  padding: .6em 1.6em;
+  border-radius: 2px;
+  font-size: inherit;
+}
+.add-role-modal-content .modal-footer button:not(:last-of-type) {
+  margin-right: 10px;
+}
+.add-role-modal-content .modal-footer button.submit {
+  color: #fff;
+}
+.add-role-modal-content .modal-footer button.submit.disabled {
+  cursor: not-allowed;
+  border: 1px solid #eaeaea;
+  background-color: #eaeaea;
+}
+.add-role-modal-content .modal-footer button.submit:not(.disabled) {
+  background-color: #3179f5;
+  box-shadow: 0 2px 2px 0 rgba(49, 121, 245, 0.4);
+  border-radius: 2px;
+}
+.add-role-modal-content .modal-footer button.submit:not(.disabled):hover {
+  background-color: #1969f4;
+}
+.add-role-modal-content .modal-footer button.submit:not(.disabled):focus {
+  background-color: #0c60f1;
+}
+.add-role-modal-content .modal-footer button.cancel {
+  color: #6e727a;
+  border: 1px solid #ced5e0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.add-role-modal-content .modal-footer button.cancel:hover {
+  color: #62656d;
+}
+.add-role-modal-content .modal-footer button.cancel:focus {
   color: #5b5e65;
 }
 
