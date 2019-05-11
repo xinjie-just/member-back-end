@@ -372,10 +372,31 @@ table {
         }
         &.handle {
           color: #496eae;
+          text-align: center;
+          font-size: 0;
           button {
-            width: 100%;
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
             height: 100%;
             color: inherit;
+            &:first-of-type:last-of-type {
+              width: 100%;
+            }
+            &:first-of-type:nth-last-of-type(2) {
+              width: calc(50% - 3px);
+              & ~ button {
+                width: calc(50% - 3px);
+                margin-left: 6px;
+              }
+            }
+            &:first-of-type:nth-last-of-type(3) {
+              width: calc(33.33333333% - 4px);
+              & ~ button {
+                width: calc(33.33333333% - 4px);
+                margin-left: 6px;
+              }
+            }
             &:hover {
               color: lighten(#496eae, 20%);
             }
@@ -385,7 +406,6 @@ table {
     }
   }
 }
-
 
 /*分页*/
 .pagination-wrapper {
@@ -1295,6 +1315,98 @@ input[type=checkbox] {
         &:focus {
           color: darken(#6e727a, 8%);
         }
+      }
+    }
+  }
+}
+
+/*===系统提示===*/
+.remind-main-body {
+  padding: 20px;
+}
+.remind-main-body-header {
+  margin-bottom: 10px;
+  @extend %clearfix;
+  .tips {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #676c73;
+    .remind-count {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #333;
+      padding-right: .2em;
+      padding-left: .2em;
+    }
+  }
+  .handle {
+    float: right;
+    button {
+      min-width: 7em;
+      padding: .56em 1.5em;
+      background-color: $theme-color;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      &:hover {
+        background-color: darken($theme-color, 5%);
+      }
+      &:focus {
+        background-color: darken($theme-color, 8%);
+      }
+      &:not(:last-of-type) {
+        margin-right: .7em;
+      }
+    }
+  }
+}
+.remind-table {
+  tr {
+    td {
+      &:first-of-type {
+        border-right: 1px solid #ebeef5;
+      }
+    }
+    @media (max-width: 1199px) {
+      .type {
+        width: 120px;
+      }
+      .handle {
+        width: 120px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .type {
+        width: 150px;
+      }
+      .handle {
+        width: 150px;
+      }
+    }
+    @media (min-width: 1400px) {
+      .type {
+        width: 180px;
+      }
+      .handle {
+        width: 180px;
+      }
+    }
+    @media (min-width: 1600px) {
+      .type {
+        width: 210px;
+      }
+      .handle {
+        width: 210px;
+      }
+    }
+    @media (min-width: 1800px) {
+      .type {
+        width: 210px;
+      }
+      .handle {
+        width: 210px;
       }
     }
   }

@@ -332,11 +332,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.header:before, .main .main-content .main-header:before, .personal-account-form .form-item:before, .message-main-body-header:before, .handle-condition:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before {
+.header:before, .main .main-content .main-header:before, .personal-account-form .form-item:before, .message-main-body-header:before, .handle-condition:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before {
   content: "";
   display: table;
 }
-.header:after, .main .main-content .main-header:after, .personal-account-form .form-item:after, .message-main-body-header:after, .handle-condition:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after {
+.header:after, .main .main-content .main-header:after, .personal-account-form .form-item:after, .message-main-body-header:after, .handle-condition:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after {
   content: "";
   display: table;
   clear: both;
@@ -724,11 +724,32 @@ table tbody tr td:not(:last-of-type):not(:first-of-type) {
 }
 table tbody tr td.handle {
   color: #496eae;
+  text-align: center;
+  font-size: 0;
 }
 table tbody tr td.handle button {
-  width: 100%;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
   height: 100%;
   color: inherit;
+}
+table tbody tr td.handle button:first-of-type:last-of-type {
+  width: 100%;
+}
+table tbody tr td.handle button:first-of-type:nth-last-of-type(2) {
+  width: calc(50% - 3px);
+}
+table tbody tr td.handle button:first-of-type:nth-last-of-type(2) ~ button {
+  width: calc(50% - 3px);
+  margin-left: 6px;
+}
+table tbody tr td.handle button:first-of-type:nth-last-of-type(3) {
+  width: calc(33.33333333% - 4px);
+}
+table tbody tr td.handle button:first-of-type:nth-last-of-type(3) ~ button {
+  width: calc(33.33333333% - 4px);
+  margin-left: 6px;
 }
 table tbody tr td.handle button:hover {
   color: #8ea6cf;
@@ -1592,6 +1613,93 @@ input[type=checkbox]:checked + label::before {
 }
 .shop-main-body .form-footer button.cancel:focus {
   color: #5b5e65;
+}
+
+/*===系统提示===*/
+.remind-main-body {
+  padding: 20px;
+}
+
+.remind-main-body-header {
+  margin-bottom: 10px;
+}
+.remind-main-body-header .tips {
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #676c73;
+}
+.remind-main-body-header .tips .remind-count {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #333;
+  padding-right: .2em;
+  padding-left: .2em;
+}
+.remind-main-body-header .handle {
+  float: right;
+}
+.remind-main-body-header .handle button {
+  min-width: 7em;
+  padding: .56em 1.5em;
+  background-color: #5a6afa;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+.remind-main-body-header .handle button:hover {
+  background-color: #4154f9;
+}
+.remind-main-body-header .handle button:focus {
+  background-color: #3246f9;
+}
+.remind-main-body-header .handle button:not(:last-of-type) {
+  margin-right: .7em;
+}
+
+.remind-table tr td:first-of-type {
+  border-right: 1px solid #ebeef5;
+}
+@media (max-width: 1199px) {
+  .remind-table tr .type {
+    width: 120px;
+  }
+  .remind-table tr .handle {
+    width: 120px;
+  }
+}
+@media (min-width: 1200px) {
+  .remind-table tr .type {
+    width: 150px;
+  }
+  .remind-table tr .handle {
+    width: 150px;
+  }
+}
+@media (min-width: 1400px) {
+  .remind-table tr .type {
+    width: 180px;
+  }
+  .remind-table tr .handle {
+    width: 180px;
+  }
+}
+@media (min-width: 1600px) {
+  .remind-table tr .type {
+    width: 210px;
+  }
+  .remind-table tr .handle {
+    width: 210px;
+  }
+}
+@media (min-width: 1800px) {
+  .remind-table tr .type {
+    width: 210px;
+  }
+  .remind-table tr .handle {
+    width: 210px;
+  }
 }
 
 /*# sourceMappingURL=member.css.map */
