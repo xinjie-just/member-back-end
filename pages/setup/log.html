@@ -97,7 +97,7 @@
                         </div>
                         <div class="condition-item">
                             <label for="date">操作日期</label>
-                            <input type="text" id="date" class="form-input" placeholder="YYYY-MM-DD" title="请输入或选择操作日期(YYYY-MM-DD)">
+                            <input type="text" id="date" class="form-input" placeholder="YYYY/MM/DD" title="请输入或选择操作日期(YYYY/MM/DD)">
                         </div>
                         <button type="button" class="search" title="搜索">搜索</button>
                     </div>
@@ -143,7 +143,7 @@
         <script src="../../scripts/moment.min.js"></script>
         <script src="../../scripts/daterangepicker.min.js"></script>
         <script>
-            $("#date").val("2019-05-12");
+            $("#date").val("2019/05/12");
             $("#date").daterangepicker({
                 linkedCalendars: false,
                 autoUpdateInput: false,
@@ -160,7 +160,7 @@
             }).on('apply.daterangepicker', function(ev, picker) {
                 picker.element.val(dateTimeFormat(picker.startDate._d).string);
             });
-            $("#date").data("daterangepicker").setStartDate("2019-05-12");
+            $("#date").data("daterangepicker").setStartDate("2019/05/12");
 
             function dateTimeFormat(dateTime) {
                 var dateTimeObj = {
@@ -173,7 +173,7 @@
                         dateTimeObj[k] = "0" + dateTimeObj[k];
                     }
                 }
-                var dateTimeString = dateTimeObj.year + "-" + dateTimeObj.month + "-" + dateTimeObj.day;
+                var dateTimeString = dateTimeObj.year + "/" + dateTimeObj.month + "/" + dateTimeObj.day;
                 return {"obj": dateTimeObj, "string": dateTimeString};
             }
         </script>

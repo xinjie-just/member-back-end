@@ -321,6 +321,86 @@ body {
   }
 }
 
+.handle-condition {
+  @extend %clearfix;
+  color: #909399;
+  font-size: 0;
+  .condition-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    height: $form-element-height;
+    line-height: $form-element-height;
+    font-size: 14px;
+    > label {
+      display: block;
+      float: left;
+      margin-right: 10px;
+    }
+    select {
+      display: block;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: $form-element-height;
+      line-height: $form-element-height;
+      border: 1px solid $form-element-border-color;
+      border-radius: 2px;
+      &:focus {
+        border-color: darken($form-element-border-color, 20%);
+      }
+      option {
+        font-size: inherit;
+        color: inherit;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+    input {
+      display: block;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: $form-element-height;
+      line-height: $form-element-height;
+      border: 1px solid $form-element-border-color;
+      border-radius: 2px;
+      &#date,
+      &#time,
+      &#datetime,
+      &#dateTime,
+      &#date-time,
+      &#calendar {
+        width: 140px;
+        padding-right: calc(20px + 15px + .5em);
+        background: url("../images/calendar.png") no-repeat right .5em center / 20px;
+      }
+      &:focus {
+        border-color: darken($form-element-border-color, 20%);
+      }
+    }
+  }
+  .search {
+    display: inline-block;
+    vertical-align: middle;
+    height: $form-element-height;
+    line-height: $form-element-height;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    background-color: rgba(100, 153, 245, .2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    border-radius: 4px;
+    color: #0557fa;
+    font-size: 14px;
+    &:hover {
+      background-color: rgba(100, 153, 245, .4);
+    }
+    &:focus {
+      background-color: rgba(100, 153, 245, .6);
+    }
+  }
+}
+
 .main-body {
   position: absolute;
   top: $breadcrumb-height;
@@ -417,6 +497,25 @@ table:not(.table-condensed) {
           }
         }
       }
+    }
+  }
+}
+
+.daterangepicker {
+  select {
+    border: 1px solid $form-element-border-color;
+  }
+  th {
+    select {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  td {
+    &.active,
+    &.active:hover,
+    &:hover {
+      background-color: $theme-color;
     }
   }
 }
@@ -765,75 +864,6 @@ input[type=checkbox] {
 /*===商家联盟===*/
 .union-main-body {
   padding: 20px;
-}
-.handle-condition {
-  @extend %clearfix;
-  color: #909399;
-  font-size: 0;
-  .condition-item {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-    height: $form-element-height;
-    line-height: $form-element-height;
-    font-size: 14px;
-    > label {
-      display: block;
-      float: left;
-      margin-right: 10px;
-    }
-    select {
-      display: block;
-      float: left;
-      padding-right: 15px;
-      padding-left: 15px;
-      height: $form-element-height;
-      line-height: $form-element-height;
-      border: 1px solid #dcdfe6;
-      border-radius: 2px;
-      &:focus {
-        border-color: darken(#dcdfe6, 20%);
-      }
-      option {
-        font-size: inherit;
-        color: inherit;
-        padding-right: 15px;
-        padding-left: 15px;
-      }
-    }
-    input {
-      display: block;
-      float: left;
-      padding-right: 15px;
-      padding-left: 15px;
-      height: $form-element-height;
-      line-height: $form-element-height;
-      border: 1px solid #dcdfe6;
-      border-radius: 2px;
-      &:focus {
-        border-color: darken(#dcdfe6, 20%);
-      }
-    }
-  }
-  .search {
-    display: inline-block;
-    vertical-align: middle;
-    height: $form-element-height;
-    line-height: $form-element-height;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
-    background-color: rgba(100, 153, 245, .2);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
-    border-radius: 4px;
-    color: #0557fa;
-    font-size: 14px;
-    &:hover {
-      background-color: rgba(100, 153, 245, .4);
-    }
-    &:focus {
-      background-color: rgba(100, 153, 245, .6);
-    }
-  }
 }
 .union-main-body-header {
   @extend %clearfix;
@@ -1875,24 +1905,6 @@ input[type=checkbox] {
 /*===操作日志===*/
 .log-main-body {
   padding: 20px;
-}
-.daterangepicker {
-  select {
-    border: 1px solid #dcdfe6;
-  }
-  th {
-    select {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-  td {
-    &.active,
-    &.active:hover,
-    &:hover {
-      background-color: $theme-color;
-    }
-  }
 }
 .log-table {
   tr {
