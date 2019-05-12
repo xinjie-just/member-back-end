@@ -435,6 +435,20 @@ body {
 .header .personal-info .msg:hover {
   background-color: #4154f9;
 }
+.header .personal-info .msg.has-msg {
+  position: relative;
+}
+.header .personal-info .msg.has-msg::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-15px);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #f70;
+}
 .header .personal-info .personal-account {
   display: inline-block;
   vertical-align: middle;

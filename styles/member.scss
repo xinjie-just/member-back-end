@@ -54,6 +54,20 @@ body {
       &:hover {
         background-color: darken($theme-color, 5%);
       }
+      &.has-msg {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          transform: translateY(-15px);
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #f70;
+        }
+      }
     }
     .personal-account {
       display: inline-block;
