@@ -689,20 +689,20 @@ body {
   padding-left: 2em;
 }
 
-table {
+table:not(.table-condensed) {
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
   width: 100%;
 }
-table th,
-table td {
+table:not(.table-condensed) th,
+table:not(.table-condensed) td {
   text-align: center;
 }
-table thead tr {
+table:not(.table-condensed) thead tr {
   background-color: #ebeef5;
 }
-table thead tr th {
+table:not(.table-condensed) thead tr th {
   font-size: 14px;
   font-weight: 400;
   background-color: #e8e8e8;
@@ -710,7 +710,7 @@ table thead tr th {
   height: 48px;
   line-height: 38px;
 }
-table tbody tr td {
+table:not(.table-condensed) tbody tr td {
   font-size: 14px;
   font-weight: 400;
   color: inherit;
@@ -719,39 +719,39 @@ table tbody tr td {
   line-height: 29px;
   border-bottom: 1px solid #ebeef5;
 }
-table tbody tr td:not(:last-of-type):not(:first-of-type) {
+table:not(.table-condensed) tbody tr td:not(:last-of-type):not(:first-of-type) {
   border-right: 1px solid #ebeef5;
 }
-table tbody tr td.handle {
+table:not(.table-condensed) tbody tr td.handle {
   color: #496eae;
   text-align: center;
   font-size: 0;
 }
-table tbody tr td.handle button {
+table:not(.table-condensed) tbody tr td.handle button {
   font-size: 14px;
   display: inline-block;
   vertical-align: middle;
   height: 100%;
   color: inherit;
 }
-table tbody tr td.handle button:first-of-type:last-of-type {
+table:not(.table-condensed) tbody tr td.handle button:first-of-type:last-of-type {
   width: 100%;
 }
-table tbody tr td.handle button:first-of-type:nth-last-of-type(2) {
+table:not(.table-condensed) tbody tr td.handle button:first-of-type:nth-last-of-type(2) {
   width: calc(50% - 3px);
 }
-table tbody tr td.handle button:first-of-type:nth-last-of-type(2) ~ button {
+table:not(.table-condensed) tbody tr td.handle button:first-of-type:nth-last-of-type(2) ~ button {
   width: calc(50% - 3px);
   margin-left: 6px;
 }
-table tbody tr td.handle button:first-of-type:nth-last-of-type(3) {
+table:not(.table-condensed) tbody tr td.handle button:first-of-type:nth-last-of-type(3) {
   width: calc(33.33333333% - 4px);
 }
-table tbody tr td.handle button:first-of-type:nth-last-of-type(3) ~ button {
+table:not(.table-condensed) tbody tr td.handle button:first-of-type:nth-last-of-type(3) ~ button {
   width: calc(33.33333333% - 4px);
   margin-left: 6px;
 }
-table tbody tr td.handle button:hover {
+table:not(.table-condensed) tbody tr td.handle button:hover {
   color: #8ea6cf;
 }
 
@@ -1122,6 +1122,19 @@ input[type=checkbox]:checked + label::before {
   color: inherit;
   padding-right: 15px;
   padding-left: 15px;
+}
+.handle-condition .condition-item input {
+  display: block;
+  float: left;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #dcdfe6;
+  border-radius: 2px;
+}
+.handle-condition .condition-item input:focus {
+  border-color: #a1a9bc;
 }
 .handle-condition .search {
   display: inline-block;
@@ -2116,6 +2129,90 @@ input[type=checkbox]:checked + label::before {
 }
 .add-role-modal-content .modal-footer button.cancel:focus {
   color: #5b5e65;
+}
+
+/*===操作日志===*/
+.log-main-body {
+  padding: 20px;
+}
+
+.daterangepicker select {
+  border: 1px solid #dcdfe6;
+}
+.daterangepicker th select {
+  display: inline-block;
+  vertical-align: middle;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover, .daterangepicker td:hover {
+  background-color: #5a6afa;
+}
+
+.log-table tr td:first-of-type {
+  border-right: 1px solid #ebeef5;
+}
+.log-table .operator {
+  width: 20%;
+}
+.log-table .shop {
+  width: 30%;
+}
+.log-table .log {
+  width: 40%;
+}
+@media (max-width: 1199px) {
+  .log-table .account {
+    width: 120px;
+  }
+  .log-table .ip {
+    width: 130px;
+  }
+  .log-table .time {
+    width: 110px;
+  }
+}
+@media (min-width: 1200px) {
+  .log-table .account {
+    width: 130px;
+  }
+  .log-table .ip {
+    width: 150px;
+  }
+  .log-table .time {
+    width: 120px;
+  }
+}
+@media (min-width: 1400px) {
+  .log-table .account {
+    width: 140px;
+  }
+  .log-table .ip {
+    width: 160px;
+  }
+  .log-table .time {
+    width: 130px;
+  }
+}
+@media (min-width: 1600px) {
+  .log-table .account {
+    width: 150px;
+  }
+  .log-table .ip {
+    width: 170px;
+  }
+  .log-table .time {
+    width: 140px;
+  }
+}
+@media (min-width: 1800px) {
+  .log-table .account {
+    width: 160px;
+  }
+  .log-table .ip {
+    width: 180px;
+  }
+  .log-table .time {
+    width: 150px;
+  }
 }
 
 /*# sourceMappingURL=member.css.map */

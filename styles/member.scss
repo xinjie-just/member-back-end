@@ -335,7 +335,7 @@ body {
   padding-left: 2em;
 }
 
-table {
+table:not(.table-condensed) {
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
@@ -785,6 +785,19 @@ input[type=checkbox] {
         color: inherit;
         padding-right: 15px;
         padding-left: 15px;
+      }
+    }
+    input {
+      display: block;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: $form-element-height;
+      line-height: $form-element-height;
+      border: 1px solid #dcdfe6;
+      border-radius: 2px;
+      &:focus {
+        border-color: darken(#dcdfe6, 20%);
       }
     }
   }
@@ -1841,6 +1854,102 @@ input[type=checkbox] {
           color: darken(#6e727a, 8%);
         }
       }
+    }
+  }
+}
+
+/*===操作日志===*/
+.log-main-body {
+  padding: 20px;
+}
+.daterangepicker {
+  select {
+    border: 1px solid #dcdfe6;
+  }
+  th {
+    select {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  td {
+    &.active,
+    &.active:hover,
+    &:hover {
+      background-color: $theme-color;
+    }
+  }
+}
+.log-table {
+  tr {
+    td {
+      &:first-of-type {
+        border-right: 1px solid #ebeef5;
+      }
+    }
+  }
+  .operator {
+    width: 20%;
+  }
+  .shop {
+    width: 30%;
+  }
+  .log {
+    width: 40%;
+  }
+  @media (max-width: 1199px) {
+    .account {
+      width: 120px;
+    }
+    .ip {
+      width: 130px;
+    }
+    .time {
+      width: 110px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .account {
+      width: 130px;
+    }
+    .ip {
+      width: 150px;
+    }
+    .time {
+      width: 120px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .account {
+      width: 140px;
+    }
+    .ip {
+      width: 160px;
+    }
+    .time {
+      width: 130px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .account {
+      width: 150px;
+    }
+    .ip {
+      width: 170px;
+    }
+    .time {
+      width: 140px;
+    }
+  }
+  @media (min-width: 1800px) {
+    .account {
+      width: 160px;
+    }
+    .ip {
+      width: 180px;
+    }
+    .time {
+      width: 150px;
     }
   }
 }
