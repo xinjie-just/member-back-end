@@ -326,6 +326,7 @@ body {
   color: #909399;
   font-size: 0;
   .condition-item {
+    @extend %clearfix;
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
@@ -365,18 +366,44 @@ body {
       line-height: $form-element-height;
       border: 1px solid $form-element-border-color;
       border-radius: 2px;
-      &#date,
-      &#time,
-      &#datetime,
-      &#dateTime,
-      &#date-time,
-      &#calendar {
+      &#date {
         width: 140px;
         padding-right: calc(20px + 15px + .5em);
         background: url("../images/calendar.png") no-repeat right .5em center / 20px;
+        &.financing-form-input {
+          width: 200px;
+        }
       }
       &:focus {
         border-color: darken($form-element-border-color, 20%);
+      }
+    }
+    > button {
+      float: left;
+      min-width: 76px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      text-align: center;
+      padding-right: 1em;
+      padding-left: 1em;
+      border: 1px solid $form-element-border-color;
+      border-left-width: 0;
+      color: #606266;
+      font-size: 14px;
+      &:hover,
+      &.active {
+        background-color: $theme-color;
+        border-color: $theme-color;
+        color: #fff;
+      }
+      &:first-of-type {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-left-width: 1px;
+      }
+      &:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
       }
     }
   }
@@ -1976,6 +2003,68 @@ input[type=checkbox] {
     }
     .time {
       width: 150px;
+    }
+  }
+}
+
+/*===财务统计===*/
+@mixin n-items($n) {
+  &:first-of-type:nth-last-of-type(#{$n}),
+  &:first-of-type:nth-last-of-type(#{$n}) ~ &{
+    width: calc((100% - 20%) / #{$n});
+  }
+}
+.financing-item {
+  @include n-items(2);
+  @include n-items(3);
+  @include n-items(4);
+  @include n-items(5);
+  @include n-items(6);
+}
+.financing-main-body {
+  padding:  30px;
+  section {
+    background-color: #f8f8f8;
+    padding: 18px 30px;
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+    > dl {
+      font-size: 0;
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+      }
+      > dt {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 18px;
+        color: $text-color + #333;
+        font-weight: 600;
+        width: 20%;
+        padding-right: 1em;
+        padding-left: 1em;
+      }
+      > dd {
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 1em;
+        padding-left: 1em;
+      }
+      dl {
+        > dt {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 14px;
+          font-weight: 400;
+          color: $text-color;
+        }
+        > dd {
+          display: block;
+          font-size: 20px;
+          font-weight: 600;
+          color: $theme-color;
+        }
+      }
     }
   }
 }
