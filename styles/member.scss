@@ -2023,46 +2023,92 @@ input[type=checkbox] {
 }
 .financing-main-body {
   padding:  30px;
-  section {
-    background-color: #f8f8f8;
-    padding: 18px 30px;
+}
+.financing-section {
+  background-color: #f8f8f8;
+  padding: 18px 30px;
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+  > dl {
+    font-size: 0;
     &:not(:last-of-type) {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
-    > dl {
-      font-size: 0;
-      &:not(:last-of-type) {
-        margin-bottom: 30px;
-      }
+    > dt {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      color: $text-color + #333;
+      font-weight: 600;
+      width: 20%;
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+    > dd {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+    dl {
       > dt {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 18px;
-        color: $text-color + #333;
-        font-weight: 600;
-        width: 20%;
-        padding-right: 1em;
-        padding-left: 1em;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-color;
       }
       > dd {
-        display: inline-block;
-        vertical-align: middle;
-        padding-right: 1em;
-        padding-left: 1em;
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        color: $theme-color;
       }
-      dl {
-        > dt {
-          display: block;
-          margin-bottom: 5px;
-          font-size: 14px;
-          font-weight: 400;
-          color: $text-color;
-        }
-        > dd {
-          display: block;
-          font-size: 20px;
-          font-weight: 600;
-          color: $theme-color;
+    }
+  }
+}
+
+/*===综合分析===*/
+.analyze-main-body {
+  padding: 30px;
+}
+.analyze-tab {
+  @extend %clearfix;
+  height: $form-element-height;
+  line-height: $form-element-height;
+  a {
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+    height: $form-element-height;
+    line-height: calc(#{$form-element-height} - 8px);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 8px;
+    &:not(:last-of-type) {
+      margin-right: 40px;
+    }
+    &:hover,
+    &.active {
+      color: $theme-color;
+      border-bottom-color: $theme-color;
+    }
+  }
+}
+.analyze-panel {
+  section {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  table {
+    tr {
+      td {
+        &:first-of-type {
+          border-right: 1px solid #ebeef5;
         }
       }
     }

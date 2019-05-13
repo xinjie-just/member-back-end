@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>综合分析</title>
+        <meta name="author" content="lixinjie">
+        <meta name="keywords" content="盟客多多" />
+        <meta name="description" content="盟客多多" />
+        <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../styles/member.css" />
+    </head>
+    <body>
+        <header id="header" class="header" role="banner">
+            <h1 class="logo">盟客多多</h1>
+            <div class="personal-info">
+                <!--当有未读消息时，添加 has-msg 类-->
+                <!--<a href="#" title="查看消息" class="iconfont icon-msg msg"></a>-->
+                <a href="#" title="查看消息" class="iconfont icon-msg msg has-msg"></a>
+                <div class="personal-account">个人账户<span class="arrows"></span></div>
+            </div>
+        </header>
+        <main id="main" class="main" role="main">
+            <nav id="nav" class="nav user-defined-scrollbar" role="navigation">
+                <ul class="nav-list">
+                    <li class="cashier">
+                        <a href="#" title="收银">收银</a>
+                        <ul>
+                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素 li 也添加 active 类-->
+                            <li><a href="#" title="快速消费">快速消费</a></li>
+                            <li><a href="#" title="账单中心">账单中心</a></li>
+                        </ul>
+                    </li>
+                    <li class="member">
+                        <a href="#" title="会员">会员</a>
+                        <ul>
+                            <li><a href="#" title="会员管理">会员管理</a></li>
+                            <li><a href="#" title="会员等级">会员等级</a></li>
+                        </ul>
+                    </li>
+                    <li class="operate">
+                        <a href="#" title="运营">运营</a>
+                        <ul>
+                            <li><a href="#" title="运营管理">运营管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="union">
+                        <a href="#" title="联盟">联盟</a>
+                        <ul>
+                            <li class="active"><a href="#" title="商家联盟">商家联盟</a></li>
+                        </ul>
+                    </li>
+                    <li class="statistics active">
+                        <a href="#" title="统计">统计</a>
+                        <ul>
+                            <li><a href="#" title="财务统计">财务统计</a></li>
+                            <li><a href="#" title="销售分析">销售分析</a></li>
+                            <li class="active"><a href="#" title="综合分析">综合分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="setup">
+                        <a href="#" title="系统设置">系统设置</a>
+                        <ul>
+                            <li><a href="#" title="我的店铺">我的店铺</a></li>
+                            <li><a href="#" title="系统提醒">系统提醒</a></li>
+                            <li><a href="#" title="角色权限">角色权限</a></li>
+                            <li><a href="#" title="操作日志">操作日志</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-content">
+                <div class="main-header">
+                    <ol class="breadcrumbs">
+                        <li>综合分析</li>
+                    </ol>
+                    <div class="handle-condition">
+                        <div class="condition-item">
+                            <!--当前查询条件添加 active 类-->
+                            <button type="button" name="sevenDays" id="sevenDays" class="active">最近七天</button>
+                            <button type="button" name="currentMonth" id="currentMonth">本月</button>
+                            <button type="button" name="lastThreeMonths" id="lastThreeMonths">最近三月</button>
+                            <button type="button" name="inRecentYear" id="inRecentYear">最近一年</button>
+                        </div>
+                        <div class="condition-item">
+                            <input type="text" id="date" class="form-input financing-form-input" placeholder="开始时间 ~ 结束时间" title="请选择开始日期和结束日期(YYYY/MM/DD)">
+                        </div>
+                        <button type="button" class="search" title="搜索">搜索</button>
+                    </div>
+                </div>
+                <div class="main-body user-defined-scrollbar analyze-main-body">
+                    <div class="analyze-tab">
+                        <a href="#" title="会员消费" class="active">会员消费</a>
+                        <a href="#" title="非会员消费">非会员消费</a>
+                    </div>
+                    <div class="analyze-panel">
+                        <section class="active">
+                            <table class="analyze-table">
+                                <thead>
+                                <tr>
+                                    <th class="name">会员名</th>
+                                    <th class="code">订单码</th>
+                                    <th class="time">订单时间</th>
+                                    <th class="way">支付方式</th>
+                                    <th class="sum">订单金额</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="name">张三</td>
+                                    <td class="code">XXX</td>
+                                    <td class="time">2019/05/07</td>
+                                    <td class="way">微信</td>
+                                    <td class="sum">21.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">李四</td>
+                                    <td class="code">XXX</td>
+                                    <td class="time">2019/05/07</td>
+                                    <td class="way">支付宝</td>
+                                    <td class="sum">21.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">王五</td>
+                                    <td class="code">XXX</td>
+                                    <td class="time">2019/05/07</td>
+                                    <td class="way">会员账户</td>
+                                    <td class="sum">21.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <nav class="pagination-wrapper" aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <!--给不能点击的链接添加 .disabled 类-->
+                                    <li class="disabled">
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <!--给当前页添加 .active 类-->
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </section>
+                        <section>
+                            <table class="analyze-table">
+                                <thead>
+                                <tr>
+                                    <th class="name">会员名111</th>
+                                    <th class="code">订单码</th>
+                                    <th class="time">订单时间</th>
+                                    <th class="way">支付方式</th>
+                                    <th class="sum">订单金额</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="name">张三</td>
+                                    <td class="code">XXX</td>
+                                    <td class="time">2019/05/07</td>
+                                    <td class="way">微信</td>
+                                    <td class="sum">21.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">李四</td>
+                                    <td class="code">XXX</td>
+                                    <td class="time">2019/05/07</td>
+                                    <td class="way">支付宝</td>
+                                    <td class="sum">21.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">王五</td>
+                                    <td class="code">XXX</td>
+                                    <td class="time">2019/05/07</td>
+                                    <td class="way">会员账户</td>
+                                    <td class="sum">21.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <nav class="pagination-wrapper" aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <!--给不能点击的链接添加 .disabled 类-->
+                                    <li class="disabled">
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <!--给当前页添加 .active 类-->
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
+        <script src="../../scripts/jquery-3.4.0.min.js"></script>
+        <script src="../../scripts/popper.min.js"></script>
+        <script src="../../scripts/bootstrap.min.js"></script>
+        <script>
+            var tab = $(".analyze-tab a");
+            var panel = $(".analyze-panel section");
+            tab.click(function () {
+                $(this).addClass("active");
+                $(this).siblings("a").removeClass("active");
+                panel.eq($(this).index()).addClass("active");
+                panel.eq($(this).index()).siblings("section").removeClass("active");
+            })
+        </script>
+    </body>
+</html>
