@@ -728,7 +728,7 @@ body {
   background: url("../images/calendar.png") no-repeat right 0.5em center/20px;
 }
 .handle-condition .condition-item input#date.financing-form-input {
-  width: 200px;
+  width: 240px;
 }
 .handle-condition .condition-item input:focus {
   border-color: #a1a9bc;
@@ -883,6 +883,15 @@ table:not(.table-condensed) tbody tr td.handle button:hover {
 }
 .daterangepicker td.active, .daterangepicker td.active:hover, .daterangepicker td:hover {
   background-color: #5a6afa;
+}
+.daterangepicker .applyBtn {
+  background-color: #5a6afa;
+}
+.daterangepicker .applyBtn:hover {
+  background-color: #4154f9;
+}
+.daterangepicker .applyBtn:focus {
+  background-color: #3246f9;
 }
 
 /*分页*/

@@ -9,6 +9,7 @@
         <meta name="keywords" content="盟客多多" />
         <meta name="description" content="盟客多多" />
         <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../styles/daterangepicker.min.css" />
         <link rel="stylesheet" href="../../styles/member.css" />
     </head>
     <body>
@@ -84,7 +85,7 @@
                             <button type="button" name="inRecentYear" id="inRecentYear">最近一年</button>
                         </div>
                         <div class="condition-item">
-                            <input type="text" id="date" class="form-input financing-form-input" placeholder="开始时间 ~ 结束时间" title="请选择开始日期和结束日期(YYYY/MM/DD)">
+                            <input type="text" id="date" class="form-input financing-form-input" placeholder="开始时间 ~ 结束时间" title="请输入或选择开始日期和结束日期(YYYY/MM/DD)">
                         </div>
                         <button type="button" class="search" title="搜索">搜索</button>
                     </div>
@@ -217,6 +218,8 @@
         <script src="../../scripts/jquery-3.4.0.min.js"></script>
         <script src="../../scripts/popper.min.js"></script>
         <script src="../../scripts/bootstrap.min.js"></script>
+        <script src="../../scripts/moment.min.js"></script>
+        <script src="../../scripts/daterangepicker.min.js"></script>
         <script>
             var tab = $(".analyze-tab a");
             var panel = $(".analyze-panel section");
@@ -225,7 +228,25 @@
                 $(this).siblings("a").removeClass("active");
                 panel.eq($(this).index()).addClass("active");
                 panel.eq($(this).index()).siblings("section").removeClass("active");
-            })
+            });
+
+            $("#date").val("2019/05/14 ~ 2019/05/24");
+            $("#date").daterangepicker({
+                linkedCalendars: false,
+                autoUpdateInput: false,
+                showDropdowns: true,
+                opens: 'left',
+                locale: {
+                    format: "YYYY/MM/DD",
+                    applyLabel: "确定",
+                    cancelLabel: "取消",
+                    daysOfWeek: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+                    monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                    firstDay: 1
+                }
+            }, function(start, end) {
+                $("#date").val(start.format('YYYY/MM/DD') + ' ~ ' + end.format('YYYY/MM/DD'));
+            });
         </script>
     </body>
 </html>

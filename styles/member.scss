@@ -367,7 +367,7 @@ body {
         padding-right: calc(20px + 15px + .5em);
         background: url("../images/calendar.png") no-repeat right .5em center / 20px;
         &.financing-form-input {
-          width: 200px;
+          width: 240px;
         }
       }
       &:focus {
@@ -539,6 +539,15 @@ table:not(.table-condensed) {
     &.active:hover,
     &:hover {
       background-color: $theme-color;
+    }
+  }
+  .applyBtn {
+    background-color: $theme-color;
+    &:hover {
+      background-color: darken($theme-color, 5%);
+    }
+    &:focus {
+      background-color: darken($theme-color, 8%);
     }
   }
 }
