@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! lixinjie 20180811 https://github.com/xinjie-just/meipo.git */
+/*! lixinjie 20190415 https://github.com/xinjie-just/member-back-end.git */
 @import "iconfont";
 @import "variables";
 @import "reboot";
@@ -253,12 +253,8 @@ body {
               background-color: currentColor;
             }
           }
-          &:hover {
-            a {
-              color: $theme-color;
-            }
-          }
-          &.active {
+          &:hover,
+		  &.active {
             a {
               color: $theme-color;
             }
@@ -592,6 +588,36 @@ table:not(.table-condensed) {
   }
 }
 
+input[type=checkbox] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  clip: rect(0,0,0,0);
+  & + label {
+    display: block;
+    &::before {
+      display: block;
+      border: 1px solid #bcc2cc;
+      width: 16px;
+      height: 16px;
+      font-size: 1.3em;
+      color: #3b61de;
+      border-radius: 2px;
+      content: " ";
+      vertical-align: middle;
+      line-height: .8;
+    }
+  }
+  &:checked {
+    & + label {
+      &::before {
+        content: "\2714 ";
+        color: $theme-color;
+      }
+    }
+  }
+}
+
 /*主要内容*/
 /*个人账户*/
 .account-main-body {
@@ -777,35 +803,6 @@ table:not(.table-condensed) {
       }
       &:not(:last-of-type) {
         margin-right: .7em;
-      }
-    }
-  }
-}
-input[type=checkbox] {
-  width: 0;
-  height: 0;
-  position: absolute;
-  clip: rect(0,0,0,0);
-  & + label {
-    display: block;
-    &::before {
-      display: block;
-      border: 1px solid #bcc2cc;
-      width: 16px;
-      height: 16px;
-      font-size: 1.3em;
-      color: #3b61de;
-      border-radius: 2px;
-      content: " ";
-      vertical-align: middle;
-      line-height: .8;
-    }
-  }
-  &:checked {
-    & + label {
-      &::before {
-        content: "\2714 ";
-        color: $theme-color;
       }
     }
   }

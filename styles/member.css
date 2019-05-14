@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! lixinjie 20180811 https://github.com/xinjie-just/meipo.git */
+/*! lixinjie 20190415 https://github.com/xinjie-just/member-back-end.git */
 @font-face {
   font-family: "iconfont";
   src: url("../fonts/iconfont.eot?t=1557672498160");
@@ -620,10 +620,7 @@ body {
   color: inherit;
   background-color: currentColor;
 }
-.nav-list > li.active ul > li:hover a {
-  color: #5a6afa;
-}
-.nav-list > li.active ul > li.active a {
+.nav-list > li.active ul > li:hover a, .nav-list > li.active ul > li.active a {
   color: #5a6afa;
 }
 
@@ -931,6 +928,32 @@ table:not(.table-condensed) tbody tr td.handle button:hover {
   background-color: #5a6afa;
 }
 
+input[type=checkbox] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+input[type=checkbox] + label {
+  display: block;
+}
+input[type=checkbox] + label::before {
+  display: block;
+  border: 1px solid #bcc2cc;
+  width: 16px;
+  height: 16px;
+  font-size: 1.3em;
+  color: #3b61de;
+  border-radius: 2px;
+  content: " ";
+  vertical-align: middle;
+  line-height: .8;
+}
+input[type=checkbox]:checked + label::before {
+  content: "\2714 ";
+  color: #5a6afa;
+}
+
 /*主要内容*/
 /*个人账户*/
 .account-main-body {
@@ -1117,32 +1140,6 @@ table:not(.table-condensed) tbody tr td.handle button:hover {
 }
 .message-main-body-header .handle button:not(:last-of-type) {
   margin-right: .7em;
-}
-
-input[type=checkbox] {
-  width: 0;
-  height: 0;
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-input[type=checkbox] + label {
-  display: block;
-}
-input[type=checkbox] + label::before {
-  display: block;
-  border: 1px solid #bcc2cc;
-  width: 16px;
-  height: 16px;
-  font-size: 1.3em;
-  color: #3b61de;
-  border-radius: 2px;
-  content: " ";
-  vertical-align: middle;
-  line-height: .8;
-}
-input[type=checkbox]:checked + label::before {
-  content: "\2714 ";
-  color: #5a6afa;
 }
 
 .message-table tbody tr.read {
