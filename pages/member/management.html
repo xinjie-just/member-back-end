@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>会员管理</title>
+        <meta name="author" content="lixinjie">
+        <meta name="keywords" content="盟客多多" />
+        <meta name="description" content="盟客多多" />
+        <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../styles/member.css" />
+    </head>
+    <body>
+        <header id="header" class="header" role="banner">
+            <h1 class="logo">盟客多多</h1>
+            <div class="personal-info">
+                <!--当有未读消息时，添加 has-msg 类-->
+                <!--<a href="#" title="查看消息" class="iconfont icon-msg msg"></a>-->
+                <a href="#" title="查看消息" class="iconfont icon-msg msg has-msg"></a>
+                <div class="personal-account">个人账户<span class="arrows"></span></div>
+            </div>
+        </header>
+        <main id="main" class="main" role="main">
+            <nav id="nav" class="nav user-defined-scrollbar" role="navigation">
+                <ul class="nav-list">
+                    <li class="cashier">
+                        <a href="#" title="收银">收银</a>
+                        <ul>
+                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素 li 也添加 active 类-->
+                            <li><a href="#" title="快速消费">快速消费</a></li>
+                            <li><a href="#" title="账单中心">账单中心</a></li>
+                        </ul>
+                    </li>
+                    <li class="member active">
+                        <a href="#" title="会员">会员</a>
+                        <ul>
+                            <li class="active"><a href="#" title="会员管理">会员管理</a></li>
+                            <li><a href="#" title="会员等级">会员等级</a></li>
+                        </ul>
+                    </li>
+                    <li class="operate">
+                        <a href="#" title="运营">运营</a>
+                        <ul>
+                            <li><a href="#" title="运营管理">运营管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="union">
+                        <a href="#" title="联盟">联盟</a>
+                        <ul>
+                            <li><a href="#" title="商家联盟">商家联盟</a></li>
+                        </ul>
+                    </li>
+                    <li class="statistics">
+                        <a href="#" title="统计">统计</a>
+                        <ul>
+                            <li><a href="#" title="财务统计">财务统计</a></li>
+                            <li><a href="#" title="联盟统计">联盟统计</a></li>
+                            <li><a href="#" title="综合分析">综合分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="setup">
+                        <a href="#" title="系统设置">系统设置</a>
+                        <ul>
+                            <li><a href="#" title="我的店铺">我的店铺</a></li>
+                            <li><a href="#" title="系统提醒">系统提醒</a></li>
+                            <li><a href="#" title="角色权限">角色权限</a></li>
+                            <li><a href="#" title="操作日志">操作日志</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-content">
+                <div class="main-header">
+                    <ol class="breadcrumbs">
+                        <!--只有一级导航时没有a标签，多级导航时，最后一级没有a标签，除了最后一级其余有a标签-->
+                        <!--<li><a href="#" title="消息中心">消息中心</a></li>-->
+                        <li>会员管理</li>
+                    </ol>
+                    <div class="handle-condition">
+                        <div class="condition-item">
+                            <label for="grade">会员等级</label>
+                            <select name="grade" id="grade">
+                                <option value="0">1级</option>
+                                <option value="1">2级</option>
+                                <option value="2">3级</option>
+                                <option value="3">4级</option>
+                            </select>
+                        </div>
+                        <div class="condition-item">
+                            <label for="industry">所属商家</label>
+                            <select name="industry" id="industry">
+                                <option value="0">商家1</option>
+                                <option value="1">商家2</option>
+                                <option value="2">商家3</option>
+                                <option value="3">商家4</option>
+                            </select>
+                        </div>
+                        <button type="button" class="search" title="搜索">搜索</button>
+                    </div>
+                </div>
+                <div class="main-body user-defined-scrollbar management-main-body">
+                    <div class="management-main-body-header">
+                        <div class="tips">共有<strong class="member-count">2</strong>个会员</div>
+                        <div class="handle">
+                            <button type="button" class="recharge" title="充值">充值</button>
+                            <button type="button" class="loss" title="挂失">挂失</button>
+                            <button type="button" class="change" title="换卡">换卡</button>
+                            <button type="button" class="update" title="修改">修改</button>
+                            <button type="button" class="add" title="新增会员">新增会员</button>
+                        </div>
+                    </div>
+                    <table class="management-table">
+                        <thead>
+                        <tr>
+                            <th class="id">会员ID</th>
+                            <th class="name">姓名</th>
+                            <th class="sex">性别</th>
+                            <th class="idcard">身份证号</th>
+                            <th class="phone">联系电话</th>
+                            <th class="business">所属商家</th>
+                            <th class="grade">等级</th>
+                            <th class="start-time">开卡时间</th>
+                            <th class="end-time">到期时间</th>
+                            <th class="status">状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--注销状态 tr 加 .logout 类-->
+                        <tr class="logout">
+                            <td class="id">hy0001</td>
+                            <td class="name">张三</td>
+                            <td class="sex">男</td>
+                            <td class="idcard">513030199111243538</td>
+                            <td class="phone">18227752000</td>
+                            <td class="business">水城黄焖鸡理想中心店</td>
+                            <td class="grade">1级</td>
+                            <td class="start-time">2015/05/14</td>
+                            <td class="end-time">2020/05/14</td>
+                            <td class="status">注销</td>
+                        </tr>
+                        <tr>
+                            <td class="id">hy0001</td>
+                            <td class="name">张三</td>
+                            <td class="sex">男</td>
+                            <td class="idcard">513030199111243538</td>
+                            <td class="phone">18227752000</td>
+                            <td class="business">水城黄焖鸡理想中心店</td>
+                            <td class="grade">1级</td>
+                            <td class="start-time">2015/05/14</td>
+                            <td class="end-time">2020/05/14</td>
+                            <td class="status">正常</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <nav class="pagination-wrapper" aria-label="Page navigation">
+                        <strong class="count">共2条</strong>
+                        <ul class="pagination">
+                            <!--给不能点击的链接添加 .disabled 类-->
+                            <li class="disabled">
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <!--给当前页添加 .active 类-->
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+        <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
+        <script src="../../scripts/jquery-3.4.0.min.js"></script>
+        <script src="../../scripts/popper.min.js"></script>
+        <script src="../../scripts/bootstrap.min.js"></script>
+    </body>
+</html>

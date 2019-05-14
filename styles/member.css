@@ -336,11 +336,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.header:before, .main .main-content .main-header:before, .handle-condition:before, .handle-condition .condition-item:before, .personal-account-form .form-item:before, .message-main-body-header:before, .message-main-body-header .handle:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before, .remind-main-body-header .handle:before, .add-remind-modal-content .modal-body .form-item:before, .add-remind-modal-content .modal-footer:before, .role-main-body-header:before, .role-main-body-header .handle:before, .add-role-modal-content .modal-body .form-item:before, .add-role-modal-content .modal-footer:before, .analyze-tab:before, .league-tab:before {
+.header:before, .main .main-content .main-header:before, .handle-condition:before, .handle-condition .condition-item:before, .personal-account-form .form-item:before, .message-main-body-header:before, .message-main-body-header .handle:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before, .remind-main-body-header .handle:before, .add-remind-modal-content .modal-body .form-item:before, .add-remind-modal-content .modal-footer:before, .role-main-body-header:before, .role-main-body-header .handle:before, .add-role-modal-content .modal-body .form-item:before, .add-role-modal-content .modal-footer:before, .analyze-tab:before, .league-tab:before, .management-main-body-header:before, .management-main-body-header .handle:before {
   content: "";
   display: table;
 }
-.header:after, .main .main-content .main-header:after, .handle-condition:after, .handle-condition .condition-item:after, .personal-account-form .form-item:after, .message-main-body-header:after, .message-main-body-header .handle:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after, .remind-main-body-header .handle:after, .add-remind-modal-content .modal-body .form-item:after, .add-remind-modal-content .modal-footer:after, .role-main-body-header:after, .role-main-body-header .handle:after, .add-role-modal-content .modal-body .form-item:after, .add-role-modal-content .modal-footer:after, .analyze-tab:after, .league-tab:after {
+.header:after, .main .main-content .main-header:after, .handle-condition:after, .handle-condition .condition-item:after, .personal-account-form .form-item:after, .message-main-body-header:after, .message-main-body-header .handle:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after, .remind-main-body-header .handle:after, .add-remind-modal-content .modal-body .form-item:after, .add-remind-modal-content .modal-footer:after, .role-main-body-header:after, .role-main-body-header .handle:after, .add-role-modal-content .modal-body .form-item:after, .add-role-modal-content .modal-footer:after, .analyze-tab:after, .league-tab:after, .management-main-body-header:after, .management-main-body-header .handle:after {
   content: "";
   display: table;
   clear: both;
@@ -825,17 +825,15 @@ table:not(.table-condensed) thead tr th {
   font-size: 14px;
   font-weight: 400;
   background-color: #e8e8e8;
-  padding: 5px 10px;
-  height: 48px;
-  line-height: 38px;
+  padding: 11px 10px;
+  line-height: 26px;
 }
 table:not(.table-condensed) tbody tr td {
   font-size: 14px;
   font-weight: 400;
   color: inherit;
-  padding: 20px 10px;
-  height: 70px;
-  line-height: 29px;
+  padding: 22px 10px;
+  line-height: 25px;
   border-bottom: 1px solid #ebeef5;
 }
 table:not(.table-condensed) tbody tr td:not(:last-of-type):not(:first-of-type) {
@@ -2537,6 +2535,179 @@ input[type=checkbox]:checked + label::before {
 }
 .league-panel table tr .code {
   width: 22%;
+}
+
+/*===会员管理===*/
+.management-main-body {
+  padding: 20px;
+}
+
+.management-main-body-header {
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+.management-main-body-header .tips {
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #676c73;
+}
+.management-main-body-header .tips .member-count {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #333;
+  padding-right: .2em;
+  padding-left: .2em;
+}
+.management-main-body-header .handle {
+  float: right;
+}
+.management-main-body-header .handle button {
+  float: left;
+  height: 100%;
+  line-height: inherit;
+  padding: 0 1.5em;
+  background-color: rgba(100, 153, 245, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  color: #0557fa;
+  font-size: 14px;
+}
+.management-main-body-header .handle button:hover {
+  background-color: rgba(100, 153, 245, 0.4);
+}
+.management-main-body-header .handle button:focus {
+  background-color: rgba(100, 153, 245, 0.6);
+}
+.management-main-body-header .handle button.add {
+  background-color: #6496fa;
+  color: #fff;
+}
+.management-main-body-header .handle button.add:hover {
+  background-color: #4b85f9;
+}
+.management-main-body-header .handle button.add:focus {
+  background-color: #3c7bf9;
+}
+.management-main-body-header .handle button:not(:last-of-type) {
+  margin-right: .7em;
+}
+
+.management-table tr td:first-of-type {
+  border-right: 1px solid #ebeef5;
+}
+@media (max-width: 1199px) {
+  .management-table tr .id {
+    width: 80px;
+  }
+  .management-table tr .idcard {
+    width: 180px;
+  }
+  .management-table tr .phone {
+    width: 120px;
+  }
+  .management-table tr .start-time,
+  .management-table tr .end-time {
+    width: 110px;
+  }
+  .management-table tr .sex,
+  .management-table tr .grade,
+  .management-table tr .status {
+    width: 65px;
+  }
+}
+@media (min-width: 1200px) {
+  .management-table tr .id {
+    width: 85px;
+  }
+  .management-table tr .idcard {
+    width: 185px;
+  }
+  .management-table tr .phone {
+    width: 125px;
+  }
+  .management-table tr .start-time,
+  .management-table tr .end-time {
+    width: 115px;
+  }
+  .management-table tr .sex,
+  .management-table tr .grade,
+  .management-table tr .status {
+    width: 70px;
+  }
+}
+@media (min-width: 1400px) {
+  .management-table tr .id {
+    width: 90px;
+  }
+  .management-table tr .idcard {
+    width: 190px;
+  }
+  .management-table tr .phone {
+    width: 130px;
+  }
+  .management-table tr .start-time,
+  .management-table tr .end-time {
+    width: 120px;
+  }
+  .management-table tr .sex,
+  .management-table tr .grade,
+  .management-table tr .status {
+    width: 75px;
+  }
+}
+@media (min-width: 1600px) {
+  .management-table tr .id {
+    width: 95px;
+  }
+  .management-table tr .idcard {
+    width: 195px;
+  }
+  .management-table tr .phone {
+    width: 135px;
+  }
+  .management-table tr .start-time,
+  .management-table tr .end-time {
+    width: 125px;
+  }
+  .management-table tr .sex,
+  .management-table tr .grade,
+  .management-table tr .status {
+    width: 75px;
+  }
+}
+@media (min-width: 1800px) {
+  .management-table tr .id {
+    width: 100px;
+  }
+  .management-table tr .idcard {
+    width: 200px;
+  }
+  .management-table tr .phone {
+    width: 140px;
+  }
+  .management-table tr .start-time,
+  .management-table tr .end-time {
+    width: 130px;
+  }
+  .management-table tr .sex,
+  .management-table tr .grade,
+  .management-table tr .status {
+    width: 65px;
+  }
+}
+.management-table tr .name {
+  width: 40%;
+}
+.management-table tr .business {
+  width: 60%;
+}
+.management-table tr.logout {
+  color: #b3b3b3;
+}
+.management-table tr.logout .status {
+  color: #9013fe;
 }
 
 /*# sourceMappingURL=member.css.map */

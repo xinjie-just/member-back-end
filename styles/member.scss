@@ -468,9 +468,8 @@ table:not(.table-condensed) {
         font-size: 14px;
         font-weight: 400;
         background-color: #e8e8e8;
-        padding: 5px 10px;
-        height: 48px;
-        line-height: 38px;
+        padding: 11px 10px;
+        line-height: 26px;
       }
     }
   }
@@ -480,9 +479,8 @@ table:not(.table-condensed) {
         font-size: 14px;
         font-weight: 400;
         color: inherit;
-        padding: 20px 10px;
-        height: 70px;
-        line-height: 29px;
+        padding: 22px 10px;
+        line-height: 25px;
         border-bottom: 1px solid #ebeef5;
         &:not(:last-of-type):not(:first-of-type){
           border-right: 1px solid #ebeef5;
@@ -2286,6 +2284,185 @@ input[type=checkbox] {
       }
       .code {
         width: 22%;
+      }
+    }
+  }
+}
+
+/*===会员管理===*/
+.management-main-body {
+  padding: 20px;
+}
+.management-main-body-header {
+  height: $form-element-height;;
+  line-height: $form-element-height;
+  margin-bottom: 10px;
+  @extend %clearfix;
+  .tips {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #676c73;
+    .member-count {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #333;
+      padding-right: .2em;
+      padding-left: .2em;
+    }
+  }
+  .handle {
+    @extend %clearfix;
+    float: right;
+    button {
+      float: left;
+      height: 100%;
+      line-height: inherit;
+      padding: 0 1.5em;
+      background-color: rgba(100, 153, 245, .2);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+      border-radius: 4px;
+      color: #0557fa;
+      font-size: 14px;
+      &:hover {
+        background-color: rgba(100, 153, 245, .4);
+      }
+      &:focus {
+        background-color: rgba(100, 153, 245, .6);
+      }
+      &.add {
+        background-color: #6496fa;
+        color: #fff;
+        &:hover {
+          background-color: darken(#6496fa, 5%);
+        }
+        &:focus {
+          background-color: darken(#6496fa, 8%);
+        }
+      }
+      &:not(:last-of-type) {
+        margin-right: .7em;
+      }
+    }
+  }
+}
+.management-table {
+  tr {
+    td {
+      &:first-of-type {
+        border-right: 1px solid #ebeef5;
+      }
+    }
+    @media (max-width: 1199px) {
+      .id {
+        width: 80px;
+      }
+      .idcard {
+        width: 180px;
+      }
+      .phone {
+        width: 120px;
+      }
+      .start-time,
+      .end-time {
+        width: 110px;
+      }
+      .sex,
+      .grade,
+      .status {
+        width: 65px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .id {
+        width: 85px;
+      }
+      .idcard {
+        width: 185px;
+      }
+      .phone {
+        width: 125px;
+      }
+      .start-time,
+      .end-time {
+        width: 115px;
+      }
+      .sex,
+      .grade,
+      .status {
+        width: 70px;
+      }
+    }
+    @media (min-width: 1400px) {
+      .id {
+        width: 90px;
+      }
+      .idcard {
+        width: 190px;
+      }
+      .phone {
+        width: 130px;
+      }
+      .start-time,
+      .end-time {
+        width: 120px;
+      }
+      .sex,
+      .grade,
+      .status {
+        width: 75px;
+      }
+    }
+    @media (min-width: 1600px) {
+      .id {
+        width: 95px;
+      }
+      .idcard {
+        width: 195px;
+      }
+      .phone {
+        width: 135px;
+      }
+      .start-time,
+      .end-time {
+        width: 125px;
+      }
+      .sex,
+      .grade,
+      .status {
+        width: 75px;
+      }
+    }
+    @media (min-width: 1800px) {
+      .id {
+        width: 100px;
+      }
+      .idcard {
+        width: 200px;
+      }
+      .phone {
+        width: 140px;
+      }
+      .start-time,
+      .end-time {
+        width: 130px;
+      }
+      .sex,
+      .grade,
+      .status {
+        width: 65px;
+      }
+    }
+    .name {
+      width: 40%;
+    }
+    .business {
+      width: 60%;
+    }
+    &.logout {
+      color: #b3b3b3;
+      .status {
+        color: #9013fe;
       }
     }
   }
