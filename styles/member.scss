@@ -2098,6 +2098,7 @@ input[type=checkbox] {
     }
     &:hover,
     &.active {
+      font-weight: 600;
       color: $theme-color;
       border-bottom-color: $theme-color;
     }
@@ -2116,6 +2117,175 @@ input[type=checkbox] {
         &:first-of-type {
           border-right: 1px solid #ebeef5;
         }
+      }
+      /*@media (max-width: 1199px) {
+        .time,
+        .sum,
+        .way {
+          width: 120px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .time,
+        .sum,
+        .way {
+          width: 130px;
+        }
+      }
+      @media (min-width: 1400px) {
+        .time,
+        .sum,
+        .way {
+          width: 140px;
+        }
+      }
+      @media (min-width: 1600px) {
+        .time,
+        .sum,
+        .way {
+          width: 150px;
+        }
+      }
+      @media (min-width: 1800px) {
+        .time,
+        .sum,
+        .way {
+          width: 160px;
+        }
+      }*/
+    }
+  }
+}
+
+/*===联盟统计===*/
+.league-main-body {
+  padding: 30px;
+}
+.league-section {
+  background-color: #f8f8f8;
+  padding: 18px 30px;
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+  > dl {
+    font-size: 0;
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+    > dt {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      color: $text-color + #333;
+      font-weight: 600;
+      width: 20%;
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+    > dd {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+    dl {
+      > dt {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-color;
+      }
+      > dd {
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        color: $theme-color;
+      }
+    }
+  }
+}
+.league-tab {
+  @extend %clearfix;
+  height: $form-element-height;
+  line-height: $form-element-height;
+  margin-top: 22px;
+  a {
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+    height: $form-element-height;
+    line-height: calc(#{$form-element-height} - 8px);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 8px;
+    &:not(:last-of-type) {
+      margin-right: 40px;
+    }
+    &:hover,
+    &.active {
+      font-weight: 600;
+      color: $theme-color;
+      border-bottom-color: $theme-color;
+    }
+  }
+}
+.league-panel {
+  section {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  table {
+    tr {
+      td {
+        &:first-of-type {
+          border-right: 1px solid #ebeef5;
+        }
+      }
+      @media (max-width: 1199px) {
+        .time,
+        .sum {
+          width: 120px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .time,
+        .sum {
+          width: 130px;
+        }
+      }
+      @media (min-width: 1400px) {
+        .time,
+        .sum {
+          width: 140px;
+        }
+      }
+      @media (min-width: 1600px) {
+        .time,
+        .sum {
+          width: 150px;
+        }
+      }
+      @media (min-width: 1800px) {
+        .time,
+        .sum {
+          width: 160px;
+        }
+      }
+      .name {
+        width: 22%;
+      }
+      .business {
+        width: 28%;
+      }
+      .address {
+        width: 28%;
+      }
+      .code {
+        width: 22%;
       }
     }
   }
