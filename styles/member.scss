@@ -595,7 +595,7 @@ table:not(.table-condensed) {
   }
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 0;
   height: 0;
   position: absolute;
@@ -603,6 +603,7 @@ input[type=checkbox] {
   & + label {
     display: block;
     &::before {
+      content: " ";
       display: block;
       border: 1px solid #bcc2cc;
       width: 16px;
@@ -610,7 +611,6 @@ input[type=checkbox] {
       font-size: 1.3em;
       color: #3b61de;
       border-radius: 2px;
-      content: " ";
       vertical-align: middle;
       line-height: .8;
     }
@@ -618,8 +618,68 @@ input[type=checkbox] {
   &:checked {
     & + label {
       &::before {
-        content: "\2714 ";
+        content: "\2714";
         color: $theme-color;
+      }
+    }
+  }
+}
+
+input[type="radio"] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  clip: rect(0,0,0,0);
+  & + label {
+    display: block;
+    position: relative;
+    margin-right: 0;
+    width: 50px;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: "";
+      display: block;
+      border: 2px solid #a5affb;
+      width: 20px;
+      height: 20px;
+      color: #3b61de;
+      border-radius: 50%;
+    }
+  }
+  &:checked {
+    & + label {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        display: block;
+        background-color: #6979f8;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.form-item {
+  label {
+    &.required {
+      position: relative;
+      &::before {
+        content: "*";
+        position: absolute;
+        left: -.8em;
+        height: 100%;
+        line-height: 2.1;
+        font-size: 1.5em;
+        color: #f00;
       }
     }
   }
@@ -635,7 +695,6 @@ input[type=checkbox] {
   font-size: 14px;
   .form-item {
     @extend %clearfix;
-    height: $form-element-height;
     line-height: $form-element-height;
     &:not(:last-of-type) {
       margin-bottom: 20px;
@@ -1082,7 +1141,6 @@ input[type=checkbox] {
   font-size: 14px;
   .form-item {
     @extend %clearfix;
-    height: $form-element-height;
     line-height: $form-element-height;
     padding-left: 20px;
     &:not(:last-of-type) {
@@ -1239,7 +1297,6 @@ input[type=checkbox] {
   font-size: 14px;
   .form-item {
     @extend %clearfix;
-    height: $form-element-height;
     line-height: $form-element-height;
     padding-left: $padding-left;
     &:not(:last-of-type) {
@@ -2463,6 +2520,149 @@ input[type=checkbox] {
       color: #b3b3b3;
       .status {
         color: #9013fe;
+      }
+    }
+  }
+}
+
+/*新增会员*/
+.add-member-main-body {
+  padding: 40px 76px;
+}
+.add-member-form {
+  $label-width: 5em;
+  font-size: 14px;
+  .form-item {
+    @extend %clearfix;
+    line-height: $form-element-height;
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      float: left;
+      margin-right: 10px;
+      width: $label-width;
+      height: inherit;
+      line-height: inherit;
+      font-size: inherit;
+      text-align: right;
+      color: $text-color;
+    }
+    .form-input {
+      width: 28.4%;
+      min-width: 300px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding-right: 1em;
+      padding-left: 1em;
+      &:focus {
+        border-color: $theme-color;
+      }
+    }
+    select {
+      display: block;
+      float: left;
+      width: 28.4%;
+      min-width: 300px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding-right: 1em;
+      padding-left: 1em;
+      &:focus {
+        border-color: $theme-color;
+      }
+      option {
+
+      }
+    }
+    button {
+      float: left;
+      min-width: 100px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      margin-left: 10px;
+      text-align: center;
+      padding-right: 1em;
+      padding-left: 1em;
+      background-color: #e0ebfd;
+      border-radius: 4px;
+      color: #0557fa;
+      font-size: 14px;
+      &:hover {
+        background-color: darken(#e0ebfd, 5%);
+      }
+      &:focus {
+        background-color: darken(#e0ebfd, 8%);
+      }
+    }
+    .sex-select {
+      @extend %clearfix;
+      display: block;
+      float: left;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      > div {
+        float: left;
+        &:not(:last-of-type) {
+          margin-right: 45px;
+        }
+      }
+    }
+    input[type="radio"] {
+      & + label {
+        margin-right: 0;
+        width: 45px;
+      }
+    }
+  }
+  .form-footer {
+    @extend %clearfix;
+    margin-top: 30px;
+    margin-left: calc(5em + 10px);
+    button {
+      float: left;
+      min-width: 8em;
+      padding: .6em 1.6em;
+      border-radius: 2px;
+      font-size: inherit;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      &.submit {
+        color: #fff;
+        &.disabled {
+          cursor: not-allowed;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+        }
+        &:not(.disabled) {
+          background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
+          box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
+        }
+        &:not(.disabled):hover {
+          background-image: linear-gradient(270deg, rgba(70, 86, 250, 1) 0%, rgba(69, 141, 245, 1) 100%);
+        }
+        &:not(.disabled):focus {
+          background-image: linear-gradient(270deg, rgba(90, 106, 250, 1) 0%, rgba(109, 181, 245, 1) 100%);
+        }
+      }
+      &.cancel {
+        color: #6e727a;
+        border: 1px solid #ced5e0;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        &:hover {
+          color: #ced5e0 - #222222;
+          border-color: currentColor;
+        }
+        &:focus {
+          color: #ced5e0 - #444444;
+          border-color: currentColor;
+        }
       }
     }
   }

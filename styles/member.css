@@ -336,11 +336,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.header:before, .main .main-content .main-header:before, .handle-condition:before, .handle-condition .condition-item:before, .personal-account-form .form-item:before, .message-main-body-header:before, .message-main-body-header .handle:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before, .remind-main-body-header .handle:before, .add-remind-modal-content .modal-body .form-item:before, .add-remind-modal-content .modal-footer:before, .role-main-body-header:before, .role-main-body-header .handle:before, .add-role-modal-content .modal-body .form-item:before, .add-role-modal-content .modal-footer:before, .analyze-tab:before, .league-tab:before, .management-main-body-header:before, .management-main-body-header .handle:before {
+.header:before, .main .main-content .main-header:before, .handle-condition:before, .handle-condition .condition-item:before, .personal-account-form .form-item:before, .message-main-body-header:before, .message-main-body-header .handle:before, .union-main-body-header:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .form-item:before, .operate-main-body .profit .section:before, .shop-main-body .form-item:before, .shop-main-body .form-item .select:before, .shop-main-body .form-footer:before, .remind-main-body-header:before, .remind-main-body-header .handle:before, .add-remind-modal-content .modal-body .form-item:before, .add-remind-modal-content .modal-footer:before, .role-main-body-header:before, .role-main-body-header .handle:before, .add-role-modal-content .modal-body .form-item:before, .add-role-modal-content .modal-footer:before, .analyze-tab:before, .league-tab:before, .management-main-body-header:before, .management-main-body-header .handle:before, .add-member-form .form-item:before, .add-member-form .form-item .sex-select:before, .add-member-form .form-footer:before {
   content: "";
   display: table;
 }
-.header:after, .main .main-content .main-header:after, .handle-condition:after, .handle-condition .condition-item:after, .personal-account-form .form-item:after, .message-main-body-header:after, .message-main-body-header .handle:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after, .remind-main-body-header .handle:after, .add-remind-modal-content .modal-body .form-item:after, .add-remind-modal-content .modal-footer:after, .role-main-body-header:after, .role-main-body-header .handle:after, .add-role-modal-content .modal-body .form-item:after, .add-role-modal-content .modal-footer:after, .analyze-tab:after, .league-tab:after, .management-main-body-header:after, .management-main-body-header .handle:after {
+.header:after, .main .main-content .main-header:after, .handle-condition:after, .handle-condition .condition-item:after, .personal-account-form .form-item:after, .message-main-body-header:after, .message-main-body-header .handle:after, .union-main-body-header:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .form-item:after, .operate-main-body .profit .section:after, .shop-main-body .form-item:after, .shop-main-body .form-item .select:after, .shop-main-body .form-footer:after, .remind-main-body-header:after, .remind-main-body-header .handle:after, .add-remind-modal-content .modal-body .form-item:after, .add-remind-modal-content .modal-footer:after, .role-main-body-header:after, .role-main-body-header .handle:after, .add-role-modal-content .modal-body .form-item:after, .add-role-modal-content .modal-footer:after, .analyze-tab:after, .league-tab:after, .management-main-body-header:after, .management-main-body-header .handle:after, .add-member-form .form-item:after, .add-member-form .form-item .sex-select:after, .add-member-form .form-footer:after {
   content: "";
   display: table;
   clear: both;
@@ -935,16 +935,17 @@ table:not(.table-condensed) tbody tr td.handle button:hover {
   background-color: #5a6afa;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 0;
   height: 0;
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
-input[type=checkbox] + label {
+input[type="checkbox"] + label {
   display: block;
 }
-input[type=checkbox] + label::before {
+input[type="checkbox"] + label::before {
+  content: " ";
   display: block;
   border: 1px solid #bcc2cc;
   width: 16px;
@@ -952,13 +953,66 @@ input[type=checkbox] + label::before {
   font-size: 1.3em;
   color: #3b61de;
   border-radius: 2px;
-  content: " ";
   vertical-align: middle;
   line-height: .8;
 }
-input[type=checkbox]:checked + label::before {
-  content: "\2714 ";
+input[type="checkbox"]:checked + label::before {
+  content: "\2714";
   color: #5a6afa;
+}
+
+input[type="radio"] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+input[type="radio"] + label {
+  display: block;
+  position: relative;
+  margin-right: 0;
+  width: 50px;
+}
+input[type="radio"] + label::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  display: block;
+  border: 2px solid #a5affb;
+  width: 20px;
+  height: 20px;
+  color: #3b61de;
+  border-radius: 50%;
+}
+input[type="radio"]:checked + label {
+  position: relative;
+}
+input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  display: block;
+  background-color: #6979f8;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.form-item label.required {
+  position: relative;
+}
+.form-item label.required::before {
+  content: "*";
+  position: absolute;
+  left: -.8em;
+  height: 100%;
+  line-height: 2.1;
+  font-size: 1.5em;
+  color: #f00;
 }
 
 /*主要内容*/
@@ -971,7 +1025,6 @@ input[type=checkbox]:checked + label::before {
   font-size: 14px;
 }
 .personal-account-form .form-item {
-  height: 36px;
   line-height: 36px;
 }
 .personal-account-form .form-item:not(:last-of-type) {
@@ -1398,7 +1451,6 @@ input[type=checkbox]:checked + label::before {
   font-size: 14px;
 }
 .operate-main-body .form-item {
-  height: 36px;
   line-height: 36px;
   padding-left: 20px;
 }
@@ -1542,7 +1594,6 @@ input[type=checkbox]:checked + label::before {
   font-size: 14px;
 }
 .shop-main-body .form-item {
-  height: 36px;
   line-height: 36px;
   padding-left: 20px;
 }
@@ -2708,6 +2759,141 @@ input[type=checkbox]:checked + label::before {
 }
 .management-table tr.logout .status {
   color: #9013fe;
+}
+
+/*新增会员*/
+.add-member-main-body {
+  padding: 40px 76px;
+}
+
+.add-member-form {
+  font-size: 14px;
+}
+.add-member-form .form-item {
+  line-height: 36px;
+}
+.add-member-form .form-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.add-member-form .form-item label {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 5em;
+  height: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: right;
+  color: #666;
+}
+.add-member-form .form-item .form-input {
+  width: 28.4%;
+  min-width: 300px;
+  height: 36px;
+  line-height: calc(36px - 2px);
+  border: 1px solid #bfc7d4;
+  border-radius: 2px;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.add-member-form .form-item .form-input:focus {
+  border-color: #5a6afa;
+}
+.add-member-form .form-item select {
+  display: block;
+  float: left;
+  width: 28.4%;
+  min-width: 300px;
+  height: 36px;
+  line-height: calc(36px - 2px);
+  border: 1px solid #bfc7d4;
+  border-radius: 2px;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.add-member-form .form-item select:focus {
+  border-color: #5a6afa;
+}
+.add-member-form .form-item button {
+  float: left;
+  min-width: 100px;
+  height: 36px;
+  line-height: calc(36px - 2px);
+  margin-left: 10px;
+  text-align: center;
+  padding-right: 1em;
+  padding-left: 1em;
+  background-color: #e0ebfd;
+  border-radius: 4px;
+  color: #0557fa;
+  font-size: 14px;
+}
+.add-member-form .form-item button:hover {
+  background-color: #c8dcfb;
+}
+.add-member-form .form-item button:focus {
+  background-color: #bad2fb;
+}
+.add-member-form .form-item .sex-select {
+  display: block;
+  float: left;
+  height: 36px;
+  line-height: calc(36px - 2px);
+}
+.add-member-form .form-item .sex-select > div {
+  float: left;
+}
+.add-member-form .form-item .sex-select > div:not(:last-of-type) {
+  margin-right: 45px;
+}
+.add-member-form .form-item input[type="radio"] + label {
+  margin-right: 0;
+  width: 45px;
+}
+.add-member-form .form-footer {
+  margin-top: 30px;
+  margin-left: calc(5em + 10px);
+}
+.add-member-form .form-footer button {
+  float: left;
+  min-width: 8em;
+  padding: .6em 1.6em;
+  border-radius: 2px;
+  font-size: inherit;
+}
+.add-member-form .form-footer button:not(:last-of-type) {
+  margin-right: 10px;
+}
+.add-member-form .form-footer button.submit {
+  color: #fff;
+}
+.add-member-form .form-footer button.submit.disabled {
+  cursor: not-allowed;
+  border: 1px solid #eaeaea;
+  background-color: #eaeaea;
+}
+.add-member-form .form-footer button.submit:not(.disabled) {
+  background-image: linear-gradient(270deg, #3242fa 0%, #3179f5 100%);
+  box-shadow: 0 2px 2px 0 rgba(49, 121, 245, 0.4);
+}
+.add-member-form .form-footer button.submit:not(.disabled):hover {
+  background-image: linear-gradient(270deg, #4656fa 0%, #458df5 100%);
+}
+.add-member-form .form-footer button.submit:not(.disabled):focus {
+  background-image: linear-gradient(270deg, #5a6afa 0%, #6db5f5 100%);
+}
+.add-member-form .form-footer button.cancel {
+  color: #6e727a;
+  border: 1px solid #ced5e0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.add-member-form .form-footer button.cancel:hover {
+  color: #acb3be;
+  border-color: currentColor;
+}
+.add-member-form .form-footer button.cancel:focus {
+  color: #8a919c;
+  border-color: currentColor;
 }
 
 /*# sourceMappingURL=member.css.map */
