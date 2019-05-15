@@ -2667,3 +2667,52 @@ input[type="radio"] {
     }
   }
 }
+
+/*换卡*/
+.change-card-form {
+  @extend %clearfix;
+  position: relative;
+  height: 100%;
+  .form-item {
+    position: absolute;
+    top: 35.3%;
+    left: 50%;
+    transform: translateX(-50%);
+    @extend %clearfix;
+    input {
+      float: left;
+      display: block;
+      width: 300px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      border-radius: 2px 0 0 2px;
+      border: 1px solid #dcdfe6;
+      padding-right: 20px;
+      padding-left: 30px;
+      font-size: 14px;
+      background: url("../images/search.png") no-repeat left 9px center / 12px auto;
+      &:focus {
+        border-color: $theme-color;
+      }
+    }
+    .search {
+      float: left;
+      min-width: 6.5em;
+      padding-right: 2em;
+      padding-left: 2em;
+      text-align: center;
+      height: $form-element-height;
+      line-height: $form-element-height;
+      background-color: #6496fa;
+      border-radius: 0 2px 2px 0;
+      font-size: 14px;
+      color: #fff;
+      &:hover {
+        background-color: #6496fa - #111111;
+      }
+      &:focus {
+        background-color: #6496fa - #333333;
+      }
+    }
+  }
+}
