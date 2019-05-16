@@ -2716,3 +2716,135 @@ input[type="radio"] {
     }
   }
 }
+
+/*===会员等级===*/
+
+/*新增会员*/
+
+/*新增会员*/
+.add-grade-main-body {
+  padding: 40px 76px;
+}
+.add-grade-form {
+  $label-width: 5em;
+  font-size: 14px;
+  .form-item {
+    @extend %clearfix;
+    line-height: $form-element-height;
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      float: left;
+      margin-right: 10px;
+      width: $label-width;
+      height: inherit;
+      line-height: inherit;
+      font-size: inherit;
+      text-align: right;
+      color: $text-color;
+    }
+    .form-input {
+      float: left;
+      width: 28.4%;
+      min-width: 300px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding-right: 1em;
+      padding-left: 1em;
+      &:focus {
+        border-color: $theme-color;
+      }
+    }
+    select {
+      display: block;
+      float: left;
+      width: 28.4%;
+      min-width: 300px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding-right: 1em;
+      padding-left: 1em;
+      &:focus {
+        border-color: $theme-color;
+      }
+      option {
+
+      }
+    }
+    span {
+      float: left;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      margin-left: 10px;
+      font-size: 14px;
+    }
+    textarea {
+      display: block;
+      float: left;
+      min-width: 300px;
+      width: 72.2%;
+      line-height: 1.6em;
+      min-height: calc(1em + 2px + 1.6em * 4);
+      max-height: calc(1em + 2px + 1.6em * 5);
+      border: 1px solid #bfc7d4;
+      border-radius: 2px;
+      padding: .5em 1em;
+      resize: vertical;
+      &:focus {
+        border-color: $theme-color;
+      }
+    }
+  }
+  .form-footer {
+    @extend %clearfix;
+    margin-top: 30px;
+    margin-left: calc(5em + 10px);
+    button {
+      float: left;
+      min-width: 8em;
+      padding: .6em 1.6em;
+      border-radius: 2px;
+      font-size: inherit;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      &.submit {
+        color: #fff;
+        &.disabled {
+          cursor: not-allowed;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+        }
+        &:not(.disabled) {
+          background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
+          box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
+        }
+        &:not(.disabled):hover {
+          background-image: linear-gradient(270deg, rgba(70, 86, 250, 1) 0%, rgba(69, 141, 245, 1) 100%);
+        }
+        &:not(.disabled):focus {
+          background-image: linear-gradient(270deg, rgba(90, 106, 250, 1) 0%, rgba(109, 181, 245, 1) 100%);
+        }
+      }
+      &.cancel {
+        color: #6e727a;
+        border: 1px solid #ced5e0;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        &:hover {
+          color: #ced5e0 - #222222;
+          border-color: currentColor;
+        }
+        &:focus {
+          color: #ced5e0 - #444444;
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+}
