@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>会员等级</title>
+        <meta name="author" content="lixinjie">
+        <meta name="keywords" content="盟客多多" />
+        <meta name="description" content="盟客多多" />
+        <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../styles/member.css" />
+    </head>
+    <body>
+        <header id="header" class="header" role="banner">
+            <h1 class="logo">盟客多多</h1>
+            <div class="personal-info">
+                <!--当有未读消息时，添加 has-msg 类-->
+                <!--<a href="#" title="查看消息" class="iconfont icon-msg msg"></a>-->
+                <a href="#" title="查看消息" class="iconfont icon-msg msg has-msg"></a>
+                <div class="personal-account">个人账户<span class="arrows"></span></div>
+            </div>
+        </header>
+        <main id="main" class="main" role="main">
+            <nav id="nav" class="nav user-defined-scrollbar" role="navigation">
+                <ul class="nav-list">
+                    <li class="cashier">
+                        <a href="#" title="收银">收银</a>
+                        <ul>
+                            <!--被点击的链接父元素 li 添加 active 类，其上一级父元素 li 也添加 active 类-->
+                            <li><a href="#" title="快速消费">快速消费</a></li>
+                            <li><a href="#" title="账单中心">账单中心</a></li>
+                        </ul>
+                    </li>
+                    <li class="member active">
+                        <a href="#" title="会员">会员</a>
+                        <ul>
+                            <li><a href="#" title="会员管理">会员管理</a></li>
+                            <li class="active"><a href="#" title="会员等级">会员等级</a></li>
+                        </ul>
+                    </li>
+                    <li class="operate">
+                        <a href="#" title="运营">运营</a>
+                        <ul>
+                            <li><a href="#" title="运营管理">运营管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="union">
+                        <a href="#" title="联盟">联盟</a>
+                        <ul>
+                            <li><a href="#" title="商家联盟">商家联盟</a></li>
+                        </ul>
+                    </li>
+                    <li class="statistics">
+                        <a href="#" title="统计">统计</a>
+                        <ul>
+                            <li><a href="#" title="财务统计">财务统计</a></li>
+                            <li><a href="#" title="联盟统计">联盟统计</a></li>
+                            <li><a href="#" title="综合分析">综合分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="setup">
+                        <a href="#" title="系统设置">系统设置</a>
+                        <ul>
+                            <li><a href="#" title="我的店铺">我的店铺</a></li>
+                            <li><a href="#" title="系统提醒">系统提醒</a></li>
+                            <li><a href="#" title="角色权限">角色权限</a></li>
+                            <li><a href="#" title="操作日志">操作日志</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-content">
+                <div class="main-header">
+                    <ol class="breadcrumbs">
+                        <li>会员等级</li>
+                    </ol>
+                </div>
+                <div class="main-body user-defined-scrollbar grade-main-body">
+                    <div class="grade-main-body-header">
+                        <div class="tips">共有<strong class="member-grade-count">2</strong>个会员等级</div>
+                        <div class="handle">
+                            <button type="button" class="add-grade" title="新增会员等级">新增等级</button>
+                            <button type="button" class="selected-default" title="将选中等级设为默认等级">设为默认</button>
+                        </div>
+                    </div>
+                    <table class="grade-table">
+                        <thead>
+                        <tr>
+                            <th class="grade-check"></th>
+                            <th class="geade">会员等级</th>
+                            <th class="sum">金额(元)</th>
+                            <th class="property">属性</th>
+                            <th class="discount">等级折扣</th>
+                            <th class="integral">积分比例</th>
+                            <th class="type">升级类型</th>
+                            <th class="condition">升级条件</th>
+                            <th class="next-grade">升级后级别</th>
+                            <th class="default-grade">默认等级</th>
+                            <th class="handle">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="grade-check" title="选择会员等级">
+                                <input name="grade" type="checkbox" id="grade0">
+                                <label for="grade0"></label>
+                            </td>
+                            <td class="geade">1级</td>
+                            <td class="sum">1000</td>
+                            <td class="property">grade</td>
+                            <td class="discount">0.8</td>
+                            <td class="integral">2</td>
+                            <td class="type">未设置</td>
+                            <td class="condition">消费满1500</td>
+                            <td class="next-grade">2级</td>
+                            <td class="default-grade">是</td>
+                            <td class="handle">
+                                <button type="button" class="update" title="修改">修改</button>
+                                <button type="button" class="delete" title="删除该条消息">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="grade-check" title="选择会员等级">
+                                <input name="grade" type="checkbox" id="grade1">
+                                <label for="grade1"></label>
+                            </td>
+                            <td class="geade">2级</td>
+                            <td class="sum">2000</td>
+                            <td class="property">grade</td>
+                            <td class="discount">0.7</td>
+                            <td class="integral">3</td>
+                            <td class="type">未设置</td>
+                            <td class="condition">消费满3000</td>
+                            <td class="next-grade">3级</td>
+                            <td class="default-grade">否</td>
+                            <td class="handle">
+                                <button type="button" class="update" title="修改">修改</button>
+                                <button type="button" class="delete" title="删除该条消息">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
+        <script src="../../scripts/jquery-3.4.0.min.js"></script>
+        <script src="../../scripts/popper.min.js"></script>
+        <script src="../../scripts/bootstrap.min.js"></script>
+    </body>
+</html>

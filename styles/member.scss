@@ -2718,10 +2718,129 @@ input[type="radio"] {
 }
 
 /*===会员等级===*/
+.grade-main-body {
+  padding: 20px;
+}
+.grade-main-body-header {
+  height: $form-element-height;;
+  line-height: $form-element-height;
+  margin-bottom: 10px;
+  @extend %clearfix;
+  .tips {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #676c73;
+    .member-grade-count {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #333;
+      padding-right: .2em;
+      padding-left: .2em;
+    }
+  }
+  .handle {
+    @extend %clearfix;
+    float: right;
+    button {
+      float: left;
+      height: 100%;
+      line-height: inherit;
+      padding: 0 1.5em;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      &:not(:last-of-type) {
+        margin-right: .7em;
+      }
+    }
+    .add-grade {
+      background-color: $theme-color;
+      &:hover {
+        background-color: darken($theme-color, 5%);
+      }
+      &:focus {
+        background-color: darken($theme-color, 8%);
+      }
+    }
+    .selected-default {
+      background-color: #26bfbf;
+      &:hover {
+      background-color: darken(#26bfbf, 5%);
+      }
+      &:focus {
+        background-color: darken(#26bfbf, 8%);
+      }
 
-/*新增会员*/
+    }
+  }
+}
+.grade-table {
+  tr {
+    .grade-check {
+      padding-right: 10px;
+      padding-left: 10px;
+      width: calc(16px + 10px * 2);
+    }
+    /*@media (max-width: 1199px) {
+      .status {
+        width: 120px;
+      }
+      .time {
+        width: 180px;
+      }
+      .handle {
+        width: 120px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .status {
+        width: 150px;
+      }
+      .time {
+        width: 210px;
+      }
+      .handle {
+        width: 150px;
+      }
+    }
+    @media (min-width: 1400px) {
+      .status {
+        width: 180px;
+      }
+      .time {
+        width: 240px;
+      }
+      .handle {
+        width: 180px;
+      }
+    }
+    @media (min-width: 1600px) {
+      .status {
+        width: 210px;
+      }
+      .time {
+        width: 270px;
+      }
+      .handle {
+        width: 210px;
+      }
+    }
+    @media (min-width: 1800px) {
+      .status {
+        width: 240px;
+      }
+      .time {
+        width: 300px;
+      }
+      .handle {
+        width: 240px;
+      }
+    }*/
+  }
+}
 
-/*新增会员*/
+/*新增会员等级*/
 .add-grade-main-body {
   padding: 40px 76px;
 }
