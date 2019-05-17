@@ -1,0 +1,1 @@
+sass --style compressed member.scss:member.min.css

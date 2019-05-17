@@ -434,10 +434,10 @@ body {
     border-radius: 2px;
     border: 1px solid rgba(73,110,174,0.6);
     &:hover {
-      color: #496eae + #222222;
+      color: #6b91d1;
     }
     &:focus {
-      color: #496eae + #444444;
+      color: #8db3eb;
     }
   }
 }
@@ -1601,9 +1601,10 @@ input[type="radio"] {
     border-bottom-color: #e9eaeb;
     padding: 12px 0;
     .modal-title {
+      $color: #111111;
       font-size: 14px;
       font-weight: 500;
-      color: $text-color + #111;
+      color: calc(#{$text-color} + #{$color});
     }
   }
   .modal-body {
@@ -1860,9 +1861,10 @@ input[type="radio"] {
     border-bottom-color: #e9eaeb;
     padding: 12px 0;
     .modal-title {
+      $color: #111111;
       font-size: 14px;
       font-weight: 500;
-      color: $text-color + #111;
+      color: calc(#{$text-color} + #{$color});
     }
   }
   .modal-body {
@@ -2115,10 +2117,11 @@ input[type="radio"] {
       margin-bottom: 30px;
     }
     > dt {
+      $color: #333333;
       display: inline-block;
       vertical-align: middle;
       font-size: 18px;
-      color: $text-color + #333;
+      color: calc(#{$text-color} + #{$color});
       font-weight: 600;
       width: 20%;
       padding-right: 1em;
@@ -2246,10 +2249,11 @@ input[type="radio"] {
       margin-bottom: 30px;
     }
     > dt {
+      $color: #333333;
       display: inline-block;
       vertical-align: middle;
       font-size: 18px;
-      color: $text-color + #333;
+      color: calc(#{$text-color} + #{$color});
       font-weight: 600;
       width: 20%;
       padding-right: 1em;
@@ -2674,11 +2678,11 @@ input[type="radio"] {
         border: 1px solid #ced5e0;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
         &:hover {
-          color: #ced5e0 - #222222;
+          color: #4c5058;
           border-color: currentColor;
         }
         &:focus {
-          color: #ced5e0 - #444444;
+          color: #2a2d36;
           border-color: currentColor;
         }
       }
@@ -2726,10 +2730,10 @@ input[type="radio"] {
       font-size: 14px;
       color: #fff;
       &:hover {
-        background-color: #6496fa - #111111;
+        background-color: #4274d8;
       }
       &:focus {
-        background-color: #6496fa - #333333;
+        background-color: #2052b6;
       }
     }
   }
@@ -2974,11 +2978,11 @@ input[type="radio"] {
         border: 1px solid #ced5e0;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
         &:hover {
-          color: #ced5e0 - #222222;
+          color: #acb3bd;
           border-color: currentColor;
         }
         &:focus {
-          color: #ced5e0 - #444444;
+          color: #8a919b;
           border-color: currentColor;
         }
       }

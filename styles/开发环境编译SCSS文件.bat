@@ -1,0 +1,1 @@
+sass --watch --style expanded member.scss:member.css
