@@ -26,7 +26,8 @@ body {
   line-height: $page-top-height;
   color: #fff;
   font-size: 16px;
-  background: linear-gradient(90deg,rgba(55,120,250,1) 0%,rgba(55,74,250,1) 100%);
+  background-image: linear-gradient(90deg,rgba(55,120,250,1) 0%,rgba(55,74,250,1) 100%);
+  background-color: rgba(55,120,250,1);
   box-shadow: 0 2px 4px 0 rgba(46,95,230,0.2);
   .logo {
     float: left;
@@ -464,6 +465,7 @@ body {
   line-height: $page-bottom-height;
   text-align: center;
   background-image: linear-gradient(to right, #3778f9, #374af9);
+  background-color: #3778f9;
   color: #fff;
   font-size: 14px;
   padding-right: 2em;
@@ -687,7 +689,23 @@ input[type="radio"] {
 }
 
 .form-item {
+  width: 100%;
+  @extend %clearfix;
+  line-height: $form-element-height;
+  font-size: 14px;
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
   label {
+    display: block;
+    float: left;
+    width: 5em;
+    margin-right: .7em;
+    height: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    text-align: right;
+    color: $text-color;
     &.required {
       position: relative;
       &::before {
@@ -698,6 +716,282 @@ input[type="radio"] {
         line-height: 2.1;
         font-size: 1.5em;
         color: #f00;
+      }
+    }
+  }
+  .form-input {
+    display: block;
+    float: left;
+    width: 28.4%;
+    min-width: 300px;
+    height: $form-element-height;
+    line-height: calc(#{$form-element-height} - 2px);
+    border: 1px solid #bfc7d4;
+    border-radius: 2px;
+    padding-right: 1em;
+    padding-left: 1em;
+    &[type="number"] {
+      padding-right: 0;
+    }
+    &.search-input,
+    &.search {
+      width: 240px;
+      background: url("../images/search.png") no-repeat left 8px center / 12px auto;
+      padding-left: 28px;
+      & + button {
+        float: left;
+        min-width: 6.5em;
+        padding-right: 2em;
+        padding-left: 2em;
+        text-align: center;
+        height: $form-element-height;
+        line-height: $form-element-height;
+        background-color: #6496fa;
+        border-radius: 0 2px 2px 0;
+        color: #fff;
+        &:hover {
+          background-color: #4274d8;
+        }
+        &:focus {
+          background-color: #2052b6;
+        }
+      }
+    }
+    &:focus {
+      border-color: $theme-color;
+    }
+  }
+  strong {
+    display: block;
+    float: left;
+    margin-right: .5em;
+    font-size: 1.43em;
+    color: #333;
+    font-weight: 600;
+  }
+  span {
+    display: block;
+    float: left;
+    color: $text-color;
+    margin-left: .7em;
+  }
+  select {
+    display: block;
+    float: left;
+    height: $form-element-height;
+    line-height: calc(#{$form-element-height} - 2px);
+    border: 1px solid #bfc7d4;
+    border-radius: 2px;
+    padding-right: 1em;
+    padding-left: 1em;
+    color: $text-color;
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+    &:focus {
+      border-color: $theme-color;
+    }
+    option {
+
+    }
+  }
+  textarea {
+    display: block;
+    float: left;
+    width: 28.4%;
+    min-width: 300px;
+    line-height: 1.6em;
+    min-height: calc(1em + 2px + 1.6em * 4);
+    max-height: calc(1em + 2px + 1.6em * 5);
+    border: 1px solid #bfc7d4;
+    border-radius: 2px;
+    padding: .5em 1em;
+    resize: vertical;
+    &:focus {
+      border-color: $theme-color;
+    }
+  }
+}
+
+.form-title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  background: #f5f7fa;
+  border-radius: 4px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #606266;
+  font-size: 1.15em;
+  .sub-title {
+    font-size: .85em;
+    margin-left: .5em;
+  }
+}
+
+.form-footer {
+  @extend %clearfix;
+  margin-top: 30px;
+  margin-left: calc(5em + 10px);  // 5em 为该表单中 label 的宽度，10px 是 label 的 margin-right 值
+  button {
+    float: left;
+    min-width: 8em;
+    padding: .6em 1.6em;
+    border-radius: 2px;
+    font-size: inherit;
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+    &.submit {
+      color: #fff;
+      &.disabled {
+        cursor: not-allowed;
+        border: 1px solid #eaeaea;
+        background-color: #eaeaea;
+      }
+      &:not(.disabled) {
+        background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
+        background-color: rgba(50, 66, 250, 1);
+        box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
+      }
+      &:not(.disabled):hover {
+        background-image: linear-gradient(270deg, rgba(70, 86, 250, 1) 0%, rgba(69, 141, 245, 1) 100%);
+        background-color: rgba(70, 86, 250, 1);
+      }
+      &:not(.disabled):focus {
+        background-image: linear-gradient(270deg, rgba(90, 106, 250, 1) 0%, rgba(109, 181, 245, 1) 100%);
+        background-color: rgba(90, 106, 250, 1);
+      }
+    }
+    &.cancel {
+      color: #6e727a;
+      border: 1px solid #ced5e0;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+      &:hover {
+        color: #acb3bd;
+        border-color: currentColor;
+      }
+      &:focus {
+        color: #8a919b;
+        border-color: currentColor;
+      }
+    }
+  }
+}
+
+.main-body-header {
+  height: $form-element-height;;
+  line-height: $form-element-height;
+  margin-bottom: 10px;
+  @extend %clearfix;
+  .tips {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #676c73;
+    .count {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #333;
+      padding-right: .2em;
+      padding-left: .2em;
+    }
+  }
+  .handle {
+    @extend %clearfix;
+    float: right;
+    button {
+      float: left;
+      height: 100%;
+      line-height: inherit;
+      padding: 0 1.5em;
+      background-color: rgba(100, 153, 245, .2);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+      border-radius: 4px;
+      color: #0557fa;
+      font-size: 14px;
+      &:not(:last-of-type) {
+        margin-right: .7em;
+      }
+      &:hover {
+        background-color: rgba(100, 153, 245, .4);
+      }
+      &:focus {
+        background-color: rgba(100, 153, 245, .6);
+      }
+    }
+  }
+  .handle-item {
+    display: inline-block;
+    vertical-align: middle;
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+    & + button {
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 76px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      text-align: center;
+      padding-right: 1em;
+      padding-left: 1em;
+      border: 1px solid $form-element-border-color;
+      border-radius: 4px;
+      color: #606266;
+      font-size: 14px;
+      &:hover,
+      &.active {
+        background-color: $theme-color;
+        border-color: $theme-color;
+        color: #fff;
+      }
+    }
+    > button {
+      float: left;
+      min-width: 76px;
+      height: $form-element-height;
+      line-height: calc(#{$form-element-height} - 2px);
+      text-align: center;
+      padding-right: 1em;
+      padding-left: 1em;
+      border: 1px solid $form-element-border-color;
+      border-left-width: 0;
+      color: #606266;
+      font-size: 14px;
+      &:hover,
+      &.active {
+        background-color: $theme-color;
+        border-color: $theme-color;
+        color: #fff;
+      }
+      &:first-of-type {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-left-width: 1px;
+      }
+      &:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+    > input {
+      display: block;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: $form-element-height;
+      line-height: $form-element-height;
+      border: 1px solid $form-element-border-color;
+      border-radius: 2px;
+      font-size: 14px;
+      &#date {
+        width: 280px;
+        padding-right: calc(20px + 15px + .5em);
+        background: url("../images/calendar.png") no-repeat right .5em center / 20px;
       }
     }
   }
@@ -712,34 +1006,8 @@ input[type="radio"] {
   $label-width: 6em;
   font-size: 14px;
   .form-item {
-    @extend %clearfix;
-    line-height: $form-element-height;
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
     label {
-      display: block;
-      float: left;
-      margin-right: 10px;
-      width: $label-width;
-      height: inherit;
-      line-height: inherit;
-      font-size: inherit;
       text-align: right;
-      color: $text-color;
-    }
-    strong {
-      display: block;
-      float: left;
-      margin-right: .5em;
-      font-size: 1.43em;
-      color: #333;
-      font-weight: 600;
-    }
-    span {
-      display: block;
-      float: left;
-      color: $text-color;
     }
     .recharge {
       padding-right: 14px;
@@ -792,36 +1060,6 @@ input[type="radio"] {
       }
     }
   }
-  .form-input {
-    width: 28.4%;
-    min-width: 300px;
-    height: $form-element-height;
-    line-height: calc(#{$form-element-height} - 2px);
-    border: 1px solid #bfc7d4;
-    border-radius: 2px;
-    padding-right: 1em;
-    padding-left: 1em;
-    &:focus {
-      border-color: $theme-color;
-    }
-  }
-  .form-title {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    background: #f5f7fa;
-    border-radius: 4px;
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #606266;
-    font-size: 1.15em;
-    .sub-title {
-      font-size: .85em;
-      margin-left: .5em;
-    }
-  }
   .submit {
     min-width: 6em;
     padding: .6em 1.6em;
@@ -847,49 +1085,6 @@ input[type="radio"] {
 /*===消息中心===*/
 .message-main-body {
   padding: 20px;
-}
-.message-main-body-header {
-  height: $form-element-height;;
-  line-height: $form-element-height;
-  margin-bottom: 10px;
-  @extend %clearfix;
-  .tips {
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: #676c73;
-    .unread-msg-count {
-      font-size: 1.2em;
-      font-weight: 500;
-      color: #333;
-      padding-right: .2em;
-      padding-left: .2em;
-    }
-  }
-  .handle {
-    @extend %clearfix;
-    float: right;
-    button {
-      float: left;
-      height: 100%;
-      line-height: inherit;
-      padding: 0 1.5em;
-      background-color: rgba(100, 153, 245, .2);
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
-      border-radius: 4px;
-      color: #0557fa;
-      font-size: 14px;
-      &:hover {
-        background-color: rgba(100, 153, 245, .4);
-      }
-      &:focus {
-        background-color: rgba(100, 153, 245, .6);
-      }
-      &:not(:last-of-type) {
-        margin-right: .7em;
-      }
-    }
-  }
 }
 .message-table {
   tbody {
@@ -974,9 +1169,6 @@ input[type="radio"] {
   padding: 20px;
 }
 .union-main-body-header {
-  @extend %clearfix;
-  height: calc(#{$form-element-height} + 8px * 2);
-  line-height: calc(#{$form-element-height} + 8px * 2);
   .sellers-tab {
     @extend %clearfix;
     float: left;
@@ -1157,44 +1349,6 @@ input[type="radio"] {
 .operate-main-body {
   padding: 30px 40px;
   font-size: 14px;
-  .form-item {
-    @extend %clearfix;
-    line-height: $form-element-height;
-    padding-left: 20px;
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      float: left;
-      margin-right: 10px;
-      height: inherit;
-      line-height: inherit;
-      font-size: inherit;
-      font-weight: normal;
-      color: $text-color;
-    }
-    span {
-      display: block;
-      float: left;
-      color: #333;
-    }
-    .form-input {
-      float: left;
-      width: 28.4%;
-      min-width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding-right: 1em;
-      padding-left: 1em;
-      margin-right: 10px;
-      &:focus {
-        border-color: $theme-color;
-      }
-    }
-  }
   .basic {
     .form-item {
       label {
@@ -1212,6 +1366,7 @@ input[type="radio"] {
     .form-item {
       float: left;
       margin-bottom: 0;
+      width: 300px;
       &:not(:last-of-type) {
         margin-right: 50px;
       }
@@ -1235,6 +1390,9 @@ input[type="radio"] {
       .form-input {
         min-width: 180px;
       }
+    }
+    .add {
+      margin-left: calc(6em + 10px);
     }
   }
   .proportion {
@@ -1293,6 +1451,7 @@ input[type="radio"] {
     font-size: inherit;
   }
   .submit {
+    margin-left: calc(8em + 10px);
     background-color: $theme-color;
     color: #fff;
     &.disabled {
@@ -1314,43 +1473,7 @@ input[type="radio"] {
   padding: 30px 40px;
   font-size: 14px;
   .form-item {
-    @extend %clearfix;
-    line-height: $form-element-height;
-    padding-left: $padding-left;
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      float: left;
-      margin-right: 10px;
-      height: inherit;
-      line-height: inherit;
-      font-size: inherit;
-      font-weight: normal;
-      color: $text-color;
-      text-align: right;
-    }
-    .form-input {
-      float: left;
-      width: 28.4%;
-      min-width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding-right: 1em;
-      padding-left: 1em;
-      margin-right: 10px;
-      color: #333;
-      font-weight: 600;
-      &:focus {
-        border-color: $theme-color;
-      }
-    }
     span {
-      display: block;
-      float: left;
       color: #333;
       font-weight: 600;
     }
@@ -1360,25 +1483,6 @@ input[type="radio"] {
       margin-right: 10px;
       height: inherit;
       line-height: inherit;
-    }
-    select {
-      float: left;
-      display: block;
-      height: inherit;
-      line-height: inherit;
-      padding-right: 1em;
-      padding-left: 1em;
-      border: 1px solid #bfc7d4;
-      font-size: inherit;
-      font-weight: normal;
-      color: $text-color;
-      text-align: right;
-      &:not(:last-of-type) {
-        margin-right: 10px;
-      }
-      option {
-        color: inherit;
-      }
     }
     @media (max-width: 1200px) {
       height: auto;
@@ -1439,98 +1543,13 @@ input[type="radio"] {
     }
   }
   .form-footer {
-    @extend %clearfix;
-    margin-top: 30px;
     margin-left: calc(#{$padding-left} + 6em + 10px);
-    button {
-      float: left;
-      min-width: 8em;
-      padding: .6em 1.6em;
-      border-radius: 2px;
-      font-size: inherit;
-      &:not(:last-of-type) {
-        margin-right: 10px;
-      }
-      &.submit {
-        color: #fff;
-        &.disabled {
-          cursor: not-allowed;
-          border: 1px solid #eaeaea;
-          background-color: #eaeaea;
-        }
-        &:not(.disabled) {
-          background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
-          box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
-        }
-        &:not(.disabled):hover {
-          background-color: darken($theme-color, 5%);
-        }
-        &:not(.disabled):focus {
-          background-color: darken($theme-color, 8%);
-        }
-      }
-      &.cancel {
-        color: #6e727a;
-        border: 1px solid #ced5e0;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-        &:hover {
-          color: darken(#6e727a, 5%);
-        }
-        &:focus {
-          color: darken(#6e727a, 8%);
-        }
-      }
-    }
   }
 }
 
 /*===系统提醒===*/
 .remind-main-body {
   padding: 20px;
-}
-.remind-main-body-header {
-  height: $form-element-height;
-  line-height: $form-element-height;
-  margin-bottom: 10px;
-  @extend %clearfix;
-  .tips {
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: #676c73;
-    .remind-count {
-      font-size: 1.2em;
-      font-weight: 500;
-      color: #333;
-      padding-right: .2em;
-      padding-left: .2em;
-    }
-  }
-  .handle {
-    @extend %clearfix;
-    float: right;
-    button {
-      float: left;
-      min-width: 7em;
-      height: 100%;
-      line-height: inherit;
-      padding: 0 1.5em;
-      background-color: $theme-color;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
-      border-radius: 4px;
-      color: #fff;
-      font-size: 14px;
-      &:hover {
-        background-color: darken($theme-color, 5%);
-      }
-      &:focus {
-        background-color: darken($theme-color, 8%);
-      }
-      &:not(:last-of-type) {
-        margin-right: .7em;
-      }
-    }
-  }
 }
 .remind-table {
   tr {
@@ -1601,10 +1620,9 @@ input[type="radio"] {
     border-bottom-color: #e9eaeb;
     padding: 12px 0;
     .modal-title {
-      $color: #111111;
       font-size: 14px;
       font-weight: 500;
-      color: calc(#{$text-color} + #{$color});
+      color: $text-color;
     }
   }
   .modal-body {
@@ -1613,71 +1631,6 @@ input[type="radio"] {
     $label-width: 5em;
     font-size: 14px;
     overflow-y: auto;
-    .form-item {
-      @extend %clearfix;
-      line-height: $form-element-height;
-      width: 100%;
-      &:not(:last-of-type) {
-        margin-bottom: 20px;
-      }
-      label {
-        display: block;
-        float: left;
-        margin-right: 10px;
-        width: $label-width;
-        height: inherit;
-        line-height: inherit;
-        font-size: inherit;
-        text-align: right;
-        color: $text-color;
-      }
-      .form-input {
-        display: block;
-        float: left;
-        min-width: 300px;
-        height: $form-element-height;
-        line-height: calc(#{$form-element-height} - 2px);
-        border: 1px solid #bfc7d4;
-        border-radius: 2px;
-        padding-right: 1em;
-        padding-left: 1em;
-        &:focus {
-          border-color: $theme-color;
-        }
-      }
-      select {
-        display: block;
-        float: left;
-        min-width: 300px;
-        height: $form-element-height;
-        line-height: calc(#{$form-element-height} - 2px);
-        border: 1px solid #bfc7d4;
-        border-radius: 2px;
-        padding-right: 1em;
-        padding-left: 1em;
-        &:focus {
-          border-color: $theme-color;
-        }
-        option {
-
-        }
-      }
-      textarea {
-        display: block;
-        float: left;
-        width: calc(100% - 5em - 10px);
-        line-height: 1.6em;
-        min-height: calc(1em + 2px + 1.6em * 4);
-        max-height: calc(1em + 2px + 1.6em * 5);
-        border: 1px solid #bfc7d4;
-        border-radius: 2px;
-        padding: .5em 1em;
-        resize: vertical;
-        &:focus {
-          border-color: $theme-color;
-        }
-      }
-    }
   }
   .modal-footer {
     @extend %clearfix;
@@ -1732,50 +1685,6 @@ input[type="radio"] {
 /*===角色权限===*/
 .role-main-body {
   padding: 20px;
-}
-.role-main-body-header {
-  height: $form-element-height;
-  line-height: $form-element-height;
-  margin-bottom: 10px;
-  @extend %clearfix;
-  .tips {
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: #676c73;
-    .role-count {
-      font-size: 1.2em;
-      font-weight: 500;
-      color: #333;
-      padding-right: .2em;
-      padding-left: .2em;
-    }
-  }
-  .handle {
-    @extend %clearfix;
-    float: right;
-    button {
-      float: left;
-      min-width: 7em;
-      height: 100%;
-      line-height: inherit;
-      padding: 0 1.5em;
-      background-color: $theme-color;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
-      border-radius: 4px;
-      color: #fff;
-      font-size: 14px;
-      &:hover {
-        background-color: darken($theme-color, 5%);
-      }
-      &:focus {
-        background-color: darken($theme-color, 8%);
-      }
-      &:not(:last-of-type) {
-        margin-right: .7em;
-      }
-    }
-  }
 }
 .role-table {
   tr {
@@ -1861,10 +1770,9 @@ input[type="radio"] {
     border-bottom-color: #e9eaeb;
     padding: 12px 0;
     .modal-title {
-      $color: #111111;
       font-size: 14px;
       font-weight: 500;
-      color: calc(#{$text-color} + #{$color});
+      color: $text-color;
     }
   }
   .modal-body {
@@ -1874,13 +1782,8 @@ input[type="radio"] {
     font-size: 14px;
     overflow-y: auto;
     .form-item {
-      @extend %clearfix;
       float: left;
       width: calc(50% - 20px);
-      line-height: $form-element-height;
-      &:not(:last-of-type) {
-        margin-bottom: 20px;
-      }
       &:nth-of-type(2n + 1) {
         label {
           width: 3em;
@@ -1904,59 +1807,6 @@ input[type="radio"] {
       }
       &:nth-of-type(2n + 1):last-of-type {
         width: 100%;
-      }
-      label {
-        display: block;
-        float: left;
-        margin-right: 10px;
-        height: inherit;
-        line-height: inherit;
-        font-size: inherit;
-        text-align: right;
-        color: $text-color;
-      }
-      .form-input {
-        display: block;
-        float: left;
-        height: $form-element-height;
-        line-height: calc(#{$form-element-height} - 2px);
-        border: 1px solid #bfc7d4;
-        border-radius: 2px;
-        padding-right: 1em;
-        padding-left: 1em;
-        &:focus {
-          border-color: $theme-color;
-        }
-      }
-      select {
-        display: block;
-        float: left;
-        height: $form-element-height;
-        line-height: calc(#{$form-element-height} - 2px);
-        border: 1px solid #bfc7d4;
-        border-radius: 2px;
-        padding-right: 1em;
-        padding-left: 1em;
-        &:focus {
-          border-color: $theme-color;
-        }
-        option {
-
-        }
-      }
-      textarea {
-        display: block;
-        float: left;
-        line-height: 1.6em;
-        min-height: calc(1em + 2px + 1.6em * 4);
-        max-height: calc(1em + 2px + 1.6em * 5);
-        border: 1px solid #bfc7d4;
-        border-radius: 2px;
-        padding: .5em 1em;
-        resize: vertical;
-        &:focus {
-          border-color: $theme-color;
-        }
       }
     }
   }
@@ -2117,11 +1967,10 @@ input[type="radio"] {
       margin-bottom: 30px;
     }
     > dt {
-      $color: #333333;
       display: inline-block;
       vertical-align: middle;
       font-size: 18px;
-      color: calc(#{$text-color} + #{$color});
+      color: #999;
       font-weight: 600;
       width: 20%;
       padding-right: 1em;
@@ -2249,11 +2098,10 @@ input[type="radio"] {
       margin-bottom: 30px;
     }
     > dt {
-      $color: #333333;
       display: inline-block;
       vertical-align: middle;
       font-size: 18px;
-      color: calc(#{$text-color} + #{$color});
+      color: #999;
       font-weight: 600;
       width: 20%;
       padding-right: 1em;
@@ -2371,59 +2219,6 @@ input[type="radio"] {
 /*===会员管理===*/
 .management-main-body {
   padding: 20px;
-}
-.management-main-body-header {
-  height: $form-element-height;;
-  line-height: $form-element-height;
-  margin-bottom: 10px;
-  @extend %clearfix;
-  .tips {
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: #676c73;
-    .member-count {
-      font-size: 1.2em;
-      font-weight: 500;
-      color: #333;
-      padding-right: .2em;
-      padding-left: .2em;
-    }
-  }
-  .handle {
-    @extend %clearfix;
-    float: right;
-    button {
-      float: left;
-      height: 100%;
-      line-height: inherit;
-      padding: 0 1.5em;
-      background-color: rgba(100, 153, 245, .2);
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
-      border-radius: 4px;
-      color: #0557fa;
-      font-size: 14px;
-      &:hover {
-        background-color: rgba(100, 153, 245, .4);
-      }
-      &:focus {
-        background-color: rgba(100, 153, 245, .6);
-      }
-      &.add {
-        background-color: #6496fa;
-        color: #fff;
-        &:hover {
-          background-color: darken(#6496fa, 5%);
-        }
-        &:focus {
-          background-color: darken(#6496fa, 8%);
-        }
-      }
-      &:not(:last-of-type) {
-        margin-right: .7em;
-      }
-    }
-  }
 }
 .management-table {
   tr {
@@ -2555,52 +2350,9 @@ input[type="radio"] {
   $label-width: 5em;
   font-size: 14px;
   .form-item {
-    @extend %clearfix;
-    line-height: $form-element-height;
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      float: left;
-      margin-right: 10px;
-      width: $label-width;
-      height: inherit;
-      line-height: inherit;
-      font-size: inherit;
-      text-align: right;
-      color: $text-color;
-    }
-    .form-input {
+    > select {
       width: 28.4%;
       min-width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding-right: 1em;
-      padding-left: 1em;
-      &:focus {
-        border-color: $theme-color;
-      }
-    }
-    select {
-      display: block;
-      float: left;
-      width: 28.4%;
-      min-width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding-right: 1em;
-      padding-left: 1em;
-      &:focus {
-        border-color: $theme-color;
-      }
-      option {
-
-      }
     }
     button {
       float: left;
@@ -2642,52 +2394,6 @@ input[type="radio"] {
       }
     }
   }
-  .form-footer {
-    @extend %clearfix;
-    margin-top: 30px;
-    margin-left: calc(5em + 10px);
-    button {
-      float: left;
-      min-width: 8em;
-      padding: .6em 1.6em;
-      border-radius: 2px;
-      font-size: inherit;
-      &:not(:last-of-type) {
-        margin-right: 10px;
-      }
-      &.submit {
-        color: #fff;
-        &.disabled {
-          cursor: not-allowed;
-          border: 1px solid #eaeaea;
-          background-color: #eaeaea;
-        }
-        &:not(.disabled) {
-          background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
-          box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
-        }
-        &:not(.disabled):hover {
-          background-image: linear-gradient(270deg, rgba(70, 86, 250, 1) 0%, rgba(69, 141, 245, 1) 100%);
-        }
-        &:not(.disabled):focus {
-          background-image: linear-gradient(270deg, rgba(90, 106, 250, 1) 0%, rgba(109, 181, 245, 1) 100%);
-        }
-      }
-      &.cancel {
-        color: #6e727a;
-        border: 1px solid #ced5e0;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-        &:hover {
-          color: #4c5058;
-          border-color: currentColor;
-        }
-        &:focus {
-          color: #2a2d36;
-          border-color: currentColor;
-        }
-      }
-    }
-  }
 }
 
 /*换卡*/
@@ -2700,41 +2406,10 @@ input[type="radio"] {
     top: 35.3%;
     left: 50%;
     transform: translateX(-50%);
-    @extend %clearfix;
+    width: auto;
     input {
-      float: left;
-      display: block;
-      width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border-radius: 2px 0 0 2px;
-      border: 1px solid #dcdfe6;
-      padding-right: 20px;
-      padding-left: 30px;
-      font-size: 14px;
-      background: url("../images/search.png") no-repeat left 9px center / 12px auto;
-      &:focus {
-        border-color: $theme-color;
-      }
-    }
-    .search {
-      float: left;
-      min-width: 6.5em;
-      padding-right: 2em;
-      padding-left: 2em;
-      text-align: center;
-      height: $form-element-height;
-      line-height: $form-element-height;
-      background-color: #6496fa;
-      border-radius: 0 2px 2px 0;
-      font-size: 14px;
-      color: #fff;
-      &:hover {
-        background-color: #4274d8;
-      }
-      &:focus {
-        background-color: #2052b6;
-      }
+      max-width: 300px;
+      min-width: 300px;
     }
   }
 }
@@ -2744,39 +2419,9 @@ input[type="radio"] {
   padding: 20px;
 }
 .grade-main-body-header {
-  height: $form-element-height;;
-  line-height: $form-element-height;
-  margin-bottom: 10px;
-  @extend %clearfix;
-  .tips {
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: #676c73;
-    .member-grade-count {
-      font-size: 1.2em;
-      font-weight: 500;
-      color: #333;
-      padding-right: .2em;
-      padding-left: .2em;
-    }
-  }
   .handle {
-    @extend %clearfix;
-    float: right;
-    button {
-      float: left;
-      height: 100%;
-      line-height: inherit;
-      padding: 0 1.5em;
-      border-radius: 4px;
-      color: #fff;
-      font-size: 14px;
-      &:not(:last-of-type) {
-        margin-right: .7em;
-      }
-    }
     .add-grade {
+      color: #fff;
       background-color: $theme-color;
       &:hover {
         background-color: darken($theme-color, 5%);
@@ -2786,6 +2431,7 @@ input[type="radio"] {
       }
     }
     .selected-default {
+      color: #fff;
       background-color: #26bfbf;
       &:hover {
       background-color: darken(#26bfbf, 5%);
@@ -2804,61 +2450,6 @@ input[type="radio"] {
       padding-left: 10px;
       width: calc(16px + 10px * 2);
     }
-    /*@media (max-width: 1199px) {
-      .status {
-        width: 120px;
-      }
-      .time {
-        width: 180px;
-      }
-      .handle {
-        width: 120px;
-      }
-    }
-    @media (min-width: 1200px) {
-      .status {
-        width: 150px;
-      }
-      .time {
-        width: 210px;
-      }
-      .handle {
-        width: 150px;
-      }
-    }
-    @media (min-width: 1400px) {
-      .status {
-        width: 180px;
-      }
-      .time {
-        width: 240px;
-      }
-      .handle {
-        width: 180px;
-      }
-    }
-    @media (min-width: 1600px) {
-      .status {
-        width: 210px;
-      }
-      .time {
-        width: 270px;
-      }
-      .handle {
-        width: 210px;
-      }
-    }
-    @media (min-width: 1800px) {
-      .status {
-        width: 240px;
-      }
-      .time {
-        width: 300px;
-      }
-      .handle {
-        width: 240px;
-      }
-    }*/
   }
 }
 
@@ -2869,205 +2460,12 @@ input[type="radio"] {
 .add-grade-form {
   $label-width: 5em;
   font-size: 14px;
-  .form-item {
-    @extend %clearfix;
-    line-height: $form-element-height;
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      float: left;
-      margin-right: 10px;
-      width: $label-width;
-      height: inherit;
-      line-height: inherit;
-      font-size: inherit;
-      text-align: right;
-      color: $text-color;
-    }
-    .form-input {
-      float: left;
-      width: 28.4%;
-      min-width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding-right: 1em;
-      padding-left: 1em;
-      &:focus {
-        border-color: $theme-color;
-      }
-    }
-    select {
-      display: block;
-      float: left;
-      width: 28.4%;
-      min-width: 300px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding-right: 1em;
-      padding-left: 1em;
-      &:focus {
-        border-color: $theme-color;
-      }
-      option {
-
-      }
-    }
-    span {
-      float: left;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      margin-left: 10px;
-      font-size: 14px;
-    }
-    textarea {
-      display: block;
-      float: left;
-      min-width: 300px;
-      width: 72.2%;
-      line-height: 1.6em;
-      min-height: calc(1em + 2px + 1.6em * 4);
-      max-height: calc(1em + 2px + 1.6em * 5);
-      border: 1px solid #bfc7d4;
-      border-radius: 2px;
-      padding: .5em 1em;
-      resize: vertical;
-      &:focus {
-        border-color: $theme-color;
-      }
-    }
-  }
-  .form-footer {
-    @extend %clearfix;
-    margin-top: 30px;
-    margin-left: calc(5em + 10px);
-    button {
-      float: left;
-      min-width: 8em;
-      padding: .6em 1.6em;
-      border-radius: 2px;
-      font-size: inherit;
-      &:not(:last-of-type) {
-        margin-right: 10px;
-      }
-      &.submit {
-        color: #fff;
-        &.disabled {
-          cursor: not-allowed;
-          border: 1px solid #eaeaea;
-          background-color: #eaeaea;
-        }
-        &:not(.disabled) {
-          background-image: linear-gradient(270deg, rgba(50, 66, 250, 1) 0%, rgba(49, 121, 245, 1) 100%);
-          box-shadow: 0 2px 2px 0 rgba(49, 121, 245, .4);
-        }
-        &:not(.disabled):hover {
-          background-image: linear-gradient(270deg, rgba(70, 86, 250, 1) 0%, rgba(69, 141, 245, 1) 100%);
-        }
-        &:not(.disabled):focus {
-          background-image: linear-gradient(270deg, rgba(90, 106, 250, 1) 0%, rgba(109, 181, 245, 1) 100%);
-        }
-      }
-      &.cancel {
-        color: #6e727a;
-        border: 1px solid #ced5e0;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-        &:hover {
-          color: #acb3bd;
-          border-color: currentColor;
-        }
-        &:focus {
-          color: #8a919b;
-          border-color: currentColor;
-        }
-      }
-    }
-  }
 }
 
 /*===账单中心===*/
 .bill-main-body-header {
-  height: $form-element-height;;
-  line-height: $form-element-height;
   margin-bottom: 20px;
   text-align: right;
-  .handle-item {
-    display: inline-block;
-    vertical-align: middle;
-    &:not(:last-of-type) {
-      margin-right: 10px;
-    }
-    & + button {
-      margin-left: 10px;
-      display: inline-block;
-      vertical-align: middle;
-      min-width: 76px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      text-align: center;
-      padding-right: 1em;
-      padding-left: 1em;
-      border: 1px solid $form-element-border-color;
-      border-radius: 4px;
-      color: #606266;
-      font-size: 14px;
-      &:hover,
-      &.active {
-        background-color: $theme-color;
-        border-color: $theme-color;
-        color: #fff;
-      }
-    }
-    > button {
-      float: left;
-      min-width: 76px;
-      height: $form-element-height;
-      line-height: calc(#{$form-element-height} - 2px);
-      text-align: center;
-      padding-right: 1em;
-      padding-left: 1em;
-      border: 1px solid $form-element-border-color;
-      border-left-width: 0;
-      color: #606266;
-      font-size: 14px;
-      &:hover,
-      &.active {
-        background-color: $theme-color;
-        border-color: $theme-color;
-        color: #fff;
-      }
-      &:first-of-type {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-        border-left-width: 1px;
-      }
-      &:last-of-type {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-      }
-    }
-    > input {
-      display: block;
-      float: left;
-      padding-right: 15px;
-      padding-left: 15px;
-      height: $form-element-height;
-      line-height: $form-element-height;
-      border: 1px solid $form-element-border-color;
-      border-radius: 2px;
-      font-size: 14px;
-      &#date {
-        width: 240px;
-        padding-right: calc(20px + 15px + .5em);
-        background: url("../images/calendar.png") no-repeat right .5em center / 20px;
-      }
-    }
-  }
 }
 .bill-table {
   tr {
@@ -3117,4 +2515,57 @@ input[type="radio"] {
       }
     }
   }
+}
+
+/*===快速消费===*/
+.expense-main-body {
+  @extend %clearfix;
+  padding: 40px;
+  .card-info {
+    float: left;
+    padding-right: 60px;
+    border-right: 1px solid #ebeef5;
+  }
+  .expense-form {
+    float: left;
+    margin-left: 50px;
+  }
+  @media (max-width: 1180px) {
+    .card-info {
+      float: none;
+      padding-right: 0;
+      border-right: none;
+    }
+    .expense-form {
+      float: none;
+      margin-left: 0;
+      margin-top: 50px;
+    }
+  }
+}
+.card-info {
+  .search-result {
+    width: 350px;
+    padding: 30px 25px;
+    background-image: linear-gradient(180deg, rgba(195,207,230,1) 0%, rgba(245,245,245,1) 100%);
+    background-color: rgba(195,207,230,1);
+    li {
+      font-size: 15px;
+      color: $text-color;
+      line-height: 1.6em;
+      &:not(:last-of-type) {
+        margin-bottom: .7em;
+      }
+      span {
+        color: #333;
+        word-break: break-all;
+        margin-left: .4em;
+      }
+    }
+  }
+}
+
+.expense-form {
+  $label-width: 5em;
+  font-size: 14px;
 }
