@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>快速消费</title>
+        <title>换卡</title>
         <meta name="author" content="lixinjie">
         <meta name="keywords" content="盟客多多" />
         <meta name="description" content="盟客多多" />
@@ -25,18 +25,18 @@
         <main id="main" class="main" role="main">
             <nav id="nav" class="nav user-defined-scrollbar" role="navigation">
                 <ul class="nav-list">
-                    <li class="cashier active">
+                    <li class="cashier">
                         <a href="#" title="收银">收银</a>
                         <ul>
                             <!--被点击的链接父元素 li 添加 active 类，其上一级父元素 li 也添加 active 类-->
-                            <li class="active"><a href="#" title="快速消费">快速消费</a></li>
+                            <li><a href="#" title="快速消费">快速消费</a></li>
                             <li><a href="#" title="账单中心">账单中心</a></li>
                         </ul>
                     </li>
-                    <li class="member">
+                    <li class="member active">
                         <a href="#" title="会员">会员</a>
                         <ul>
-                            <li><a href="#" title="会员管理">会员管理</a></li>
+                            <li class="active"><a href="#" title="会员管理">会员管理</a></li>
                             <li><a href="#" title="会员等级">会员等级</a></li>
                         </ul>
                     </li>
@@ -74,47 +74,49 @@
             <div class="main-content">
                 <div class="main-header">
                     <ol class="breadcrumbs">
-                        <li>快速消费</li>
+                        <li><a href="#" title="会员管理">会员管理</a></li>
+                        <li>换卡</li>
                     </ol>
                 </div>
-                <div class="main-body user-defined-scrollbar expense-main-body">
+                <div class="main-body user-defined-scrollbar member-management-main-body">
                     <div class="card-info">
                         <div class="form-item">
                             <input type="text" name="searchInput" id="searchInput" class="form-input search-input" placeholder="手机号码、卡号、姓名">
                             <button type="button" name="searchBtn" id="searchBtn" class="search-btn">查询</button>
                         </div>
-                        <ul class="search-result">
-                            <li>会员卡号：<span>hyk123456789</span></li>
-                            <li>会员姓名：<span>张三</span></li>
-                            <li>手机号码：<span>18227752000</span></li>
-                            <li>会员生日：<span>1990-12-14</span></li>
-                            <li>卡上余额：<span>288.58</span></li>
-                            <li>累计消费：<span>1711.42</span></li>
-                            <li>过期时间：<span>2020-12-31</span></li>
-                            <li>会员积分：<span>580</span></li>
-                        </ul>
+                        <div class="search-result-container">
+                            <div class="basic-info">
+                                <div class="iconfont icon-account account-icon"></div>
+                                <div class="name-balance">
+                                    <div class="name">张三</div>
+                                    <div class="balance">余额：<strong class="count">89.56</strong><span class="unit">元</span></div>
+                                </div>
+                            </div>
+                            <div class="handle">
+                                <button type="button" id="recharge" class="recharge">充值</button>
+                                <button type="button" id="loss" class="loss">挂失</button>
+                                <button type="button" id="changeCard" class="change-card">换卡</button>
+                            </div>
+                            <ul class="search-result">
+                                <li>会员卡号：<span>hyk123456789</span></li>
+                                <li>身份证号：<span>510301199805043938</span></li>
+                                <li>会员生日：<span>1998-05-04</span></li>
+                                <li>累计消费：<span>288.58</span></li>
+                                <li>会员等级：<span>6折</span></li>
+                                <li>过期时间：<span>2020-12-31</span></li>
+                                <li>会员积分：<span>580</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <form action="" name="expense" id="expense" class="expense-form">
-                        <div class="form-item expense-sum">
-                            <label for="expenseSum">消费金额：</label>
-                            <input type="number" name="expenseSum" id="expenseSum" class="form-input" placeholder="请输入消费金额">
-                        </div>
-                        <div class="form-item discount-sum">
-                            <label for="discountSum">折后金额：</label>
-                            <input type="number" name="discountSum" id="discountSum" class="form-input" placeholder="请输入折后金额">
-                        </div>
-                        <div class="form-item integral">
-                            <label for="integral">可得积分：</label>
-                            <input type="number" name="integral" id="integral" class="form-input" placeholder="请输入可得积分">
-                        </div>
-                        <div class="form-item comment">
-                            <label for="comment">备注：</label>
-                            <textarea name="comment" id="comment" placeholder="请输入备注信息"></textarea>
+                    <form action="" name="expense" id="expense" class="member-management-form">
+                        <div class="form-item new-card-number">
+                            <label for="newCardNumber">新卡号：</label>
+                            <input type="number" name="newCardNumber" id="newCardNumber" class="form-input" placeholder="请输入新卡号">
                         </div>
                         <div class="form-footer">
                             <!--表单信息没有正确填写时，给 .submit 类添加 .disabled 类-->
-                            <button type="submit" id="submit" name="submit" class="submit">结账</button>
-                            <!--<button type="submit" id="submit" name="submit" class="submit disabled" title="请先正确填写表单信息" disabled>结账</button>-->
+                            <button type="submit" id="submit" name="submit" class="submit">确定</button>
+                            <!--<button type="submit" id="submit" name="submit" class="submit disabled" title="请先正确填写表单信息" disabled>确定</button>-->
                             <button type="submit" id="cancel" name="cancel" class="cancel">取消</button>
                         </div>
                     </form>

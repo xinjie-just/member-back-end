@@ -792,7 +792,10 @@ input[type="radio"] {
       border-color: $theme-color;
     }
     option {
-
+      font-size: inherit;
+      color: inherit;
+      padding-right: 1em;
+      padding-left: 1em;
     }
   }
   textarea {
@@ -1007,6 +1010,7 @@ input[type="radio"] {
   font-size: 14px;
   .form-item {
     label {
+      width: $label-width;
       text-align: right;
     }
     .recharge {
@@ -1027,6 +1031,7 @@ input[type="radio"] {
       float: left;
       margin-right: .7em;
       .form-input {
+        float: none;
         position: relative;
         &:focus {
           border: 1px solid $theme-color;
@@ -1052,9 +1057,11 @@ input[type="radio"] {
       }
       .tips {
         display: block;
+        float: none;
         color: #666;
         line-height: 20px;
         margin-top: 8px;
+        margin-right: 0;
         font-size: inherit;
         font-weight: normal;
       }
@@ -1198,7 +1205,6 @@ input[type="radio"] {
   .union-handle {
     @extend %clearfix;
     float: right;
-    margin-top: 8px;
     button {
       float: left;
       display: none;
@@ -1473,6 +1479,7 @@ input[type="radio"] {
   padding: 30px 40px;
   font-size: 14px;
   .form-item {
+    margin-left: 20px;
     span {
       color: #333;
       font-weight: 600;
@@ -1490,7 +1497,6 @@ input[type="radio"] {
         height: $form-element-height;
         line-height: $form-element-height;
         & + input {
-          float: none;
           margin-top: 10px;
           margin-left: calc(5em + 10px);
         }
@@ -2525,10 +2531,34 @@ input[type="radio"] {
     float: left;
     padding-right: 60px;
     border-right: 1px solid #ebeef5;
+    .form-item {
+      margin-bottom: 30px;
+    }
+    .search-result {
+      width: 350px;
+      padding: 30px 25px;
+      background-image: linear-gradient(180deg, rgba(195,207,230,1) 0%, rgba(245,245,245,1) 100%);
+      background-color: rgba(195,207,230,1);
+      li {
+        font-size: 15px;
+        color: $text-color;
+        line-height: 1.6em;
+        &:not(:last-of-type) {
+          margin-bottom: .7em;
+        }
+        span {
+          color: #333;
+          word-break: break-all;
+          margin-left: .4em;
+        }
+      }
+    }
   }
   .expense-form {
     float: left;
     margin-left: 50px;
+    $label-width: 5em;
+    font-size: 14px;
   }
   @media (max-width: 1180px) {
     .card-info {
@@ -2543,18 +2573,109 @@ input[type="radio"] {
     }
   }
 }
-.card-info {
-  .search-result {
-    width: 350px;
-    padding: 30px 25px;
-    background-image: linear-gradient(180deg, rgba(195,207,230,1) 0%, rgba(245,245,245,1) 100%);
-    background-color: rgba(195,207,230,1);
-    li {
-      font-size: 15px;
+
+/*===换卡，充值，挂失===*/
+.member-management-main-body {
+  font-size: 0;
+  padding: 40px;
+  .card-info {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    .form-item {
+      margin-bottom: 39px;
+    }
+  }
+  .member-management-form {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    margin-left: 40px;
+  }
+}
+.search-result-container {
+  min-width: 380px;
+  padding: 25px 55px;
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.1);
+  border-radius: 8px;
+  .basic-info {
+    font-size: 0;
+    margin-bottom: 20px;
+    .account-icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .name-balance {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .account-icon {
+    margin-right: 20px;
+    width: 88px;
+    height: 88px;
+    line-height: 88px;
+    text-align: center;
+    background-color: #d6e4ff;
+    border-radius: 60px;
+    color: $theme-color;
+    font-size: 43px;
+  }
+  .name-balance {
+    font-size: 14px;
+    .name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      margin-bottom: 5px;
+    }
+    .balance {
       color: $text-color;
-      line-height: 1.6em;
+      .count {
+        font-size: 24px;
+        font-weight:600;
+        color: #f56200;
+      }
+      .unit {
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+  .handle {
+    margin-bottom: 20px;
+    @extend %clearfix;
+    button {
+      float: left;
+      min-width: 6em;
+      padding-right: 2em;
+      padding-left: 2em;
+      text-align: center;
+      height: $form-element-height;
+      line-height: $form-element-height;
+      background-color: rgba(100, 153, 245, .2);
+      border-radius: 4px;
+      color: #0557fa;
+      &:hover {
+        background-color: rgba(100, 153, 245, .5);
+      }
+      &:focus {
+        background-color: rgba(100, 153, 245, .8);
+      }
       &:not(:last-of-type) {
-        margin-bottom: .7em;
+        margin-right: 10px;
+      }
+    }
+  }
+  .search-result {
+    li {
+      font-size: 14px;
+      color: $text-color;
+      line-height: 2em;
+      &:not(:last-of-type) {
+        margin-bottom: .8em;
       }
       span {
         color: #333;
@@ -2565,7 +2686,15 @@ input[type="radio"] {
   }
 }
 
-.expense-form {
-  $label-width: 5em;
+.member-management-formform {
+  $label-width: 4em;
   font-size: 14px;
+  .form-item {
+    label {
+      width: 4em;
+    }
+    .form-footer {
+      margin-left: calc(#{$label-width} + 10px);
+    }
+  }
 }
