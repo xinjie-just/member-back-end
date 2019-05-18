@@ -2821,7 +2821,8 @@ input[type="radio"]:checked + label::after {
 .member-management-main-body .card-info .form-item {
   margin-bottom: 39px;
 }
-.member-management-main-body .member-management-form {
+.member-management-main-body .member-change-card-form,
+.member-management-main-body .member-recharge-form {
   display: inline-block;
   vertical-align: middle;
   font-size: 14px;
@@ -2918,14 +2919,24 @@ input[type="radio"]:checked + label::after {
   margin-left: .4em;
 }
 
-.member-management-formform {
+.member-change-card-form {
   font-size: 14px;
 }
-.member-management-formform .form-item label {
+.member-change-card-form .form-item label {
   width: 4em;
 }
-.member-management-formform .form-item .form-footer {
+.member-change-card-form .form-footer {
   margin-left: calc(4em + 10px);
+}
+
+.member-recharge-form {
+  font-size: 14px;
+}
+.member-recharge-form .form-item label {
+  width: 5em;
+}
+.member-recharge-form .form-footer {
+  margin-left: calc(5em + 10px);
 }
 
 /*# sourceMappingURL=member.css.map */

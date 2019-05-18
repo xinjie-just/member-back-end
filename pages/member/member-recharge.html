@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>换卡搜索</title>
+        <title>充值</title>
         <meta name="author" content="lixinjie">
         <meta name="keywords" content="盟客多多" />
         <meta name="description" content="盟客多多" />
@@ -73,16 +73,50 @@
             <div class="main-content">
                 <div class="main-header">
                     <ol class="breadcrumbs">
-                        <!--只有一级导航时没有a标签，多级导航时，最后一级没有a标签，除了最后一级其余有a标签-->
                         <li><a href="#" title="会员管理">会员管理</a></li>
-                        <li>换卡</li>
+                        <li>充值</li>
                     </ol>
                 </div>
-                <div class="main-body user-defined-scrollbar change-card-main-body">
-                    <form action="" name="changeCardForm" id="changeCardForm" class="change-card-form">
+                <div class="main-body user-defined-scrollbar member-management-main-body">
+                    <div class="card-info">
                         <div class="form-item">
-                            <input type="tel" name="tel" id="tel" class="search form-input" placeholder="请输入会员电话号码">
-                            <button type="button" name="search" id="search" class="search">搜索</button>
+                            <input type="text" name="searchInput" id="searchInput" class="form-input search-input" placeholder="手机号码、卡号、姓名">
+                            <button type="button" name="searchBtn" id="searchBtn" class="search-btn">查询</button>
+                        </div>
+                        <div class="search-result-container">
+                            <div class="basic-info">
+                                <div class="iconfont icon-account account-icon"></div>
+                                <div class="name-balance">
+                                    <div class="name">张三</div>
+                                    <div class="balance">余额：<strong class="count">89.56</strong><span class="unit">元</span></div>
+                                </div>
+                            </div>
+                            <div class="handle">
+                                <button type="button" id="recharge" class="recharge">充值</button>
+                                <button type="button" id="loss" class="loss">挂失</button>
+                                <button type="button" id="changeCard" class="change-card">换卡</button>
+                            </div>
+                            <ul class="search-result">
+                                <li>会员卡号：<span>hyk123456789</span></li>
+                                <li>身份证号：<span>510301199805043938</span></li>
+                                <li>会员生日：<span>1998-05-04</span></li>
+                                <li>累计消费：<span>288.58</span></li>
+                                <li>会员等级：<span>6折</span></li>
+                                <li>过期时间：<span>2020-12-31</span></li>
+                                <li>会员积分：<span>580</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form action="" name="memberRecharge" id="memberRecharge" class="member-recharge-form">
+                        <div class="form-item recharge-amount">
+                            <label for="rechargeAmount">充值金额：</label>
+                            <input type="number" name="rechargeAmount" id="rechargeAmount" class="form-input" placeholder="请输入充值金额">
+                        </div>
+                        <div class="form-footer">
+                            <!--表单信息没有正确填写时，给 .submit 类添加 .disabled 类-->
+                            <button type="submit" id="submit" name="submit" class="submit">确定</button>
+                            <!--<button type="submit" id="submit" name="submit" class="submit disabled" title="请先正确填写表单信息" disabled>确定</button>-->
+                            <button type="submit" id="cancel" name="cancel" class="cancel">取消</button>
                         </div>
                     </form>
                 </div>

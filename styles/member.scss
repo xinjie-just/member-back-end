@@ -2586,7 +2586,8 @@ input[type="radio"] {
       margin-bottom: 39px;
     }
   }
-  .member-management-form {
+  .member-change-card-form,
+  .member-recharge-form {
     display: inline-block;
     vertical-align: middle;
     font-size: 14px;
@@ -2686,15 +2687,28 @@ input[type="radio"] {
   }
 }
 
-.member-management-formform {
+.member-change-card-form {
   $label-width: 4em;
   font-size: 14px;
   .form-item {
     label {
-      width: 4em;
+      width: $label-width;
     }
-    .form-footer {
-      margin-left: calc(#{$label-width} + 10px);
+  }
+  .form-footer {
+    margin-left: calc(#{$label-width} + 10px);
+  }
+}
+
+.member-recharge-form {
+  $label-width: 5em;
+  font-size: 14px;
+  .form-item {
+    label {
+      width: $label-width;
     }
+  }
+  .form-footer {
+    margin-left: calc(#{$label-width} + 10px);
   }
 }
