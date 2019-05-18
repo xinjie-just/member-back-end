@@ -845,6 +845,7 @@ table:not(.table-condensed) {
 table:not(.table-condensed) th,
 table:not(.table-condensed) td {
   text-align: center;
+  word-break: break-all;
 }
 table:not(.table-condensed) thead tr {
   background-color: #ebeef5;
@@ -1142,12 +1143,13 @@ input[type="radio"]:checked + label::after {
 .form-item textarea {
   display: block;
   float: left;
-  width: 28.4%;
+  width: 72.2%;
   min-width: 300px;
   line-height: 1.6em;
   min-height: calc(1em + 2px + 1.6em * 4);
   max-height: calc(1em + 2px + 1.6em * 5);
   border: 1px solid #bfc7d4;
+  background-color: #f5f7fa;
   border-radius: 2px;
   padding: .5em 1em;
   resize: vertical;
@@ -1895,6 +1897,11 @@ input[type="radio"]:checked + label::after {
   }
 }
 
+.add-remind-form .form-item select {
+  min-width: 300px;
+  width: 28.4%;
+}
+
 /*新增系统提醒*/
 .add-remind-modal-content {
   display: flex;
@@ -2038,7 +2045,7 @@ input[type="radio"]:checked + label::after {
   }
 }
 
-/*新增加色权限*/
+/*新增角色权限*/
 .add-role-modal-content {
   display: flex;
   flex-direction: column;
@@ -2046,7 +2053,7 @@ input[type="radio"]:checked + label::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 800px;
   min-height: 300px;
   max-height: 600px;
   padding: 6px 20px 40px;
@@ -2072,6 +2079,9 @@ input[type="radio"]:checked + label::after {
 .add-role-modal-content .modal-body .form-item {
   float: left;
   width: calc(50% - 20px);
+}
+.add-role-modal-content .modal-body .form-item input {
+  min-width: auto;
 }
 .add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1) label {
   width: 3em;
@@ -2486,6 +2496,17 @@ input[type="radio"]:checked + label::after {
   padding: 20px;
 }
 
+.management-main-body-header .handle button.add {
+  background-color: #6496fa;
+  color: #fff;
+}
+.management-main-body-header .handle button.add:hover {
+  background-color: #4b85f9;
+}
+.management-main-body-header .handle button.add:focus {
+  background-color: #3c7bf9;
+}
+
 .management-table tr td:first-of-type {
   border-right: 1px solid #ebeef5;
 }
@@ -2822,7 +2843,8 @@ input[type="radio"]:checked + label::after {
   margin-bottom: 39px;
 }
 .member-management-main-body .member-change-card-form,
-.member-management-main-body .member-recharge-form {
+.member-management-main-body .member-recharge-form,
+.member-management-main-body .member-loss-form {
   display: inline-block;
   vertical-align: middle;
   font-size: 14px;
@@ -2887,8 +2909,8 @@ input[type="radio"]:checked + label::after {
 .search-result-container .handle button {
   float: left;
   min-width: 6em;
-  padding-right: 2em;
-  padding-left: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
   text-align: center;
   height: 36px;
   line-height: 36px;
@@ -2904,6 +2926,10 @@ input[type="radio"]:checked + label::after {
 }
 .search-result-container .handle button:not(:last-of-type) {
   margin-right: 10px;
+}
+.search-result-container .handle button.visited {
+  background: rgba(255, 51, 51, 0.15);
+  color: #f33;
 }
 .search-result-container .search-result li {
   font-size: 14px;
@@ -2937,6 +2963,33 @@ input[type="radio"]:checked + label::after {
 }
 .member-recharge-form .form-footer {
   margin-left: calc(5em + 10px);
+}
+
+.member-loss-form {
+  margin-top: 75px;
+  width: 400px;
+  height: 475px;
+  background: white;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  padding: 120px 40px 0;
+}
+.member-loss-form .title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+.member-loss-form .tips {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7em;
+}
+.member-loss-form .form-footer {
+  display: inline-block;
+  margin-left: 0;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=member.css.map */

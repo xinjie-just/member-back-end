@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>充值</title>
+        <title>挂失</title>
         <meta name="author" content="lixinjie">
         <meta name="keywords" content="盟客多多" />
         <meta name="description" content="盟客多多" />
@@ -74,7 +74,7 @@
                 <div class="main-header">
                     <ol class="breadcrumbs">
                         <li><a href="#" title="会员管理">会员管理</a></li>
-                        <li>充值</li>
+                        <li>挂失</li>
                     </ol>
                 </div>
                 <div class="main-body user-defined-scrollbar member-management-main-body">
@@ -93,6 +93,8 @@
                             </div>
                             <div class="handle">
                                 <button type="button" id="recharge" class="recharge">充值</button>
+                                <!--已挂失给 lose 类添加 visited 类-->
+                                <!--<button type="button" id="loss" class="loss visited">已挂失</button>-->
                                 <button type="button" id="loss" class="loss">挂失</button>
                                 <button type="button" id="changeCard" class="change-card">换卡</button>
                             </div>
@@ -107,15 +109,13 @@
                             </ul>
                         </div>
                     </div>
-                    <form action="" name="memberRecharge" id="memberRecharge" class="member-recharge-form">
-                        <div class="form-item recharge-amount">
-                            <label for="rechargeAmount">充值金额：</label>
-                            <input type="number" name="rechargeAmount" id="rechargeAmount" class="form-input" placeholder="请输入充值金额">
-                        </div>
+                    <!--挂失后，下面的表单隐藏，添加 hidden 类-->
+                    <!--<form action="" name="memberLoss" id="memberLoss" class="member-loss-form hidden">-->
+                        <form action="" name="memberLoss" id="memberLoss" class="member-loss-form">
+                        <h3 class="title">立即挂失</h3>
+                        <p class="tips">挂失后，该卡无法进行消费，请确认！</p>
                         <div class="form-footer">
-                            <!--表单信息没有正确填写时，给 .submit 类添加 .disabled 类-->
                             <button type="submit" id="submit" name="submit" class="submit">确定</button>
-                            <!--<button type="submit" id="submit" name="submit" class="submit disabled" title="请先正确填写表单信息" disabled>确定</button>-->
                             <button type="button" id="cancel" name="cancel" class="cancel">取消</button>
                         </div>
                     </form>
