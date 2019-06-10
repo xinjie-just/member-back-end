@@ -344,11 +344,13 @@ ul {
 }
 
 /* ===关于浮动=== */
-.header:before, .main .main-content .main-header:before, .handle-condition:before, .handle-condition .condition-item:before, .form-item:before, .form-footer:before, .main-body-header:before, .main-body-header .handle:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .profit .section:before, .shop-main-body .form-item .select:before, .add-remind-modal-content .modal-footer:before, .add-role-modal-content .modal-footer:before, .analyze-tab:before, .league-tab:before, .add-member-form .form-item .sex-select:before, .change-card-form:before, .expense-main-body:before, .search-result-container .handle:before {
+.header:before, .main .main-content .main-header:before, .handle-condition:before, .handle-condition .condition-item:before, .form-item:before, .form-footer:before, .main-body-header:before, .main-body-header .handle:before, .union-main-body-header .sellers-tab:before, .union-main-body-header .union-handle:before, .operate-main-body .profit .section:before, .shop-main-body .form-item .select:before, .modal-content .modal-footer:before, .analyze-tab:before, .league-tab:before, .confer-form:before, .confer-form .discount:before,
+.confer-form .rebate:before, .add-member-form .form-item .sex-select:before, .change-card-form:before, .expense-main-body:before, .search-result-container .handle:before {
   content: "";
   display: table;
 }
-.header:after, .main .main-content .main-header:after, .handle-condition:after, .handle-condition .condition-item:after, .form-item:after, .form-footer:after, .main-body-header:after, .main-body-header .handle:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .profit .section:after, .shop-main-body .form-item .select:after, .add-remind-modal-content .modal-footer:after, .add-role-modal-content .modal-footer:after, .analyze-tab:after, .league-tab:after, .add-member-form .form-item .sex-select:after, .change-card-form:after, .expense-main-body:after, .search-result-container .handle:after {
+.header:after, .main .main-content .main-header:after, .handle-condition:after, .handle-condition .condition-item:after, .form-item:after, .form-footer:after, .main-body-header:after, .main-body-header .handle:after, .union-main-body-header .sellers-tab:after, .union-main-body-header .union-handle:after, .operate-main-body .profit .section:after, .shop-main-body .form-item .select:after, .modal-content .modal-footer:after, .analyze-tab:after, .league-tab:after, .confer-form:after, .confer-form .discount:after,
+.confer-form .rebate:after, .add-member-form .form-item .sex-select:after, .change-card-form:after, .expense-main-body:after, .search-result-container .handle:after {
   content: "";
   display: table;
   clear: both;
@@ -1902,85 +1904,85 @@ input[type="radio"]:checked + label::after {
   width: 28.4%;
 }
 
-/*新增系统提醒*/
-.add-remind-modal-content {
+.modal-content {
   display: flex;
   flex-direction: column;
+  width: 600px;
+  min-height: 300px;
+  max-height: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  min-height: 300px;
-  max-height: 600px;
   padding: 6px 20px 40px;
   background: #fff;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 }
-.add-remind-modal-content .modal-header {
+.modal-content .modal-header {
   border-bottom-color: #e9eaeb;
   padding: 12px 0;
 }
-.add-remind-modal-content .modal-header .modal-title {
+.modal-content .modal-header .modal-title {
   font-size: 14px;
   font-weight: 500;
   color: #666;
 }
-.add-remind-modal-content .modal-body {
+.modal-content .modal-body {
   flex: 1;
   padding: 30px 44px;
   font-size: 14px;
   overflow-y: auto;
 }
-.add-remind-modal-content .modal-footer {
+.modal-content .modal-footer {
   margin-left: calc(44px + 5em + 10px);
   padding: 0;
   text-align: left;
   border-top: none;
   font-size: 14px;
 }
-.add-remind-modal-content .modal-footer button {
+.modal-content .modal-footer button {
   float: left;
   min-width: 8em;
   padding: .6em 1.6em;
   border-radius: 2px;
   font-size: inherit;
 }
-.add-remind-modal-content .modal-footer button:not(:last-of-type) {
+.modal-content .modal-footer button:not(:last-of-type) {
   margin-right: 10px;
 }
-.add-remind-modal-content .modal-footer button.submit {
+.modal-content .modal-footer button.submit {
   color: #fff;
 }
-.add-remind-modal-content .modal-footer button.submit.disabled {
+.modal-content .modal-footer button.submit.disabled {
   cursor: not-allowed;
   border: 1px solid #eaeaea;
   background-color: #eaeaea;
 }
-.add-remind-modal-content .modal-footer button.submit:not(.disabled) {
+.modal-content .modal-footer button.submit:not(.disabled) {
   background-color: #3179f5;
   box-shadow: 0 2px 2px 0 rgba(49, 121, 245, 0.4);
   border-radius: 2px;
 }
-.add-remind-modal-content .modal-footer button.submit:not(.disabled):hover {
+.modal-content .modal-footer button.submit:not(.disabled):hover {
   background-color: #1969f4;
 }
-.add-remind-modal-content .modal-footer button.submit:not(.disabled):focus {
+.modal-content .modal-footer button.submit:not(.disabled):focus {
   background-color: #0c60f1;
 }
-.add-remind-modal-content .modal-footer button.cancel {
+.modal-content .modal-footer button.cancel {
   color: #6e727a;
   border: 1px solid #ced5e0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
-.add-remind-modal-content .modal-footer button.cancel:hover {
+.modal-content .modal-footer button.cancel:hover {
   color: #62656d;
 }
-.add-remind-modal-content .modal-footer button.cancel:focus {
+.modal-content .modal-footer button.cancel:focus {
   color: #5b5e65;
 }
 
+/*新增系统提醒*/
 /*===角色权限===*/
 .role-main-body {
   padding: 20px;
@@ -2047,28 +2049,7 @@ input[type="radio"]:checked + label::after {
 
 /*新增角色权限*/
 .add-role-modal-content {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 800px;
-  min-height: 300px;
-  max-height: 600px;
-  padding: 6px 20px 40px;
-  background: #fff;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-}
-.add-role-modal-content .modal-header {
-  border-bottom-color: #e9eaeb;
-  padding: 12px 0;
-}
-.add-role-modal-content .modal-header .modal-title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #666;
 }
 .add-role-modal-content .modal-body {
   flex: 1;
@@ -2104,53 +2085,6 @@ input[type="radio"]:checked + label::after {
 }
 .add-role-modal-content .modal-body .form-item:nth-of-type(2n + 1):last-of-type {
   width: 100%;
-}
-.add-role-modal-content .modal-footer {
-  margin-left: calc(20px + 3em + 10px);
-  padding: 0;
-  text-align: left;
-  border-top: none;
-  font-size: 14px;
-}
-.add-role-modal-content .modal-footer button {
-  float: left;
-  min-width: 8em;
-  padding: .6em 1.6em;
-  border-radius: 2px;
-  font-size: inherit;
-}
-.add-role-modal-content .modal-footer button:not(:last-of-type) {
-  margin-right: 10px;
-}
-.add-role-modal-content .modal-footer button.submit {
-  color: #fff;
-}
-.add-role-modal-content .modal-footer button.submit.disabled {
-  cursor: not-allowed;
-  border: 1px solid #eaeaea;
-  background-color: #eaeaea;
-}
-.add-role-modal-content .modal-footer button.submit:not(.disabled) {
-  background-color: #3179f5;
-  box-shadow: 0 2px 2px 0 rgba(49, 121, 245, 0.4);
-  border-radius: 2px;
-}
-.add-role-modal-content .modal-footer button.submit:not(.disabled):hover {
-  background-color: #1969f4;
-}
-.add-role-modal-content .modal-footer button.submit:not(.disabled):focus {
-  background-color: #0c60f1;
-}
-.add-role-modal-content .modal-footer button.cancel {
-  color: #6e727a;
-  border: 1px solid #ced5e0;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-}
-.add-role-modal-content .modal-footer button.cancel:hover {
-  color: #62656d;
-}
-.add-role-modal-content .modal-footer button.cancel:focus {
-  color: #5b5e65;
 }
 
 /*===操作日志===*/
@@ -2489,6 +2423,66 @@ input[type="radio"]:checked + label::after {
 }
 .league-panel table tr .code {
   width: 22%;
+}
+
+/*申请联盟*/
+.confer-modal-content {
+  width: 1200px;
+}
+.confer-modal-content .modal-body {
+  padding: 24px 0;
+}
+.confer-modal-content .modal-footer {
+  margin-left: 0;
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #ebeef5;
+}
+.confer-modal-content .modal-footer button {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.confer-form > div {
+  float: left;
+  width: 50%;
+}
+.confer-form > div:first-of-type {
+  border-right: 1px solid #ebeef5;
+  padding-right: 3%;
+}
+.confer-form > div:last-of-type {
+  padding-left: 3%;
+}
+.confer-form .form-item label {
+  width: 7em;
+}
+.confer-form .form-item .form-input {
+  min-width: calc(100% - 7em - .7em);
+  max-width: calc(100% - 7em - .7em);
+}
+.confer-form .form-item textarea {
+  min-width: calc(100% - 7em - .7em);
+  max-width: calc(100% - 7em - .7em);
+}
+.confer-form .form-item #businessAddress,
+.confer-form .form-item #businessAddressExchange {
+  margin-top: 1em;
+  margin-left: calc(7em + .7em);
+}
+.confer-form .discount > div,
+.confer-form .rebate > div {
+  float: left;
+}
+.confer-form .discount .form-item,
+.confer-form .rebate .form-item {
+  width: 50%;
+}
+.confer-form .discount .form-item .form-input,
+.confer-form .rebate .form-item .form-input {
+  min-width: calc(100% - 7em - .7em);
+  max-width: calc(100% - 7em - .7em);
 }
 
 /*===会员管理===*/

@@ -107,9 +107,9 @@
                         <li aria-controls="unleashed" role="tab" data-toggle="tab" title="已取消商家">已取消商家</li>
                     </ul>
                     <div class="union-handle">
-                        <button type="button" class="active" title="申请联盟">申请联盟</button>
+                        <button type="button" class="active" title="申请联盟" data-toggle="modal" data-target="#confer">申请联盟</button>
                         <button type="button" title="取消联盟">取消联盟</button>
-                        <button type="button" title="申请联盟">申请联盟</button>
+                        <button type="button" title="申请联盟" data-toggle="modal" data-target="#confer">申请联盟</button>
                     </div>
                 </div>
                 <div class="sellers-panel">
@@ -402,10 +402,105 @@
             </div>
         </div>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="confer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-content confer-modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">联盟申请数据协商</h4>
+            </div>
+            <form name="conferForm" id="conferForm" class="modal-body user-defined-scrollbar confer-form">
+                <div class="form-body-left">
+                    <div class="form-item">
+                        <label for="businessName">商家名称：</label>
+                        <input type="text" name="businessName" id="businessName" class="form-input" placeholder="请输入商家名称">
+                    </div>
+                    <div class="form-item">
+                        <label for="businessAddress">商家地址：</label>
+                        <div id="select" class="select">
+                            <select name="province"></select>
+                            <select name="city"></select>
+                            <select name="area"></select>
+                        </div>
+                        <input type="text" name="businessAddress" id="businessAddress" class="form-input" placeholder="请输入详细地址">
+                    </div>
+                    <div class="discount">
+                        <div class="form-item">
+                            <label for="discount">给对方的折扣：</label>
+                            <input type="text" name="discount" id="discount" class="form-input" placeholder="请输入折扣">
+                        </div>
+                        <div class="form-item">
+                            <label for="discountOrigin">源数据：</label>
+                            <input type="text" name="discountOrigin" id="discountOrigin" class="form-input" placeholder="请输入源数据">
+                        </div>
+                    </div>
+                    <div class="rebate">
+                        <div class="form-item">
+                            <label for="rebate">给对方的返点：</label>
+                            <input type="text" name="rebate" id="rebate" class="form-input" placeholder="请输入返点">
+                        </div>
+                        <div class="form-item">
+                            <label for="rebateOrigin">源数据：</label>
+                            <input type="text" name="rebateOrigin" id="rebateOrigin" class="form-input" placeholder="请输入源数据">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="comment">备注：</label>
+                        <textarea name="comment" id="comment" placeholder="请输入备注"></textarea>
+                    </div>
+                </div>
+                <div class="form-body-right">
+                    <div class="form-item">
+                        <label for="businessNameExchange">商家名称：</label>
+                        <input type="text" name="businessNameExchange" id="businessNameExchange" class="form-input" placeholder="请输入商家名称">
+                    </div>
+                    <div class="form-item">
+                        <label for="businessAddressExchange">商家地址：</label>
+                        <div id="selectExchange" class="select">
+                            <select name="province"></select>
+                            <select name="city"></select>
+                            <select name="area"></select>
+                        </div>
+                        <input type="text" name="businessAddressExchange" id="businessAddressExchange" class="form-input" placeholder="请输入详细地址">
+                    </div>
+                    <div class="discount">
+                        <div class="form-item">
+                            <label for="discountExchange">给对方的折扣：</label>
+                            <input type="text" name="discountExchange" id="discountExchange" class="form-input" placeholder="请输入折扣">
+                        </div>
+                        <div class="form-item">
+                            <label for="discountOriginExchange">源数据：</label>
+                            <input type="text" name="discountOriginExchange" id="discountOriginExchange" class="form-input" placeholder="请输入源数据">
+                        </div>
+                    </div>
+                    <div class="rebate">
+                        <div class="form-item">
+                            <label for="rebateExchange">给对方的返点：</label>
+                            <input type="text" name="rebateExchange" id="rebateExchange" class="form-input" placeholder="请输入返点">
+                        </div>
+                        <div class="form-item">
+                            <label for="rebateOriginExchange">源数据：</label>
+                            <input type="text" name="rebateOriginExchange" id="rebateOriginExchange" class="form-input" placeholder="请输入源数据">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="commentExchange">备注：</label>
+                        <textarea name="commentExchange" id="commentExchange" placeholder="请输入备注"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <!--<button type="submit" class="submit disabled" title="请补全系统提示表单" disabled>保存</button>-->
+                <button type="submit" class="submit">保存</button>
+                <button type="button" class="cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
     <!--<footer id="footer" class="footer" role="contentinfo">XX有限公司</footer>-->
     <script src="../../scripts/jquery-3.4.0.min.js"></script>
     <script src="../../scripts/popper.min.js"></script>
     <script src="../../scripts/bootstrap.min.js"></script>
+    <script src="../../scripts/jquery.citys.js"></script>
     <script>
         var tab = $(".sellers-tab li");
         var panel = $(".sellers-panel section");
@@ -417,7 +512,22 @@
             panel.eq($(this).index()).siblings("section").removeClass("active");
             handle.eq($(this).index()).addClass("active");
             handle.eq($(this).index()).siblings("button").removeClass("active");
-        })
+        });
+
+
+        $("#select").citys({
+            valueType: "name",
+            province: "四川",
+            city: "成都",
+            area: "锦江"
+        });
+
+        $("#selectExchange").citys({
+            valueType: "name",
+            province: "四川",
+            city: "成都",
+            area: "双流"
+        });
     </script>
     </body>
 </html>

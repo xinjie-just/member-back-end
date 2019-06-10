@@ -1617,17 +1617,17 @@ input[type="radio"] {
     }
   }
 }
-/*新增系统提醒*/
-.add-remind-modal-content {
+
+.modal-content {
   display: flex;
   flex-direction: column;
+  width: 600px;
+  min-height: 300px;
+  max-height: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  min-height: 300px;
-  max-height: 600px;
   padding: 6px 20px 40px;
   background: #fff;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2), 0 8px 8px 0 rgba(0, 0, 0, .2);
@@ -1644,7 +1644,6 @@ input[type="radio"] {
   .modal-body {
     flex: 1;
     padding: 30px 44px;
-    $label-width: 5em;
     font-size: 14px;
     overflow-y: auto;
   }
@@ -1695,6 +1694,13 @@ input[type="radio"] {
         }
       }
     }
+  }
+}
+
+/*新增系统提醒*/
+.add-remind-modal-content {
+  .modal-body {
+    $label-width: 5em;
   }
 }
 
@@ -1769,28 +1775,7 @@ input[type="radio"] {
 
 /*新增角色权限*/
 .add-role-modal-content {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 800px;
-  min-height: 300px;
-  max-height: 600px;
-  padding: 6px 20px 40px;
-  background: #fff;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2), 0 8px 8px 0 rgba(0, 0, 0, .2);
-  border-radius: 2px;
-  .modal-header {
-    border-bottom-color: #e9eaeb;
-    padding: 12px 0;
-    .modal-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: $text-color;
-    }
-  }
   .modal-body {
     flex: 1;
     padding: 30px 20px;
@@ -1826,54 +1811,6 @@ input[type="radio"] {
       }
       &:nth-of-type(2n + 1):last-of-type {
         width: 100%;
-      }
-    }
-  }
-  .modal-footer {
-    @extend %clearfix;
-    margin-left: calc(20px + 3em + 10px);
-    padding: 0;
-    text-align: left;
-    border-top: none;
-    font-size: 14px;
-    button {
-      float: left;
-      min-width: 8em;
-      padding: .6em 1.6em;
-      border-radius: 2px;
-      font-size: inherit;
-      &:not(:last-of-type) {
-        margin-right: 10px;
-      }
-      &.submit {
-        color: #fff;
-        &.disabled {
-          cursor: not-allowed;
-          border: 1px solid #eaeaea;
-          background-color: #eaeaea;
-        }
-        &:not(.disabled) {
-          background-color: #3179f5;
-          box-shadow: 0 2px 2px 0 rgba(49,121,245,0.4);
-          border-radius: 2px;
-        }
-        &:not(.disabled):hover {
-          background-color: darken(#3179f5, 5%);
-        }
-        &:not(.disabled):focus {
-          background-color: darken(#3179f5, 8%);
-        }
-      }
-      &.cancel {
-        color: #6e727a;
-        border: 1px solid #ced5e0;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-        &:hover {
-          color: darken(#6e727a, 5%);
-        }
-        &:focus {
-          color: darken(#6e727a, 8%);
-        }
       }
     }
   }
@@ -2230,6 +2167,72 @@ input[type="radio"] {
       }
       .code {
         width: 22%;
+      }
+    }
+  }
+}
+
+/*申请联盟*/
+.confer-modal-content {
+  width: 1200px;
+  .modal-body {
+    $label-width: 5em;
+    padding: 24px 0;
+  }
+  .modal-footer {
+    margin-left: 0;
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(235,238,245,1);
+    button {
+      display: inline-block;
+      vertical-align: middle;
+      float: none;
+    }
+  }
+}
+.confer-form {
+  @extend %clearfix;
+  > div {
+    float: left;
+    width: 50%;
+    &:first-of-type {
+      border-right: 1px solid rgba(235,238,245,1);
+      padding-right: 3%;
+    }
+    &:last-of-type {
+      padding-left: 3%;
+    }
+  }
+  .form-item {
+    label {
+      width: 7em;
+    }
+    .form-input {
+      min-width: calc(100% - 7em - .7em);
+      max-width: calc(100% - 7em - .7em);
+    }
+    textarea {
+      min-width: calc(100% - 7em - .7em);
+      max-width: calc(100% - 7em - .7em);
+    }
+    #businessAddress,
+    #businessAddressExchange {
+      margin-top: 1em;
+      margin-left: calc(7em + .7em);
+    }
+  }
+  .discount,
+  .rebate {
+    @extend %clearfix;
+    > div {
+      float: left;
+    }
+    .form-item {
+      width: 50%;
+      .form-input {
+        min-width: calc(100% - 7em - .7em);
+        max-width: calc(100% - 7em - .7em);
       }
     }
   }
